@@ -1,5 +1,4 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function PublicLayout({
   children,
@@ -8,9 +7,8 @@ export default function PublicLayout({
 }) {
   return (
     <>
-      <Navbar />
-      <main style={{ paddingTop: "72px" }}>{children}</main>
-      <Footer />
+      <ScrollToTop />
+      {children}
     </>
   );
 }

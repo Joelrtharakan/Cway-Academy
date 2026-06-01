@@ -1,264 +1,633 @@
+"use client";
+
 import Link from "next/link";
-import { BookOpen, Clock, Users, Award, ChevronRight, Filter } from "lucide-react";
+import { motion } from "framer-motion";
 
-export const metadata = {
-  title: "Courses",
-  description: "Explore CWAY Academy's theological courses — Certificate and Diploma programs in Biblical Theology, Pastoral Ministry, Evangelism, Worship, and more.",
-};
+/* ── Animation variants ── */
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
+} as const;
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" } },
+} as const;
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.92 },
+  show: { opacity: 1, scale: 1, transition: { duration: 0.55, ease: "easeOut" } },
+} as const;
+
+/* ── Course data ── */
 const allCourses = [
   {
-    slug: "foundations-biblical-theology",
-    title: "Foundations of Biblical Theology",
+    slug: "spiritual-formation",
+    title: "Spiritual Formation",
     level: "Certificate",
-    format: "Self-Paced",
-    duration: "12 Weeks",
-    hours: "48 hrs",
-    students: 340,
+    format: "Hybrid",
+    duration: "6 Weeks",
+    lectures: "10 Lectures",
+    category: "Formation",
+    description:
+      "Integrated study of the Christian life and personal character development by the initiation and enactment of the Holy Spirit.",
+  },
+  {
+    slug: "old-testament",
+    title: "Old Testament",
+    level: "Certificate",
+    format: "Hybrid",
+    duration: "6 Weeks",
+    lectures: "10 Lectures",
     category: "Theology",
-    isFree: false,
-    description: "A comprehensive introduction to systematic theology grounded in Scripture, covering God, creation, humanity, sin, salvation, the Church, and eschatology.",
-    objectives: ["Understand the core doctrines of the Christian faith", "Apply biblical hermeneutics to Scripture interpretation", "Develop a personal theological framework for ministry"],
+    description:
+      "Overview of the content and theology of the Old Testament books, examining key theological themes and relevance to ministry today.",
   },
   {
-    slug: "pastoral-ministry-leadership",
-    title: "Pastoral Ministry & Leadership",
+    slug: "new-testament",
+    title: "New Testament",
     level: "Certificate",
-    format: "Cohort",
-    duration: "16 Weeks",
-    hours: "64 hrs",
-    students: 215,
-    category: "Leadership",
-    isFree: false,
-    description: "Equipping pastors with practical ministry skills: shepherding, preaching, counselling, church administration, conflict resolution, and community leadership.",
-    objectives: ["Master expository preaching and sermon preparation", "Develop pastoral counselling competencies", "Lead and administrate a local church effectively"],
+    format: "Hybrid",
+    duration: "6 Weeks",
+    lectures: "10 Lectures",
+    category: "Theology",
+    description:
+      "Overview within historical, literary, cultural, and theological contexts, tracing each book\u2019s Christological development.",
   },
   {
-    slug: "five-fold-ministry-training",
-    title: "Five-Fold Ministry Training",
+    slug: "interpreting-the-bible",
+    title: "Interpreting the Bible",
+    level: "Certificate",
+    format: "Hybrid",
+    duration: "6 Weeks",
+    lectures: "10 Lectures",
+    category: "Hermeneutics",
+    description:
+      "Equipping you with tools to study Scripture with insight, accuracy, and understanding through sound interpretive principles.",
+  },
+  {
+    slug: "theology-doctrines-1",
+    title: "Theology & Doctrines 1",
+    level: "Certificate",
+    format: "Hybrid",
+    duration: "6 Weeks",
+    lectures: "10 Lectures",
+    category: "Theology",
+    description:
+      "God, Humanity, Christ, and Salvation. Developing a Biblically grounded theology for life and ministry.",
+  },
+  {
+    slug: "theology-doctrines-2",
+    title: "Theology & Doctrines 2",
+    level: "Certificate",
+    format: "Hybrid",
+    duration: "6 Weeks",
+    lectures: "10 Lectures",
+    category: "Theology",
+    description:
+      "Church, Holy Spirit, and Mission. Exploring major areas of Christian theology to defend and teach the faith.",
+  },
+  {
+    slug: "five-fold-ministry",
+    title: "Five-Fold Ministry",
     level: "Diploma",
     format: "Hybrid",
-    duration: "6 Months",
-    hours: "120 hrs",
-    students: 180,
+    duration: "6 Weeks",
+    lectures: "10 Lectures",
     category: "Ministry",
-    isFree: false,
-    description: "Deep exploration of the apostolic, prophetic, evangelistic, pastoral and teaching gifts. Understand how the five-fold ministry builds the Body of Christ.",
-    objectives: ["Identify and develop your ministry gift", "Understand apostolic and prophetic foundations", "Build collaborative ministry teams"],
+    description:
+      "Training in church leadership, revealing functions of apostles, prophets, evangelists, pastors, and teachers.",
   },
   {
-    slug: "evangelism-church-planting",
-    title: "Evangelism & Church Planting",
+    slug: "church-history",
+    title: "Our Roots: Church History",
     level: "Certificate",
-    format: "Self-Paced",
-    duration: "10 Weeks",
-    hours: "40 hrs",
-    students: 290,
-    category: "Evangelism",
-    isFree: true,
-    description: "Practical training in personal evangelism, cross-cultural outreach, and the principles of planting sustainable, indigenous churches in unreached communities.",
-    objectives: ["Develop a personal evangelism strategy", "Understand cross-cultural church planting principles", "Apply indigenous ministry methods"],
+    format: "Hybrid",
+    duration: "6 Weeks",
+    lectures: "10 Lectures",
+    category: "History",
+    description:
+      "Development of Christianity from inception to present, including the global expansion and India\u2019s heritage.",
   },
   {
-    slug: "worship-arts-ministry",
-    title: "Worship Arts & Ministry",
-    level: "Certificate",
-    format: "Self-Paced",
-    duration: "8 Weeks",
-    hours: "32 hrs",
-    students: 150,
-    category: "Worship",
-    isFree: false,
-    description: "Biblical foundations of worship, practical training for worship leaders, team building, and the theology of music in the local church.",
-    objectives: ["Understand the biblical theology of worship", "Lead congregational worship effectively", "Build and develop a local worship team"],
-  },
-  {
-    slug: "biblical-counselling",
-    title: "Biblical Counselling & Care",
+    slug: "spiritual-leadership",
+    title: "Spiritual Leadership",
     level: "Diploma",
-    format: "Cohort",
-    duration: "5 Months",
-    hours: "100 hrs",
-    students: 125,
-    category: "Counselling",
-    isFree: false,
-    description: "Comprehensive training in Scripture-based counselling methodology for pastors, lay leaders, and ministry workers serving individuals and families in crisis.",
-    objectives: ["Apply biblical counselling principles", "Navigate complex pastoral care situations", "Establish a counselling ministry in the local church"],
-  },
-  {
-    slug: "old-testament-survey",
-    title: "Old Testament Survey",
-    level: "Beginner",
-    format: "Self-Paced",
-    duration: "8 Weeks",
-    hours: "32 hrs",
-    students: 420,
-    category: "Theology",
-    isFree: true,
-    description: "A sweeping survey of the Old Testament — its history, literature, theology, and prophetic messages — interpreted through the lens of Christ.",
-    objectives: ["Navigate the entire Old Testament canon", "Understand covenant theology", "Interpret OT prophecy with Christological accuracy"],
-  },
-  {
-    slug: "new-testament-survey",
-    title: "New Testament Survey",
-    level: "Beginner",
-    format: "Self-Paced",
-    duration: "8 Weeks",
-    hours: "32 hrs",
-    students: 390,
-    category: "Theology",
-    isFree: true,
-    description: "A comprehensive survey of the New Testament — the Gospels, Acts, Epistles, and Revelation — exploring their historical context, theological themes, and application.",
-    objectives: ["Understand New Testament chronology and context", "Interpret Paul's epistles accurately", "Apply New Testament ethics to ministry"],
-  },
-  {
-    slug: "christian-ethics-social-justice",
-    title: "Christian Ethics & Social Justice",
-    level: "Intermediate",
-    format: "Cohort",
-    duration: "10 Weeks",
-    hours: "40 hrs",
-    students: 110,
-    category: "Ethics",
-    isFree: false,
-    description: "Biblical framework for Christian engagement with society — addressing poverty, justice, caste, gender, and the Church's prophetic role in contemporary India.",
-    objectives: ["Develop a biblical social ethics framework", "Engage with justice issues from Scripture", "Lead churches in holistic community transformation"],
+    format: "Hybrid",
+    duration: "6 Weeks",
+    lectures: "10 Lectures",
+    category: "Leadership",
+    description:
+      "Practical understanding of leadership principles and blending natural/spiritual qualities to shape your calling.",
   },
 ];
 
-const categories = ["All", "Theology", "Leadership", "Ministry", "Evangelism", "Worship", "Counselling", "Ethics"];
+/* ── Category color mapping ── */
+const categoryColors: Record<string, string> = {
+  Formation: "#6B8E7B",
+  Theology: "#2C4A3B",
+  Hermeneutics: "#7A6B4A",
+  Ministry: "#4A6B5A",
+  History: "#5A6B5D",
+  Leadership: "#3A5A4A",
+};
 
 export default function CoursesPage() {
   return (
-    <div>
-      {/* Hero */}
-      <section className="parchment-bg" style={{ padding: "5rem 0 3rem" }}>
-        <div className="container">
-          <div className="section-label">Theological Education</div>
-          <h1 style={{ marginBottom: "1rem" }}>
-            Courses Built for <span className="gradient-text-gold">Kingdom Impact</span>
-          </h1>
-          <div className="gold-divider gold-divider-left" />
-          <p style={{ maxWidth: "580px", fontSize: "1.05rem", lineHeight: 1.9, color: "var(--text-secondary)" }}>
-            From beginner surveys to advanced diploma programs, every course is grounded
-            in Scripture, designed for ministry application, and taught by experienced
-            theological faculty.
-          </p>
+    <div style={{ overflow: "hidden" }}>
+      {/* ═══════════════════════════════════════════════════
+          HERO SECTION
+      ═══════════════════════════════════════════════════ */}
+      <section
+        style={{
+          background: "linear-gradient(160deg, #1A2F25 0%, #2C4A3B 40%, #1A2F25 100%)",
+          padding: "clamp(100px, 14vw, 180px) 24px clamp(80px, 10vw, 120px)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Decorative elements */}
+        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden" }}>
+          <div style={{
+            position: "absolute", top: "-20%", right: "-10%", width: "500px", height: "500px",
+            borderRadius: "50%", background: "var(--gold-primary)", opacity: 0.06, filter: "blur(100px)"
+          }} />
+          <div style={{
+            position: "absolute", bottom: "-15%", left: "-5%", width: "400px", height: "400px",
+            borderRadius: "50%", background: "#4A7A62", opacity: 0.08, filter: "blur(80px)"
+          }} />
+          {/* Subtle grid pattern */}
+          <div style={{
+            position: "absolute", inset: 0, opacity: 0.03,
+            backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }} />
         </div>
-      </section>
 
-      {/* Stats Bar */}
-      <section style={{ background: "var(--navy-deep)", padding: "2rem 0" }}>
-        <div className="container">
-          <div style={{ display: "flex", gap: "3rem", justifyContent: "center", flexWrap: "wrap" }}>
-            {[
-              { n: "18+", l: "Courses Available" },
-              { n: "4", l: "Diploma Programs" },
-              { n: "12", l: "Languages" },
-              { n: "2,400+", l: "Students Trained" },
-            ].map((s) => (
-              <div key={s.l} style={{ textAlign: "center" }}>
-                <span style={{ fontFamily: "var(--font-serif)", fontSize: "2rem", fontWeight: 700, color: "var(--gold-light)", display: "block" }}>{s.n}</span>
-                <span style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.5)", textTransform: "uppercase", letterSpacing: "0.08em" }}>{s.l}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Courses Grid */}
-      <section className="section-padding">
-        <div className="container">
-          {/* Filter Row */}
-          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginBottom: "3rem", alignItems: "center" }}>
-            <span style={{ color: "var(--text-muted)", fontSize: "0.875rem", display: "flex", alignItems: "center", gap: "0.375rem" }}>
-              <Filter size={14} /> Filter by:
+        <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span style={{
+              color: "var(--gold-light)", fontWeight: 700, fontSize: "11px",
+              letterSpacing: "3px", textTransform: "uppercase", display: "block", marginBottom: "20px"
+            }}>
+              Theological Education
             </span>
-            {categories.map((cat) => (
-              <button
-                key={cat}
+            <h1 style={{
+              fontFamily: "var(--font-serif, Georgia, serif)",
+              fontSize: "clamp(36px, 5vw, 72px)", fontWeight: 400,
+              color: "#FFFFFF", lineHeight: 1.1, marginBottom: "28px", maxWidth: "800px"
+            }}>
+              Courses Built for{" "}
+              <span style={{
+                background: "linear-gradient(135deg, var(--gold-light), #D4A853)",
+                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+                fontStyle: "italic"
+              }}>
+                Kingdom Impact
+              </span>
+            </h1>
+            <div style={{ width: "60px", height: "3px", background: "var(--gold-light)", borderRadius: "2px", marginBottom: "24px" }} />
+            <p style={{
+              fontSize: "clamp(16px, 1.8vw, 19px)", color: "rgba(255,255,255,0.7)",
+              fontWeight: 300, lineHeight: 1.7, maxWidth: "620px", marginBottom: "40px"
+            }}>
+              Biblically grounded. Locally delivered. Globally certified.
+              Our curriculum is designed to support active ministry, balancing academic depth
+              with practical spiritual development.
+            </p>
+            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+              <Link
+                href="/apply"
                 style={{
-                  padding: "0.375rem 1rem",
-                  borderRadius: "999px",
-                  border: "1.5px solid var(--border-light)",
-                  background: cat === "All" ? "var(--gold-primary)" : "transparent",
-                  color: cat === "All" ? "white" : "var(--text-secondary)",
-                  fontSize: "0.8rem",
-                  fontWeight: 600,
-                  cursor: "pointer",
-                  transition: "all 0.2s",
+                  display: "inline-block", padding: "16px 36px",
+                  background: "var(--gold-light)", color: "var(--navy-deep)",
+                  fontWeight: 700, fontSize: "12px", letterSpacing: "0.1em",
+                  textTransform: "uppercase", borderRadius: "999px",
+                  textDecoration: "none", transition: "transform 0.3s, box-shadow 0.3s",
                 }}
               >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          {/* Grid */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "2rem" }}>
-            {allCourses.map((course) => (
-              <article key={course.slug} className="course-card">
-                <div
-                  className="course-card-image"
-                  style={{ height: "160px", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: "0.5rem", position: "relative" }}
-                >
-                  <BookOpen size={36} color="var(--gold-light)" opacity={0.5} />
-                  <span style={{ color: "var(--gold-light)", fontSize: "0.7rem", letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 600 }}>
-                    {course.category}
-                  </span>
-                  {course.isFree && (
-                    <span style={{ position: "absolute", top: "1rem", right: "1rem", background: "var(--success)", color: "white", fontSize: "0.7rem", fontWeight: 700, padding: "0.25rem 0.625rem", borderRadius: "999px" }}>
-                      FREE
-                    </span>
-                  )}
-                </div>
-                <div className="course-card-body">
-                  <div style={{ display: "flex", gap: "0.5rem", marginBottom: "0.75rem", flexWrap: "wrap" }}>
-                    <span className="badge badge-gold">{course.level}</span>
-                    <span className="badge badge-navy">{course.format}</span>
-                  </div>
-                  <h3 style={{ fontSize: "1.05rem", marginBottom: "0.625rem", color: "var(--navy-deep)", lineHeight: 1.3 }}>{course.title}</h3>
-                  <p style={{ fontSize: "0.85rem", lineHeight: 1.7, marginBottom: "1rem", color: "var(--text-secondary)" }}>{course.description}</p>
-
-                  <div style={{ display: "flex", gap: "1rem", marginBottom: "1.25rem", fontSize: "0.8rem", color: "var(--text-muted)" }}>
-                    <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                      <Clock size={12} /> {course.duration}
-                    </span>
-                    <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                      <BookOpen size={12} /> {course.hours}
-                    </span>
-                    <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                      <Users size={12} /> {course.students}
-                    </span>
-                  </div>
-
-                  <div style={{ display: "flex", gap: "0.75rem" }}>
-                    <Link href={`/courses/${course.slug}`} className="btn-primary" style={{ flex: 1, justifyContent: "center", padding: "0.625rem 1rem", fontSize: "0.85rem" }}>
-                      Enroll Now
-                    </Link>
-                    <Link href={`/courses/${course.slug}`} style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "0.8rem", color: "var(--gold-dark)", textDecoration: "none", fontWeight: 600, padding: "0.625rem" }}>
-                      Details <ChevronRight size={14} />
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+                Apply Now
+              </Link>
+              <Link
+                href="/contact"
+                style={{
+                  display: "inline-block", padding: "16px 36px",
+                  background: "transparent", color: "#fff",
+                  border: "1px solid rgba(255,255,255,0.3)",
+                  fontWeight: 600, fontSize: "12px", letterSpacing: "0.1em",
+                  textTransform: "uppercase", borderRadius: "999px",
+                  textDecoration: "none", transition: "border-color 0.3s",
+                }}
+              >
+                Talk to Admissions
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ background: "var(--navy-deep)", padding: "5rem 0", textAlign: "center" }}>
-        <div className="container">
-          <h2 style={{ color: "white", marginBottom: "1rem" }}>Not Sure Which Course Is Right for You?</h2>
-          <p style={{ color: "rgba(255,255,255,0.65)", maxWidth: "500px", margin: "0 auto 2rem", lineHeight: 1.8 }}>
-            Our admissions team is ready to guide you toward the program that best matches
-            your calling, experience, and ministry context.
-          </p>
-          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/contact" className="btn-primary">Talk to Admissions</Link>
-            <Link href="/apply" className="btn-outline-gold">Apply Now</Link>
-          </div>
+      {/* ═══════════════════════════════════════════════════
+          STATS BAR
+      ═══════════════════════════════════════════════════ */}
+      <section style={{ background: "#fff", borderBottom: "1px solid #DCE0D5" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}>
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            style={{
+              display: "grid", gridTemplateColumns: "repeat(4, 1fr)",
+              gap: "0",
+            }}
+          >
+            {[
+              { value: "10+", label: "Courses Available" },
+              { value: "6 Weeks", label: "Per Course" },
+              { value: "10", label: "Lectures Each" },
+              { value: "Accredited", label: "Global Recognition" },
+            ].map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                variants={fadeUp}
+                style={{
+                  textAlign: "center", padding: "36px 16px",
+                  borderRight: i < 3 ? "1px solid #DCE0D5" : "none",
+                }}
+              >
+                <span style={{
+                  fontFamily: "var(--font-serif, Georgia, serif)",
+                  fontSize: "clamp(24px, 2.5vw, 36px)", fontWeight: 400,
+                  color: "var(--accent-green)", display: "block", marginBottom: "6px"
+                }}>
+                  {stat.value}
+                </span>
+                <span style={{
+                  fontSize: "11px", color: "#5A6B5D", textTransform: "uppercase",
+                  letterSpacing: "0.15em", fontWeight: 600
+                }}>
+                  {stat.label}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          COURSES GRID
+      ═══════════════════════════════════════════════════ */}
+      <section style={{
+        background: "linear-gradient(180deg, #F7F8F4 0%, #EDEEE8 100%)",
+        padding: "clamp(80px, 10vw, 120px) 24px",
+      }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          {/* Section intro */}
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            style={{ textAlign: "center", marginBottom: "64px" }}
+          >
+            <motion.span variants={fadeUp} style={{
+              color: "var(--accent-green)", fontWeight: 700, fontSize: "11px",
+              letterSpacing: "3px", textTransform: "uppercase", display: "block", marginBottom: "12px"
+            }}>
+              Our Curriculum
+            </motion.span>
+            <motion.h2 variants={fadeUp} style={{
+              fontFamily: "var(--font-serif, Georgia, serif)",
+              fontSize: "clamp(28px, 3.5vw, 44px)", fontWeight: 400,
+              color: "var(--accent-green)", marginBottom: "16px"
+            }}>
+              9 Courses. One Transformative Journey.
+            </motion.h2>
+            <motion.p variants={fadeUp} style={{
+              fontSize: "16px", color: "#5A6B5D", maxWidth: "560px",
+              margin: "0 auto", lineHeight: 1.7, fontWeight: 300
+            }}>
+              Each course is 6 weeks long with 10 lectures, delivered in a flexible hybrid format
+              that fits around your life and ministry.
+            </motion.p>
+          </motion.div>
+
+          {/* Cards */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "24px",
+            }}
+          >
+            {allCourses.map((course, idx) => (
+              <motion.article
+                key={course.slug}
+                variants={fadeUp}
+                whileHover={{ y: -8 }}
+                style={{
+                  background: "#fff",
+                  borderRadius: "20px",
+                  overflow: "hidden",
+                  border: "1px solid #DCE0D5",
+                  display: "flex",
+                  flexDirection: "column",
+                  transition: "box-shadow 0.4s, border-color 0.4s",
+                  cursor: "default",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = "0 24px 64px rgba(44,74,59,0.14)";
+                  e.currentTarget.style.borderColor = "var(--accent-gold-light)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = "none";
+                  e.currentTarget.style.borderColor = "#DCE0D5";
+                }}
+              >
+                {/* Card header band */}
+                <div style={{
+                  padding: "28px 32px 24px",
+                  background: `linear-gradient(135deg, ${categoryColors[course.category] || "#2C4A3B"}, ${categoryColors[course.category] || "#2C4A3B"}dd)`,
+                  position: "relative",
+                  overflow: "hidden",
+                }}>
+                  {/* Big number watermark */}
+                  <span style={{
+                    position: "absolute", top: "-12px", right: "12px",
+                    fontFamily: "var(--font-serif, Georgia, serif)",
+                    fontSize: "80px", fontWeight: 700, color: "rgba(255,255,255,0.08)",
+                    lineHeight: 1, pointerEvents: "none", userSelect: "none"
+                  }}>
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <span style={{
+                    display: "inline-block",
+                    padding: "4px 14px", borderRadius: "999px",
+                    background: "rgba(255,255,255,0.15)", backdropFilter: "blur(4px)",
+                    color: "#fff", fontSize: "10px", fontWeight: 700,
+                    letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "12px"
+                  }}>
+                    {course.category}
+                  </span>
+                  <h3 style={{
+                    fontFamily: "var(--font-serif, Georgia, serif)",
+                    fontSize: "22px", fontWeight: 400, color: "#fff",
+                    lineHeight: 1.3, position: "relative", zIndex: 1
+                  }}>
+                    {course.title}
+                  </h3>
+                </div>
+
+                {/* Card body */}
+                <div style={{ padding: "28px 32px 32px", flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                  <div>
+                    <p style={{ fontSize: "14.5px", color: "#5A6B5D", lineHeight: 1.7, marginBottom: "24px", fontWeight: 300 }}>
+                      {course.description}
+                    </p>
+
+                    {/* Meta info */}
+                    <div style={{
+                      display: "flex", gap: "16px", flexWrap: "wrap",
+                      marginBottom: "24px", paddingBottom: "24px",
+                      borderBottom: "1px solid #EDEEE8"
+                    }}>
+                      {[
+                        { label: course.level, color: course.level === "Diploma" ? "var(--gold-dark)" : "var(--accent-green)" },
+                        { label: course.duration, color: "#5A6B5D" },
+                        { label: course.lectures, color: "#5A6B5D" },
+                      ].map((meta) => (
+                        <span key={meta.label} style={{
+                          padding: "6px 14px", borderRadius: "999px",
+                          background: "#F3F4F0", fontSize: "11px", fontWeight: 600,
+                          color: meta.color, letterSpacing: "0.03em"
+                        }}>
+                          {meta.label}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  <Link
+                    href="/contact"
+                    style={{
+                      display: "block", textAlign: "center",
+                      padding: "14px 24px", borderRadius: "999px",
+                      background: "var(--accent-green)",
+                      color: "#fff", fontWeight: 600, fontSize: "13px",
+                      letterSpacing: "0.04em", textDecoration: "none",
+                      transition: "background 0.3s, transform 0.3s",
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.background = "var(--navy-deep)"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = "var(--accent-green)"; }}
+                  >
+                    Enroll Now
+                  </Link>
+                </div>
+              </motion.article>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          PROGRAM STRUCTURE SECTION
+      ═══════════════════════════════════════════════════ */}
+      <section style={{
+        background: "#fff",
+        padding: "clamp(80px, 10vw, 120px) 24px",
+        borderTop: "1px solid #DCE0D5",
+      }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "64px",
+              alignItems: "center",
+            }}
+          >
+            {/* Left text */}
+            <motion.div variants={fadeUp}>
+              <span style={{
+                color: "var(--accent-green)", fontWeight: 700, fontSize: "11px",
+                letterSpacing: "3px", textTransform: "uppercase", display: "block", marginBottom: "12px"
+              }}>
+                How It Works
+              </span>
+              <h2 style={{
+                fontFamily: "var(--font-serif, Georgia, serif)",
+                fontSize: "clamp(28px, 3.5vw, 42px)", fontWeight: 400,
+                color: "var(--accent-green)", lineHeight: 1.2, marginBottom: "20px"
+              }}>
+                Your Path to Graduation
+              </h2>
+              <p style={{ fontSize: "16px", color: "#5A6B5D", lineHeight: 1.7, fontWeight: 300, marginBottom: "36px" }}>
+                Complete all 9 courses at your own pace. Each course consists of 10 lectures
+                delivered over 6 weeks in a hybrid format — online and in-person — so you can
+                continue your ministry while you study.
+              </p>
+              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                <Link
+                  href="/apply"
+                  style={{
+                    display: "inline-block", padding: "14px 32px",
+                    background: "var(--accent-green)", color: "#fff",
+                    fontWeight: 700, fontSize: "12px", letterSpacing: "0.1em",
+                    textTransform: "uppercase", borderRadius: "999px",
+                    textDecoration: "none", transition: "background 0.3s",
+                  }}
+                >
+                  Start Your Journey
+                </Link>
+                <Link
+                  href="/contact"
+                  style={{
+                    display: "inline-block", padding: "14px 32px",
+                    background: "transparent", color: "var(--accent-green)",
+                    border: "1.5px solid #DCE0D5",
+                    fontWeight: 600, fontSize: "12px", letterSpacing: "0.1em",
+                    textTransform: "uppercase", borderRadius: "999px",
+                    textDecoration: "none", transition: "border-color 0.3s",
+                  }}
+                >
+                  Ask a Question
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right: Steps */}
+            <motion.div variants={fadeUp} style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+              {[
+                { step: "01", title: "Enroll", desc: "Register online or contact admissions. Choose your start date." },
+                { step: "02", title: "Study", desc: "Complete 10 lectures per course over 6 weeks — online, offline, or both." },
+                { step: "03", title: "Complete", desc: "Finish all 9 courses and meet the requirements at your own pace." },
+                { step: "04", title: "Graduate", desc: "Receive a globally accredited certificate at a local graduation ceremony." },
+              ].map((item, i) => (
+                <div
+                  key={item.step}
+                  style={{
+                    display: "flex", gap: "24px", alignItems: "flex-start",
+                    padding: "28px 0",
+                    borderBottom: i < 3 ? "1px solid #EDEEE8" : "none",
+                  }}
+                >
+                  <span style={{
+                    fontFamily: "var(--font-serif, Georgia, serif)",
+                    fontSize: "32px", fontWeight: 400,
+                    color: "var(--accent-green)", opacity: 0.3,
+                    lineHeight: 1, minWidth: "44px"
+                  }}>
+                    {item.step}
+                  </span>
+                  <div>
+                    <h4 style={{
+                      fontFamily: "var(--font-serif, Georgia, serif)",
+                      fontSize: "18px", fontWeight: 600,
+                      color: "var(--accent-green)", marginBottom: "6px"
+                    }}>
+                      {item.title}
+                    </h4>
+                    <p style={{ fontSize: "14px", color: "#5A6B5D", lineHeight: 1.6, fontWeight: 300 }}>
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          GRADUATION CTA
+      ═══════════════════════════════════════════════════ */}
+      <section style={{
+        background: "linear-gradient(160deg, #1A2F25 0%, #2C4A3B 40%, #1A2F25 100%)",
+        padding: "clamp(80px, 10vw, 120px) 24px",
+        position: "relative",
+        overflow: "hidden",
+      }}>
+        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden" }}>
+          <div style={{
+            position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)",
+            width: "600px", height: "600px", borderRadius: "50%",
+            background: "var(--gold-primary)", opacity: 0.06, filter: "blur(120px)"
+          }} />
+        </div>
+
+        <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            <motion.span variants={fadeUp} style={{
+              color: "var(--gold-light)", fontWeight: 700, fontSize: "11px",
+              letterSpacing: "3px", textTransform: "uppercase", display: "block", marginBottom: "16px"
+            }}>
+              Your Future Awaits
+            </motion.span>
+            <motion.h2 variants={fadeUp} style={{
+              fontFamily: "var(--font-serif, Georgia, serif)",
+              fontSize: "clamp(30px, 4vw, 52px)", fontWeight: 400,
+              color: "#fff", lineHeight: 1.15, marginBottom: "20px"
+            }}>
+              Graduation &amp; Certification
+            </motion.h2>
+            <motion.div variants={fadeUp} style={{ width: "60px", height: "3px", background: "var(--gold-light)", borderRadius: "2px", margin: "0 auto 28px" }} />
+            <motion.p variants={fadeUp} style={{
+              fontSize: "17px", color: "rgba(255,255,255,0.75)",
+              lineHeight: 1.7, fontWeight: 300, marginBottom: "44px", maxWidth: "600px", margin: "0 auto 44px"
+            }}>
+              Students who complete all courses and meet the requirements will receive
+              a globally accredited certificate upon graduation. Graduation services
+              will be conducted locally.
+            </motion.p>
+            <motion.div variants={fadeUp} style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
+              <Link
+                href="/contact"
+                style={{
+                  display: "inline-block", padding: "16px 36px",
+                  background: "var(--gold-light)", color: "var(--navy-deep)",
+                  fontWeight: 700, fontSize: "12px", letterSpacing: "0.1em",
+                  textTransform: "uppercase", borderRadius: "999px",
+                  textDecoration: "none",
+                }}
+              >
+                Talk to Admissions
+              </Link>
+              <Link
+                href="/apply"
+                style={{
+                  display: "inline-block", padding: "16px 36px",
+                  background: "transparent", color: "#fff",
+                  border: "1px solid rgba(255,255,255,0.3)",
+                  fontWeight: 600, fontSize: "12px", letterSpacing: "0.1em",
+                  textTransform: "uppercase", borderRadius: "999px",
+                  textDecoration: "none",
+                }}
+              >
+                Apply Online
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </div>

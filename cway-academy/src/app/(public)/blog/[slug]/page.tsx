@@ -1,92 +1,123 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { User, Clock, Tag, ArrowLeft, BookOpen, ChevronRight } from "lucide-react";
+import { User, Clock, Tag, ArrowLeft, ChevronRight } from "lucide-react";
 
-const posts = [
+interface Post {
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  authorRole: string;
+  date: string;
+  readTime: string;
+  category: string;
+  tags: string[];
+  scripture: {
+    text: string;
+    reference: string;
+  };
+}
+
+const posts: Post[] = [
   {
-    slug: "the-great-commission-and-the-indian-church",
-    title: "The Great Commission and the Indian Church: A Call to Every Believer",
-    author: "Rev. [Director Name]",
-    authorRole: "Founder & Executive Director",
-    date: "March 16, 2022",
-    readTime: "8 min",
-    category: "Missiology",
-    tags: ["Great Commission", "India", "Church Growth", "Missiology"],
-    excerpt: "India is home to over 1.4 billion people, thousands of unreached people groups, and a church that is simultaneously growing and in urgent need of theological depth.",
-    content: `
-India is home to over 1.4 billion people — a staggering 17% of the world's population. Within her borders lie over 2,000 distinct people groups, hundreds of languages, and thousands of communities that have never once heard the name of Jesus Christ in a meaningful, contextualised way.
+    slug: "arulappan-indigenous-leadership",
+    title: "Arulappan: A Pioneer of Indigenous Leadership Training in India",
+    excerpt: "John Christian Arulappan was a Tamil evangelist who led one of the earliest Pentecostal revivals in South India and pioneered local training for indigenous church leaders in the 19th century.",
+    content: `Pastor Bill Hybels, a pastor of one of the largest evangelical churches in the world, wrote in his book ‘Courageous Leadership’ that "the local church is the hope of the world, and its future rests primarily in the hands of its leaders.” As we see in the letter of the Apostle Paul to the church at Ephesus, he wrote about “equipping of the saints for the work of ministry, for the edifying of the body of Christ” (Ephesians 4:11-13). He encouraged the church to train local leaders “to the unity of the faith and of the knowledge of the Son of God, to a perfect man, to the measure of the stature of the fullness of Christ.”
 
-Yet the church in India is growing. By every statistical measure, the Indian church is expanding — through the work of faithful pastors, itinerant evangelists, and grassroots church planters who are taking the Gospel to the margins of society. This is cause for great rejoicing.
+What do you think? When did the Indian Christian community adopt an indigenous system of leadership training? Do you know that Pentecostal-Charismatic leadership training for local churches and leaders in India was initiated by a local pastor?
 
-But growth without depth is dangerous.
+I want you to study an episode in the history of Charismatic Christianity in South India that reveals an individual who pioneered local training for indigenous church leaders in the nineteenth century.
 
-**The Crisis of Untrained Leaders**
+John Christian Arulappan was a Tamil evangelist who led one of the earliest Pentecostal revivals in South India during 1860-65 and trained local Christians for indigenous churches. Arulappan, a young man from the village of Strivelliputtoor, joined the seminary of the Church Missionary Society in Tirunelveli in 1825 and studied under the German missionary C.T.E. Rhenius. He later worked with Anthony Groves, a British missionary, as a translator and evangelist. During this time, he faced criticism from local people who said, “he was hired for preaching.” However, Arulappan refused any form of remuneration from Groves and lived "by faith."
 
-One of the most urgent challenges facing the Indian church today is the crisis of pastoral training. The vast majority of church planters and pastors in rural India — those shepherding congregations in tribal areas, Dalit communities, and villages far from urban centres — have received little to no formal theological education.
+Arulappan’s Spirit-led vision empowered local Christians to share ministerial responsibilities, embrace the apostolic pattern of leadership, engage in faith missions, and adopt a communitarian lifestyle. He established a Christian settlement near his native place and transformed it into a self-supporting agricultural village that included a printing press, a boarding school, a church, and a center for Bible training. Arulappan established churches in the surrounding areas, and those congregations were independent, self-supporting, and locally managed. He was an itinerant trainer who passionately taught about the suffering, death, resurrection, and return of Lord Jesus Christ. Amid people's suffering due to famine, he exhorted them to "seek first the kingdom of God," and God miraculously supplied their needs.
 
-This is not a reflection of their calling or their character. These are men and women of extraordinary faith, sacrifice, and devotion to God. The problem is structural: theological education in India has historically been expensive, urban-centric, and delivered primarily in English — effectively inaccessible to the very pastors who need it most.
+The Missionary Reporter of 1860 reported on revivals in Britain and America in recent years, and Arulappan had been reading about them. He enthusiastically trained local leaders of his churches to earnestly pray and work for a similar revival in South India. He told them, “look for the Holy Spirit, let us pray for the Holy Spirit; let every one of us do the same.” Between May and August 1860, a revival with "Pentecostal" characteristics occurred in Tirunelveli. Arulappan described the events as “the Holy Ghost poured out openly and wonderfully…some prophesied, and some spoke in unknown tongues with their interpretations." Many people were baptized after receiving the Holy Spirit, and he continued to teach from the early chapters of Acts to extend the outpouring of the Holy Spirit among the locals.
 
-**What the Great Commission Demands**
-
-Matthew 28:19–20 is one of the most familiar passages in the New Testament: *"Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you."*
-
-Notice the scope of the commission. It is not merely to *evangelise* — to announce the Gospel and move on. The commission includes *teaching* — forming disciples who understand what they believe, why they believe it, and how to live and lead accordingly. This is the task of theological education.
-
-Every pastor who cannot explain the nature of the Trinity, the doctrine of justification, or the authority of Scripture is limited in their ability to form deep, rooted disciples. Every congregation led by a theologically shallow shepherd is vulnerable to false teaching, syncretism, and spiritual immaturity.
-
-**The Opportunity Before Us**
-
-The digital revolution has created an unprecedented opportunity to change this reality. For the first time in history, high-quality theological education can be delivered directly to a rural pastor's smartphone — in their own language, at their own pace, at a fraction of the cost of residential seminary.
-
-This is the vision driving CWAY Academy. We believe that every called pastor in every village in India deserves access to world-class theological training. We believe that theological education is not a luxury for the privileged few — it is a justice issue, a discipleship issue, and ultimately, a Great Commission issue.
-
-**A Call to Action**
-
-Will you partner with us in this mission? Whether through prayer, financial support, or sharing our work with pastors in your network — you can be part of equipping the Indian church for the work of the Gospel.
-
-The Great Commission is not just for missionaries who cross borders. It is for every believer, in every place, who is willing to be a part of making deep, theologically grounded disciples — disciples who will stand firm when the storms come, and who will in turn reproduce themselves in others.
-
-*"And the things that you have heard from me among many witnesses, commit these to faithful men who will be able to teach others also."* — 2 Timothy 2:2 (NKJV)
-    `.trim(),
-    scripture: { text: "Go therefore and make disciples of all nations... teaching them to observe all that I have commanded you.", reference: "Matthew 28:19–20 (ESV)" },
-  },
-  {
-    slug: "theological-education-for-rural-pastors",
-    title: "Why Theological Education for Rural Pastors Is a Justice Issue",
-    author: "Dr. [Academic Dean]",
-    authorRole: "Academic Dean",
-    date: "February 2022",
+Arulappan was a true pioneer and visionary who believed in local training for Christian leaders. He was a local pastor and Christian leader with the vision to train and produce Christian leaders for the future church in India. The impact of his training and the Tirunelveli revival continues to this day, as we have many Pentecostal-Charismatic Christian leaders and churches in South India.`,
+    author: "Dr. Reeju Tharakan",
+    authorRole: "M.Th., Ph.D",
+    date: "March 16, 2026",
     readTime: "6 min",
-    category: "Theological Education",
-    tags: ["Rural Ministry", "Pastoral Training", "Access", "Justice"],
-    excerpt: "Too often, the pastor in the village has less access to theological training than his urban counterpart — not because of lack of calling, but because of geography, language, and economics.",
-    content: `
-The disparity between theological education available to urban pastors and rural pastors in India is not merely an inconvenience. It is a justice issue — and the Indian church must name it as such.
-
-Consider this: a pastor serving a congregation of 30 families in a village in Bihar or Chhattisgarh faces the same spiritual challenges as a pastor in Bangalore or Chennai. He must preach every Sunday, counsel grieving families, navigate doctrinal confusion, disciple new believers, and resist false teaching — often without any formal training.
-
-**The Geography of Inequality**
-
-India's seminaries and Bible colleges are concentrated in urban centres — Chennai, Bangalore, Hyderabad, Kolkata. A rural pastor who wishes to attend such an institution must leave his congregation, his family, and his livelihood for months or years. Most cannot afford this. Most will not go.
-
-The result is a two-tiered church: a well-resourced, theologically equipped urban church, and an under-resourced, theologically thin rural church. This is not the church that Jesus is building.
-
-**The Language Barrier**
-
-Compounding the geography problem is the language barrier. Most theological education in India is delivered in English — the language of colonial-era missions, academic theology, and urban India. But the majority of rural pastors minister in Tamil, Telugu, Hindi, Kannada, Malayalam, Odia, or one of hundreds of other regional languages.
-
-A pastor who cannot access theology in his mother tongue is effectively excluded from the theological conversation. His understanding of Scripture is limited by his language access, not by his capacity or his calling.
-
-**CWAY Academy's Response**
-
-At CWAY Academy, we are committed to dismantling these barriers. Our courses are being developed in multiple Indian languages. Our scholarship programme ensures that no rural pastor is turned away for financial reasons. Our digital-first delivery model means that a pastor in a remote village with a smartphone and an internet connection can access the same quality of theological training as a pastor in Chennai.
-
-We believe this is not charity. It is justice. It is the church living into its calling to be a community without distinction — where calling, not economics or geography, determines access to training.
-
-*"There is neither Jew nor Gentile, neither slave nor free, nor is there male and female, for you are all one in Christ Jesus."* — Galatians 3:28
-    `.trim(),
-    scripture: { text: "There is neither Jew nor Gentile, neither slave nor free... for you are all one in Christ Jesus.", reference: "Galatians 3:28 (NIV)" },
+    category: "History",
+    tags: ["Arulappan", "Indigenous", "Leadership", "India", "Tirunelveli"],
+    scripture: { 
+      text: "equipping of the saints for the work of ministry, for the edifying of the body of Christ", 
+      reference: "Ephesians 4:12" 
+    }
   },
+  {
+    slug: "identity-uniqueness-calling",
+    title: "The Identity — Your Uniqueness and Your Calling",
+    excerpt: "Discover the importance of finding your true identity in your divine mandate and how a true leader emerges when they recognize God's unique plan and calling for their life.",
+    content: `In today's world, we can see many products that are knockoffs of the originals. The popularity, acceptance, advertising, and massive sales of the original products prompted others to create replicas of these genuine products. Fake product production shifts in response to the trend of original products. The features of authentic products are designed to keep them unique in the market, while duplicates attempt to imitate these originals. Two different visions!
+
+“Your uniqueness can become distorted if you lose focus on your calling and start concentrating on what others are doing.” Yes! The purpose makes you unique, so you must know who you are by identifying yourself. When we look at the Bible, we can see how God uses people to carry out His plan in unique ways. This means we are called for different purposes, which determine our identity. However, as humans, we are always influenced by others, and we frequently copy what others do when we observe their success. This is because no one wants to endure painful preparation; instead, everyone wants to be a finished product without going through the process. A true leader emerges when he recognizes God’s plan and lives accordingly. A leader should have a God-given vision and be able to communicate that vision to his teammates from the same perspective. Christian leadership is not a one-person show; instead, it is a fellowship.
+
+“As a prisoner for the Lord, then, I urge you to live a life worthy of the calling you have received.” (Eph 4:1). These are among the Apostle Paul's greatest words, revealing the uniqueness of the calling. The Epistle to the Ephesian Church was written while Paul was in Roman prison, and while there he tells us to "live a life worthy of the calling," the most important thing we should remember. Paul was content even in prison because he grasped God's purpose. As a result, when he moved by God's purpose, his worldly reputation was gone, and he saw himself as trash in the eyes of the world (1Cor4:13). However, when viewed through the lens of the Kingdom of God, the Apostle Paul is one of the greatest leaders ever recorded in the Bible. He was able to carry out God's will and communicate the God-given vision to his companions, not only conveying it but also correcting and redirecting others (churches and co-workers) by God's plan. His companions, such as Barnabas, Timothy, and others, understood his vision, and they all followed his lead, which is the mark of a successful leader. Toward the end of his life, Paul could see that he had fought the good fight, he had finished the race, and he had kept his faith (2Tim4:7).
+
+Although Jesus could have become a good political leader and brought freedom to the Jews from Roman rule, because he knew His purpose, he rejected the public's motive to make him a political king. Moreover, he took some men who appeared unworthy in the eyes of the public, taught them about the real Kingdom of God to come, and called them disciples. They had an entirely new view of the Messiah and the Kingdom of God after they encountered Jesus, and as a result, they were able to stand for the Kingdom of God in the face of severe persecution. Jesus was a great leader who was able to influence his followers and disciples and lead them toward the vision of God.
+
+In following Jesus, Paul imitated his example, allowing his path to become unique, just as he connected with his call. When we hear Jesus, we make our path unique and re-correct it according to God's plan.
+
+All of us are born leaders, and the degree of obedience to God's voice determines our leadership and its uniqueness. Even in the midst of problems, if you are confirmed in your call, you will respond with leadership's eyes, which will reveal a true leader within you. Then 'you', the original product, will remain original amid imitators.`,
+    author: "Pr. Robin Ninan",
+    authorRole: "Pastor & Teacher",
+    date: "April 2, 2026",
+    readTime: "5 min",
+    category: "Discipleship",
+    tags: ["Identity", "Calling", "Uniqueness", "Discipleship", "Leadership"],
+    scripture: { 
+      text: "As a prisoner for the Lord, then, I urge you to live a life worthy of the calling you have received.", 
+      reference: "Ephesians 4:1" 
+    }
+  },
+  {
+    slug: "mary-chapmans-resolve",
+    title: "“They Will Not Go, I Must” — The Legacy of Mary Chapman",
+    excerpt: "Mary Weems Chapman, a 60-year-old veteran missionary, became the first Assemblies of God missionary to India, pioneering children's homes and local leadership training in Kerala.",
+    content: `“They will not go, I must” were the words of Mary Weems Chapman, a 60-year-old veteran missionary who, in 1915, became the first Assemblies of God missionary to India. Mary Chapman was a Free Methodist missionary before her association with the Assemblies of God, and she worked in Liberia and India. Between 1890 and 1900, Mary worked in Daund, Pune, Mumbai, and Doddaballapur near Bangalore, and she was heavily involved in the ministry of children’s homes, which provided education and moral support to underprivileged children. After spending some years in India, single and aging, she returned to the United States of America. In 1915, she felt the call of God to return to India as a missionary from the Assemblies of God fellowship. However, her family and friends discouraged her, saying she was too old to go back to India. Nevertheless, she persevered in her resolve and made her decision firm, and she became the first Assemblies of God missionary to India. Before leaving the U.S. for India, she said: "The Spirit of God will not permit me to remain at home in a life of ease while souls are perishing…if young people are not able to go, old people must go."
+
+Mary Chapman arrived in India in October 1915 and had a vision that women and little girls in South India should lead the people of India to the experience of the new birth, Baptism in the Holy Spirit, divine healing, and baptism by immersion. She earnestly prayed for revival in India. From September 1917, Chapman visited Kerala and conducted meetings in Trivandrum. She raised a team of local leaders in Kerala, including Manessah, Mathew, Jaborathanam Daniel, and Jacob; later, they served as leaders of the Assemblies of God mission in South Kerala. She initiated a training center in Kerala for indigenous leaders. It later grew into a full-fledged Bible School. She envisioned the training and development of local church leaders in India. In the twentieth century, this training of local leaders impacted the development of many Pentecostal-Charismatic leaders in India. Training leaders for the local church has been a vision for many Christian institutions and organizations.
+
+John Maxwell made the leadership statement, “Everything rises and falls on leadership.” This statement has become especially significant in today’s church context in India, where there appears to be a shortage of trained pastors and local leaders. Because of India’s many ethnic groups and languages, training Christian leaders has become the most challenging task for churches and theological institutions. There are thousands of untrained pastors and lay leaders in remote villages in India who have never had the opportunity for formal leadership training or theological education. The poor financial status of churches and families, along with the lack of training programs in local languages, always hinders local pastors and leaders from enrolling in theological education or Christian leadership programs. What can we do for them?`,
+    author: "Dr. Reeju Tharakan",
+    authorRole: "M.Th., Ph.D",
+    date: "April 28, 2026",
+    readTime: "7 min",
+    category: "Missions",
+    tags: ["Mary Chapman", "Missions", "India", "Kerala", "History"],
+    scripture: { 
+      text: "The Spirit of God will not permit me to remain at home in a life of ease while souls are perishing…if young people are not able to go, old people must go.", 
+      reference: "Mary Weems Chapman" 
+    }
+  },
+  {
+    slug: "obedience-will-of-god-the-garrs",
+    title: "Obedience to the Will of God — The Garrs",
+    excerpt: "Alfred and Lillian Garr were model missionaries who obeyed God's will to bring the Pentecostal message to India in 1906, sparking a revival across Calcutta, Pune, and Bombay.",
+    content: `Growing in the grace and wisdom of God means finding favor with God and obeying His will. The first men and women who experienced baptism in the Holy Spirit at the beginning of the twentieth century were growing in the grace and wisdom of God. Some of them obeyed God's will and became the first Pentecostal missionaries to India.
+
+Alfred Goodrich Garr of Danville, Kentucky, was passionately seeking a personal encounter with God, which he always told his mother, “I am feeling after God.” In his continued pursuit of God, he traveled to several places, attended many meetings, and later joined Asbury College for ministerial training. Garr married Lillian Anderson, daughter of a Methodist bishop, while at Asbury College. They then moved to California to become pastors of an independent congregation, the Burning Bush Church. Although he was established as a pastor of this church, his desire for a deeper relationship with God continued. During this time, the Azusa Street Revival broke out, and Garr attended every session enthusiastically. On June 14, 1906, Garr received baptism in the Holy Spirit with speaking in tongues. At one meeting, while he was speaking in tongues, a British Indian approached him and said that Garr was speaking his mother tongue, Bengali. Initially, Lillian was skeptical about taking this experience as divine, and Garr asked her to attend one session of the Azusa Street Revival. Mrs. Garr received the power of the Holy Spirit with the gift of tongues, Tibetan and Chinese, in her first meeting at the Azusa mission. One week later, Garr stood up in one of the sessions of the Azusa Revival and said, “Friends, I believe that God wants me to go to India with this message.”
+
+A. G. Garr and Lillian Garr, with their daughter Virginia and their assistant Maria Gardner, arrived in Calcutta in December 1906. For the first three weeks, this missionary couple prayed for an opening to begin their ministry. During this time, Garr realized that he could not use the ‘Bengali’ language he had received as a gift of tongues at the Azusa Street Revival for preaching in Calcutta. However, he was not discouraged; instead, he studied the scriptures and came to understand that speaking in tongues was a source of spiritual empowerment rather than a tool for missionary evangelism. They were then invited to attend a prayer meeting of missionaries at the Woman’s Union Missionary Society mission house on Dhurmutulla Street to share about ‘God’s visitation in America.’ The missionaries who attended this meeting received the baptism of the Spirit. Later, Garr met Pastor Hook of the Bow Bazar Baptist Church – the church William Carey had ministered to 100 years earlier. The Garrs conducted revival meetings at this church with Pastor Hook. Some Protestant missionaries and local Christians experienced the power of the Holy Spirit.
+
+Lillian Garr reported on this revival in the periodical Apostolic Faith of the Azusa Street Mission: “God is spreading Pentecost in Calcutta, … We are among the Bible teachers, and they have the Word so stored away; but now the Spirit is putting life and power into it, which is wonderful to behold.” One night in Calcutta, Sister Lillian Garr had a vision of Jesus, His hands filled with golden crowns ready to place on heads. She realized that God had put a burden on her heart for the hungry souls in India. The Garrs began praying for missionaries in India to receive the outpouring of the Holy Spirit. She initiated revival prayer meetings among the missionary ladies in Calcutta. Miss Susan Easton, head of the American Women’s Board of Missions, and Fanny Simpson, a Methodist missionary and director of a girls’ orphanage, received the Holy Spirit's empowerment in these meetings. At Miss Simpson's orphanage, forty-five native girls prayed and received the Spirit’s baptism. These girls became local ministers and witnessed the power of the gospel in their families and villages. The revival continued to spread in Calcutta, Pune, and Bombay. The Garrs visited and conducted revival meetings at Ramabai’s Mukti Sadan in Pune and at a boys’ home in Dhond. The Garrs family went from Calcutta to Sri Lanka, then to Hong Kong and China. Despite personal tragedy, including the deaths of their two daughters and their assistant Maria, they continued the work of the Lord in China until 1911.
+
+Alfred and Lillian Garr were a model missionary family who had grown in the grace and wisdom of God. They obeyed God's will in their lives and accepted their challenging experiences as God-given for the glory of God. The impact of their lives and ministry will endure forever.`,
+    author: "Pr. Robin Ninan",
+    authorRole: "Pastor & Teacher",
+    date: "May 15, 2026",
+    readTime: "8 min",
+    category: "History",
+    tags: ["A.G. Garr", "Azusa Street", "Missions", "Calcutta", "Revival"],
+    scripture: { 
+      text: "Friends, I believe that God wants me to go to India with this message.", 
+      reference: "Alfred Goodrich Garr" 
+    }
+  }
 ];
 
 export async function generateStaticParams() {
@@ -98,7 +129,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = posts.find((p) => p.slug === slug);
   if (!post) return { title: "Post Not Found" };
   return {
-    title: `${post.title} | CWAY Academy Blog`,
+    title: `${post.title} | CWAY Academy Journal`,
     description: post.excerpt,
     openGraph: { title: post.title, description: post.excerpt, type: "article" },
   };
@@ -115,9 +146,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     <div>
       {/* Breadcrumb */}
       <div style={{ background: "var(--cream-mid)", padding: "1rem 0", borderBottom: "1px solid var(--border-light)" }}>
-        <div className="container" style={{ display: "flex", gap: "0.5rem", alignItems: "center", fontSize: "0.82rem", color: "var(--text-muted)" }}>
+        <div className="container" style={{ display: "flex", gap: "0.5rem", alignItems: "center", fontSize: "0.82rem", color: "var(--text-muted)", maxWidth: "760px", margin: "0 auto", padding: "0 1rem" }}>
           <Link href="/blog" style={{ color: "var(--gold-dark)", textDecoration: "none", fontWeight: 600, display: "flex", alignItems: "center", gap: "4px" }}>
-            <ArrowLeft size={13} /> Blog
+            <ArrowLeft size={13} /> Journal
           </Link>
           <ChevronRight size={12} />
           <span style={{ color: "var(--text-primary)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: "300px" }}>{post.title}</span>
@@ -126,14 +157,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       {/* Hero */}
       <section className="parchment-bg" style={{ padding: "4rem 0 2.5rem" }}>
-        <div className="container" style={{ maxWidth: "760px" }}>
+        <div className="container" style={{ maxWidth: "760px", margin: "0 auto", padding: "0 1rem" }}>
           <span className="badge badge-gold" style={{ marginBottom: "1.25rem", display: "inline-block" }}>{post.category}</span>
           <h1 style={{ fontSize: "clamp(28px, 4vw, 40px)", lineHeight: 1.25, marginBottom: "1.5rem" }}>{post.title}</h1>
           <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
             <span style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.875rem", color: "var(--text-secondary)" }}>
               <User size={14} color="var(--gold-primary)" />
               <strong style={{ color: "var(--navy-deep)" }}>{post.author}</strong>
-              <span style={{ color: "var(--text-muted)" }}>· {post.authorRole}</span>
+              {post.authorRole && <span style={{ color: "var(--text-muted)" }}>· {post.authorRole}</span>}
             </span>
             <span style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.875rem", color: "var(--text-muted)" }}>
               <Clock size={14} /> {post.date} · {post.readTime} read
@@ -145,45 +176,54 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       {/* Article Body */}
       <section style={{ padding: "3rem 0 5rem" }}>
-        <div className="container" style={{ maxWidth: "760px" }}>
+        <div className="container" style={{ maxWidth: "760px", margin: "0 auto", padding: "0 1rem" }}>
           {/* Lead */}
           <p style={{ fontSize: "1.1rem", lineHeight: 1.85, fontWeight: 500, color: "var(--navy-mid)", marginBottom: "2rem", borderLeft: "3px solid var(--gold-primary)", paddingLeft: "1.25rem" }}>
             {post.excerpt}
           </p>
 
-          {/* Scripture */}
-          <div className="scripture-block">
-            {post.scripture.text}
-            <span className="scripture-reference">— {post.scripture.reference}</span>
-          </div>
+          {/* Scripture / Quote */}
+          {post.scripture && (
+            <div className="scripture-block">
+              {post.scripture.text}
+              <span className="scripture-reference">— {post.scripture.reference}</span>
+            </div>
+          )}
 
           {/* Content */}
           <div style={{ lineHeight: 1.9, color: "var(--text-secondary)" }}>
             {post.content.split("\n\n").map((para, i) => {
-              if (para.startsWith("**") && para.endsWith("**")) {
-                return <h3 key={i} style={{ fontSize: "1.2rem", color: "var(--navy-deep)", margin: "2rem 0 0.875rem" }}>{para.replace(/\*\*/g, "")}</h3>;
-              }
-              if (para.startsWith("*") && para.endsWith("*")) {
+              const trimmed = para.trim();
+              if (trimmed.startsWith("“") && trimmed.endsWith("”")) {
                 return (
-                  <div key={i} className="scripture-block" style={{ margin: "1.5rem 0" }}>
-                    <p style={{ fontStyle: "italic", margin: 0 }}>{para.replace(/^\*/, "").replace(/\*$/, "")}</p>
+                  <div key={i} className="scripture-block" style={{ margin: "2rem 0" }}>
+                    <p style={{ fontStyle: "italic", margin: 0 }}>{trimmed}</p>
                   </div>
                 );
               }
-              const withBold = para.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-              return <p key={i} style={{ marginBottom: "1.25rem" }} dangerouslySetInnerHTML={{ __html: withBold }} />;
+              if (trimmed.startsWith("**") && trimmed.endsWith("**")) {
+                return (
+                  <h3 key={i} style={{ fontSize: "1.3rem", color: "var(--navy-deep)", margin: "2.5rem 0 1rem" }}>
+                    {trimmed.replace(/\*\*/g, "")}
+                  </h3>
+                );
+              }
+              const withBold = trimmed.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+              return <p key={i} style={{ marginBottom: "1.5rem" }} dangerouslySetInnerHTML={{ __html: withBold }} />;
             })}
           </div>
 
           {/* Tags */}
-          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "2.5rem", paddingTop: "2rem", borderTop: "1px solid var(--border-light)" }}>
-            <span style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "0.8rem", color: "var(--text-muted)", fontWeight: 600, marginRight: "0.25rem" }}>
-              <Tag size={13} /> Tags:
-            </span>
-            {post.tags.map((tag) => (
-              <span key={tag} className="badge badge-gold">{tag}</span>
-            ))}
-          </div>
+          {post.tags && post.tags.length > 0 && (
+            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "2.5rem", paddingTop: "2rem", borderTop: "1px solid var(--border-light)" }}>
+              <span style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "0.8rem", color: "var(--text-muted)", fontWeight: 600, marginRight: "0.25rem" }}>
+                <Tag size={13} /> Tags:
+              </span>
+              {post.tags.map((tag) => (
+                <span key={tag} className="badge badge-gold">{tag}</span>
+              ))}
+            </div>
+          )}
 
           {/* Author Card */}
           <div style={{ marginTop: "2.5rem", padding: "1.75rem", background: "var(--cream-mid)", borderRadius: "16px", border: "1px solid var(--border-light)", display: "flex", gap: "1.25rem", alignItems: "flex-start" }}>
@@ -196,7 +236,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <div style={{ fontWeight: 700, color: "var(--navy-deep)", marginBottom: "0.25rem" }}>{post.author}</div>
               <div style={{ fontSize: "0.82rem", color: "var(--gold-dark)", marginBottom: "0.625rem" }}>{post.authorRole} · CWAY Academy</div>
               <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", lineHeight: 1.6, margin: 0 }}>
-                A seasoned theologian and ministry leader contributing to CWAY Academy's mission of equipping rural pastors and Christian leaders across India with world-class theological training.
+                Equipping rural pastors and Christian leaders across India with contextually relevant, world-class theological education.
               </p>
             </div>
           </div>
@@ -206,24 +246,26 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Related Posts */}
       {related.length > 0 && (
         <section style={{ background: "var(--cream-mid)", padding: "4rem 0" }}>
-          <div className="container" style={{ maxWidth: "760px" }}>
-            <h3 style={{ marginBottom: "1.5rem" }}>Related Articles</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+          <div className="container" style={{ maxWidth: "760px", margin: "0 auto", padding: "0 1rem" }}>
+            <h3 style={{ marginBottom: "1.5rem", fontFamily: "var(--font-serif)", color: "var(--navy-deep)" }}>Related Articles</h3>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
               {related.map((r) => (
                 <Link key={r.slug} href={`/blog/${r.slug}`} style={{ display: "block", textDecoration: "none" }}>
-                  <div className="card-cream" style={{ padding: "1.5rem" }}>
+                  <div className="card-cream" style={{ padding: "1.5rem", borderRadius: "12px", background: "white", border: "1px solid var(--border-light)", height: "100%" }}>
                     <span className="badge badge-gold" style={{ marginBottom: "0.75rem", display: "inline-block", fontSize: "0.7rem" }}>{r.category}</span>
-                    <h4 style={{ fontSize: "0.95rem", lineHeight: 1.35, color: "var(--navy-deep)", marginBottom: "0.625rem" }}>{r.title}</h4>
+                    <h4 style={{ fontSize: "0.95rem", lineHeight: 1.35, color: "var(--navy-deep)", marginBottom: "0.625rem", fontFamily: "var(--font-serif)", fontWeight: 700 }}>{r.title}</h4>
                     <div style={{ fontSize: "0.78rem", color: "var(--text-muted)", display: "flex", gap: "0.75rem" }}>
-                      <span><User size={10} style={{ verticalAlign: "middle" }} /> {r.author.split(" ").slice(0, 2).join(" ")}</span>
+                      <span><User size={10} style={{ verticalAlign: "middle" }} /> {r.author}</span>
                       <span><Clock size={10} style={{ verticalAlign: "middle" }} /> {r.readTime}</span>
                     </div>
                   </div>
                 </Link>
               ))}
             </div>
-            <div style={{ textAlign: "center", marginTop: "2rem" }}>
-              <Link href="/blog" className="btn-primary">View All Articles</Link>
+            <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
+              <Link href="/blog" className="btn-primary" style={{ display: "inline-block", textDecoration: "none", backgroundColor: "var(--navy-deep)", color: "white", padding: "0.75rem 2rem", borderRadius: "50px", fontWeight: 600 }}>
+                View All Articles
+              </Link>
             </div>
           </div>
         </section>

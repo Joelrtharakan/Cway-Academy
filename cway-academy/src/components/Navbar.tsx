@@ -2,43 +2,25 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, BookOpen } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { Menu, X, BookOpen } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  {
-    label: "Courses",
-    href: "/courses",
-    dropdown: [
-      { label: "All Courses", href: "/courses" },
-      { label: "Certificate Programs", href: "/courses?level=CERTIFICATE" },
-      { label: "Diploma Programs", href: "/courses?level=DIPLOMA" },
-      { label: "Short Courses", href: "/courses?level=BEGINNER" },
-      { label: "Course Overview", href: "/courses/overview" },
-    ],
-  },
-  { label: "Leadership", href: "/leadership" },
-  { label: "Blog", href: "/blog" },
-  {
-    label: "Get Involved",
-    href: "/get-involved",
-    dropdown: [
-      { label: "Partner With Us", href: "/get-involved#partner" },
-      { label: "Donate", href: "/donate" },
-      { label: "Prayer Requests", href: "/prayer" },
-      { label: "Volunteer", href: "/get-involved#volunteer" },
-    ],
-  },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Courses", href: "/#courses" },
+  { label: "Get Involved", href: "/#involved" },
+  { label: "Blog", href: "/#blog" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [currentHash, setCurrentHash] = useState("home");
   const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -47,64 +29,104 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.substring(1) || "home";
+      setCurrentHash(hash);
+    };
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  useEffect(() => {
     setMobileOpen(false);
-    setActiveDropdown(null);
   }, [pathname]);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("/#")) {
+      const targetId = href.substring(2);
+      if (pathname === "/") {
+        e.preventDefault();
+        window.location.hash = targetId;
+      }
+    }
+  };
 
   return (
     <nav
       className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        background: scrolled
+          ? "rgba(250, 250, 247, 0.85)"
+          : "rgba(250, 250, 247, 0.7)",
+        backdropFilter: "blur(20px) saturate(180%)",
+        borderBottom: "1px solid rgba(44, 74, 59, 0.08)",
+        transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+        height: scrolled ? "72px" : "84px",
+        display: "flex",
+        alignItems: "center",
+      }}
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="container">
+      <div className="container" style={{ width: "100%" }}>
         <div
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            height: "72px",
+            width: "100%",
           }}
         >
           {/* Logo */}
           <Link
             href="/"
-            style={{ display: "flex", alignItems: "center", gap: "0.75rem", textDecoration: "none" }}
+            onClick={(e) => handleNavClick(e, "/#home")}
+            style={{ display: "flex", alignItems: "center", gap: "0.85rem", textDecoration: "none" }}
             aria-label="CWAY Academy Home"
           >
             <div
               style={{
                 width: "44px",
                 height: "44px",
-                borderRadius: "12px",
+                borderRadius: "14px",
                 background: "linear-gradient(135deg, var(--navy-deep), var(--navy-mid))",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 flexShrink: 0,
+                boxShadow: "0 4px 12px rgba(44, 74, 59, 0.15)",
+                border: "1px solid rgba(212, 163, 91, 0.3)",
               }}
             >
-              <BookOpen size={22} color="var(--gold-light)" />
+              <BookOpen size={20} color="var(--gold-light)" />
             </div>
             <div>
               <div
                 style={{
                   fontFamily: "var(--font-serif)",
-                  fontWeight: 700,
-                  fontSize: "1.25rem",
+                  fontWeight: 800,
+                  fontSize: "1.35rem",
                   color: "var(--navy-deep)",
                   lineHeight: 1.1,
+                  letterSpacing: "0.02em",
                 }}
               >
-                CWAY Academy
+                CWAY <span style={{ color: "var(--gold-primary)", fontWeight: 600 }}>Academy</span>
               </div>
               <div
                 style={{
-                  fontSize: "0.7rem",
-                  color: "var(--gold-dark)",
+                  fontSize: "0.68rem",
+                  color: "var(--text-secondary)",
                   fontWeight: 600,
-                  letterSpacing: "0.1em",
+                  letterSpacing: "0.15em",
                   textTransform: "uppercase",
+                  opacity: 0.85,
                 }}
               >
                 Coach · Challenge · Commission
@@ -112,102 +134,95 @@ export function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav Links */}
           <div
-            style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+            style={{ display: "flex", alignItems: "center", gap: "1rem" }}
             className="hidden-mobile"
           >
-            {navLinks.map((link) => (
-              <div
-                key={link.href}
-                style={{ position: "relative" }}
-                onMouseEnter={() => link.dropdown && setActiveDropdown(link.label)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
+            {navLinks.map((link) => {
+              const hash = link.href.substring(2);
+              const isActive = pathname === "/" && currentHash === hash;
+              
+              return (
                 <Link
+                  key={link.href}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "0.375rem",
-                    padding: "0.5rem 1rem",
+                    position: "relative",
+                    padding: "0.5rem 0.85rem",
                     fontWeight: 600,
-                    fontSize: "0.95rem",
-                    color: pathname === link.href ? "var(--gold-dark)" : "var(--navy-deep)",
+                    fontSize: "0.92rem",
+                    color: isActive ? "var(--gold-primary)" : "var(--navy-deep)",
                     textDecoration: "none",
-                    borderRadius: "8px",
-                    transition: "all 0.2s ease",
-                    backgroundColor:
-                      pathname === link.href ? "var(--gold-pale)" : "transparent",
+                    transition: "color 0.3s ease",
+                    letterSpacing: "0.03em",
                   }}
-                  aria-current={pathname === link.href ? "page" : undefined}
                 >
                   {link.label}
-                  {link.dropdown && (
-                    <ChevronDown
-                      size={14}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeUnderline"
                       style={{
-                        transition: "transform 0.2s",
-                        transform: activeDropdown === link.label ? "rotate(180deg)" : "none",
+                        position: "absolute",
+                        bottom: "-4px",
+                        left: "0.85rem",
+                        right: "0.85rem",
+                        height: "2px",
+                        background: "linear-gradient(90deg, var(--gold-primary), var(--gold-light))",
+                        borderRadius: "2px",
                       }}
                     />
                   )}
                 </Link>
-
-                {link.dropdown && activeDropdown === link.label && (
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "calc(100% + 8px)",
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      background: "var(--cream-light)",
-                      border: "1px solid var(--border-light)",
-                      borderRadius: "12px",
-                      boxShadow: "var(--shadow-lg)",
-                      padding: "0.5rem",
-                      minWidth: "200px",
-                      zIndex: 200,
-                    }}
-                  >
-                    {link.dropdown.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        style={{
-                          display: "block",
-                          padding: "0.625rem 1rem",
-                          fontSize: "0.875rem",
-                          color: "var(--text-secondary)",
-                          textDecoration: "none",
-                          borderRadius: "8px",
-                          transition: "all 0.15s",
-                          fontWeight: 500,
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.background = "var(--gold-pale)";
-                          e.currentTarget.style.color = "var(--gold-dark)";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.background = "transparent";
-                          e.currentTarget.style.color = "var(--text-secondary)";
-                        }}
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* CTA Buttons */}
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }} className="hidden-mobile">
-            <Link href="/apply" className="btn-outline-gold" style={{ padding: "0.625rem 1.25rem", fontSize: "0.875rem" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.85rem" }} className="hidden-mobile">
+            <Link 
+              href="/apply" 
+              className="btn-outline-gold" 
+              style={{ 
+                padding: "0.6rem 1.35rem", 
+                fontSize: "0.88rem", 
+                borderRadius: "50px",
+                border: "2px solid var(--gold-primary)",
+                fontWeight: 600,
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                transition: "all 0.3s"
+              }}
+            >
               Apply Now
             </Link>
-            <Link href="/login" className="btn-primary" style={{ padding: "0.625rem 1.25rem", fontSize: "0.875rem" }}>
+            <Link 
+              href="/login" 
+              className="btn-primary" 
+              style={{ 
+                padding: "0.6rem 1.35rem", 
+                fontSize: "0.88rem", 
+                borderRadius: "50px",
+                background: "var(--navy-mid)",
+                color: "#white",
+                fontWeight: 600,
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                boxShadow: "0 4px 12px rgba(44, 74, 59, 0.1)",
+                transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "var(--navy-deep)";
+                e.currentTarget.style.transform = "translateY(-1px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "var(--navy-mid)";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
               Student Login
             </Link>
           </div>
@@ -218,79 +233,110 @@ export function Navbar() {
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             style={{
-              background: "none",
+              background: "rgba(44, 74, 59, 0.05)",
               border: "none",
               cursor: "pointer",
-              padding: "0.5rem",
+              padding: "0.55rem",
+              borderRadius: "10px",
               color: "var(--navy-deep)",
               display: "none",
+              transition: "background 0.3s"
             }}
             className="show-mobile"
           >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div
-          style={{
-            background: "var(--cream-light)",
-            borderTop: "1px solid var(--border-light)",
-            padding: "1rem",
-          }}
-        >
-          {navLinks.map((link) => (
-            <div key={link.href}>
+      {/* Mobile Menu Dropdown */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            style={{
+              position: "absolute",
+              top: scrolled ? "72px" : "84px",
+              left: 0,
+              right: 0,
+              background: "rgba(250, 250, 247, 0.98)",
+              backdropFilter: "blur(20px)",
+              borderBottom: "1px solid rgba(44, 74, 59, 0.08)",
+              padding: "1.5rem",
+              zIndex: 999,
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.6rem",
+              boxShadow: "0 10px 25px -5px rgba(0,0,0,0.05)",
+            }}
+          >
+            {navLinks.map((link) => (
               <Link
+                key={link.href}
                 href={link.href}
+                onClick={(e) => {
+                  handleNavClick(e, link.href);
+                  setMobileOpen(false);
+                }}
                 style={{
                   display: "block",
-                  padding: "0.875rem 1rem",
-                  fontWeight: 500,
-                  color: pathname === link.href ? "var(--gold-dark)" : "var(--text-primary)",
+                  padding: "0.75rem 1rem",
+                  fontWeight: 600,
+                  color: "var(--navy-deep)",
                   textDecoration: "none",
-                  borderRadius: "8px",
-                  fontSize: "0.95rem",
-                  backgroundColor: pathname === link.href ? "var(--gold-pale)" : "transparent",
-                  marginBottom: "0.25rem",
+                  borderRadius: "10px",
+                  fontSize: "0.98rem",
+                  transition: "all 0.2s",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "var(--cream-mid)";
+                  e.currentTarget.style.color = "var(--gold-primary)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "transparent";
+                  e.currentTarget.style.color = "var(--navy-deep)";
                 }}
               >
                 {link.label}
               </Link>
-              {link.dropdown && (
-                <div style={{ paddingLeft: "1rem", marginBottom: "0.5rem" }}>
-                  {link.dropdown.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      style={{
-                        display: "block",
-                        padding: "0.5rem 1rem",
-                        fontSize: "0.875rem",
-                        color: "var(--text-secondary)",
-                        textDecoration: "none",
-                        borderRadius: "8px",
-                      }}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
+            ))}
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginTop: "1rem", paddingTop: "1rem", borderTop: "1px solid rgba(44, 74, 59, 0.08)" }}>
+              <Link 
+                href="/apply" 
+                className="btn-outline-gold" 
+                style={{ 
+                  textAlign: "center", 
+                  padding: "0.75rem", 
+                  borderRadius: "50px",
+                  textDecoration: "none",
+                  fontWeight: 600,
+                  fontSize: "0.95rem"
+                }}
+              >
+                Apply Now
+              </Link>
+              <Link 
+                href="/login" 
+                className="btn-primary" 
+                style={{ 
+                  textAlign: "center", 
+                  padding: "0.75rem", 
+                  borderRadius: "50px",
+                  textDecoration: "none",
+                  fontWeight: 600,
+                  background: "var(--navy-mid)",
+                  fontSize: "0.95rem"
+                }}
+              >
+                Student Login
+              </Link>
             </div>
-          ))}
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginTop: "1rem", paddingTop: "1rem", borderTop: "1px solid var(--border-light)" }}>
-            <Link href="/apply" className="btn-outline-gold" style={{ textAlign: "center" }}>
-              Apply Now
-            </Link>
-            <Link href="/login" className="btn-primary" style={{ textAlign: "center" }}>
-              Student Login
-            </Link>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <style>{`
         @media (max-width: 900px) {
@@ -300,7 +346,13 @@ export function Navbar() {
         @media (min-width: 901px) {
           .show-mobile { display: none !important; }
         }
+        /* Underline animation on hover */
+        .hidden-mobile a:hover .nav-underline {
+          opacity: 1 !important;
+          transform: scaleX(1) !important;
+        }
       `}</style>
     </nav>
   );
 }
+
