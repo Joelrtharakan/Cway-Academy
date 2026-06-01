@@ -1,30 +1,31 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, DM_Serif_Display, Inter, JetBrains_Mono, Cinzel } from "next/font/google";
+import { Jost, Fraunces, Karla, JetBrains_Mono, Cinzel } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { GlobalReveal } from "@/components/GlobalReveal";
 
 /* ── Self-hosted fonts via next/font (no external network requests) ── */
-const plusJakarta = Plus_Jakarta_Sans({
+const plusJakarta = Jost({
   subsets: ["latin"],
   variable: "--font-plus-jakarta",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const dmSerif = DM_Serif_Display({
+const dmSerif = Fraunces({
   subsets: ["latin"],
   variable: "--font-dm-serif",
   display: "swap",
-  weight: "400",
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
 });
 
-const inter = Inter({
+const inter = Karla({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
