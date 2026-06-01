@@ -1401,3 +1401,11 @@ section[id] {
 .reveal.stagger-2 { transition-delay: 0.3s; }
 .reveal.stagger-3 { transition-delay: 0.45s; }
 
+/* Contact Layout Grid */
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+}
+

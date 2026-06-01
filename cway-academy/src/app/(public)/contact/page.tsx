@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { EmailCard } from "@/components/EmailCard";
 
 export const metadata = {
   title: "Contact Us",
@@ -23,14 +24,14 @@ export default function ContactPage() {
 
       <section className="section-padding">
         <div className="container">
-          <div className="contact-layout-grid reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "4rem", alignItems: "start" }}>
+          <div className="contact-layout-grid reveal">
             {/* Info */}
             <div className="reveal stagger-1">
               <h3 style={{ marginBottom: "2rem" }}>Contact Information</h3>
               {[
                 { Icon: MapPin, label: "Address", value: "CWAY MISSIONS Religious Trust\nBangalore, Karnataka, India" },
-                { Icon: Mail, label: "Email", value: "info@cwayacademy.org\nadmissions@cwayacademy.org" },
-                { Icon: Phone, label: "Phone", value: "+91 (080) XXXX-XXXX" },
+                { Icon: Mail, label: "Email", value: <a href="mailto:support@cwayacademy.com" style={{ textDecoration: "underline" }}>support@cwayacademy.com</a> },
+                { Icon: Phone, label: "Phone", value: "+91 96638 31220" },
                 { Icon: Clock, label: "Office Hours", value: "Monday – Friday: 9am – 5pm IST\nSaturday: 9am – 1pm IST" },
               ].map(({ Icon, label, value }) => (
                 <div key={label} style={{ display: "flex", gap: "1rem", marginBottom: "2rem" }}>
@@ -50,59 +51,9 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Form */}
-            <div className="card-cream reveal stagger-2" style={{ padding: "2.5rem", borderRadius: "16px", border: "1px solid var(--border-light)" }}>
-              <h3 style={{ marginBottom: "2rem", color: "var(--navy-deep)", fontSize: "1.5rem", fontFamily: "var(--font-serif)" }}>Send us a Message</h3>
-              <p style={{ fontSize: "0.875rem", color: "var(--text-muted)", marginBottom: "2rem" }}>
-                We typically respond within 1–2 business days.
-              </p>
-              <form style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-                <div className="form-row-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-                  <div>
-                    <label className="form-label" htmlFor="contact-first">First Name *</label>
-                    <input id="contact-first" type="text" className="form-input" placeholder="Samuel" required />
-                  </div>
-                  <div>
-                    <label className="form-label" htmlFor="contact-last">Last Name *</label>
-                    <input id="contact-last" type="text" className="form-input" placeholder="Raju" required />
-                  </div>
-                </div>
-                <div>
-                  <label className="form-label" htmlFor="contact-email">Email Address *</label>
-                  <input id="contact-email" type="email" className="form-input" placeholder="pastor@church.com" required />
-                </div>
-                <div>
-                  <label className="form-label" htmlFor="contact-phone">Phone Number</label>
-                  <input id="contact-phone" type="tel" className="form-input" placeholder="+91 98765 43210" />
-                </div>
-                <div>
-                  <label className="form-label" htmlFor="contact-subject">Subject *</label>
-                  <select id="contact-subject" className="form-input">
-                    <option value="">Select a subject...</option>
-                    <option value="admissions">Admissions Enquiry</option>
-                    <option value="courses">Course Information</option>
-                    <option value="scholarship">Scholarship Information</option>
-                    <option value="partnership">Ministry Partnership</option>
-                    <option value="donation">Donation Enquiry</option>
-                    <option value="faculty">Faculty Opportunity</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="form-label" htmlFor="contact-message">Message *</label>
-                  <textarea
-                    id="contact-message"
-                    className="form-input"
-                    rows={5}
-                    placeholder="How can we help you?"
-                    required
-                    style={{ resize: "vertical" }}
-                  />
-                </div>
-                <button type="submit" className="btn-primary" style={{ justifyContent: "center", gap: "0.5rem" }}>
-                  Send Message <Send size={16} />
-                </button>
-              </form>
+            {/* Email Card Replacement */}
+            <div className="reveal stagger-2" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+              <EmailCard />
             </div>
           </div>
         </div>

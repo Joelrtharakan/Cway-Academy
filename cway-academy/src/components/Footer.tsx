@@ -93,14 +93,14 @@ export function Footer() {
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.75rem" }}>
                 <Mail size={14} color="var(--gold-primary)" />
-                <a href="mailto:info@cwayacademy.org" className="footer-link" style={{ fontSize: "0.8rem" }}>
-                  info@cwayacademy.org
+                <a href="mailto:support@cwayacademy.com" className="footer-link" style={{ fontSize: "0.8rem" }}>
+                  support@cwayacademy.com
                 </a>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
                 <Phone size={14} color="var(--gold-primary)" />
-                <a href="tel:+91-XXXXXXXXXX" className="footer-link" style={{ fontSize: "0.8rem" }}>
-                  +91 (080) XXXX-XXXX
+                <a href="tel:+919663831220" className="footer-link" style={{ fontSize: "0.8rem" }}>
+                  +91 96638 31220
                 </a>
               </div>
             </div>

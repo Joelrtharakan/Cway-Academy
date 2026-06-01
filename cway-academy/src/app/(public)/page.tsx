@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { EmailCard } from "@/components/EmailCard";
 
 interface Post {
   slug: string;
@@ -1578,15 +1579,29 @@ export default function LandingPage() {
 
       {/* ─── CONTACT PAGE ─── */}
       <section id="contact" className="page" style={getPageStyle("contact")}>
-        <div className="section container text-center" style={{ minHeight: "calc(100vh - 80px)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div className="reveal" style={{ maxWidth: "700px", width: "100%" }}>
+        <div 
+          className="section container text-center" 
+          style={{ 
+            minHeight: "calc(100vh - 80px)", 
+            display: "flex", 
+            flexDirection: "column",
+            alignItems: "center", 
+            justifyContent: "center",
+            paddingTop: "5rem",
+            paddingBottom: "5rem"
+          }}
+        >
+          <div className="reveal" style={{ maxWidth: "500px", width: "100%", margin: "0 auto" }}>
             <span className="label text-center" style={{ color: "var(--accent-gold)" }}>A Question For You</span>
-            <h1 className="headline-page" style={{ margin: "2rem 0" }}>&ldquo;Is it too late for you to be equipped for God&apos;s calling?&rdquo;</h1>
-            <p className="sub-heading" style={{ marginBottom: "3rem" }}>&ldquo;Keep your hope alive. The Lord has already prepared a path for you.&rdquo;</p>
+            <h1 className="headline-page" style={{ margin: "1.5rem 0" }}>&ldquo;Is it too late for you to be equipped for God&apos;s calling?&rdquo;</h1>
+            <p className="sub-heading" style={{ marginBottom: "2rem" }}>&ldquo;Keep your hope alive. The Lord has already prepared a path for you.&rdquo;</p>
 
-            <div className="hero-btn-group" style={{ justifyContent: "center" }}>
-              <a href="mailto:info@cwaymissions.org" className="btn-primary">Email Us Today</a>
-              <a href="#courses" className="btn-secondary">Explore Courses</a>
+            <div style={{ marginBottom: "2rem" }}>
+              <EmailCard />
+            </div>
+
+            <div>
+              <a href="#courses" className="btn-secondary" style={{ display: "inline-block" }}>Explore Courses</a>
             </div>
           </div>
         </div>
@@ -1600,7 +1615,7 @@ export default function LandingPage() {
             <div className="nav-logo-text" style={{ marginBottom: "1.2rem" }}><span className="logo-cway">CWAY</span><span className="logo-academy"> ACADEMY</span></div>
             <p className="body-text" style={{ fontSize: "14.5px", lineHeight: "1.8", maxWidth: "300px", color: "var(--text-muted)" }}>Equipping Frontline Leaders for God&apos;s Great Commission.<br />A CWAY Missions Project · Bangalore, India</p>
             <div style={{ marginTop: "1.5rem" }}>
-              <a href="mailto:info@cwaymissions.org" style={{ fontFamily: "var(--font-plus-jakarta), sans-serif", fontSize: "13px", fontWeight: 700, letterSpacing: "1.5px", color: "var(--accent-gold)", textDecoration: "none" }}>INFO@CWAYMISSIONS.ORG</a>
+              <a href="mailto:support@cwayacademy.com" style={{ fontFamily: "var(--font-plus-jakarta), sans-serif", fontSize: "13px", fontWeight: 700, letterSpacing: "1.5px", color: "var(--accent-gold)", textDecoration: "none" }}>SUPPORT@CWAYACADEMY.COM</a>
             </div>
           </div>
           <div>
@@ -1618,7 +1633,7 @@ export default function LandingPage() {
               CWAY Missions Religious Trust<br />
               Bangalore, Karnataka, India<br /><br />
               <strong style={{ color: "var(--text-main)", fontWeight: 600 }}>Phone Inquiries:</strong><br />
-              +91 8660307998
+              +91 96638 31220
             </p>
           </div>
         </div>
