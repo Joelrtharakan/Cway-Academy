@@ -96,6 +96,7 @@ export function Navbar() {
           <Link
             href="/"
             onClick={(e) => handleNavClick(e, "/#home")}
+            prefetch={false}
             style={{ display: "flex", alignItems: "center", gap: "0.85rem", textDecoration: "none" }}
             aria-label="CWAY Academy Home"
           >
@@ -161,6 +162,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
+                  prefetch={false}
                   style={{
                     position: "relative",
                     padding: "0.5rem 0.85rem",
@@ -197,6 +199,7 @@ export function Navbar() {
             <Link 
               href="/apply" 
               className="btn-outline-gold" 
+              prefetch={false}
               style={{ 
                 padding: "0.6rem 1.35rem", 
                 fontSize: "0.88rem", 
@@ -267,6 +270,7 @@ export function Navbar() {
                   handleNavClick(e, link.href);
                   setMobileOpen(false);
                 }}
+                prefetch={false}
                 style={{
                   display: "block",
                   padding: "0.75rem 1rem",
@@ -293,6 +297,7 @@ export function Navbar() {
               <Link 
                 href="/apply" 
                 className="btn-outline-gold" 
+                prefetch={false}
                 style={{ 
                   textAlign: "center", 
                   padding: "0.75rem", 
