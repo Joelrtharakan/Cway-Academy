@@ -198,33 +198,6 @@ export function Navbar() {
             >
               Apply Now
             </Link>
-            <Link 
-              href="/login" 
-              className="btn-primary" 
-              style={{ 
-                padding: "0.6rem 1.35rem", 
-                fontSize: "0.88rem", 
-                borderRadius: "50px",
-                background: "var(--navy-mid)",
-                color: "#white",
-                fontWeight: 600,
-                textDecoration: "none",
-                display: "inline-flex",
-                alignItems: "center",
-                boxShadow: "0 4px 12px rgba(44, 74, 59, 0.1)",
-                transition: "all 0.3s"
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "var(--navy-deep)";
-                e.currentTarget.style.transform = "translateY(-1px)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "var(--navy-mid)";
-                e.currentTarget.style.transform = "translateY(0)";
-              }}
-            >
-              Student Login
-            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -317,21 +290,6 @@ export function Navbar() {
                 }}
               >
                 Apply Now
-              </Link>
-              <Link 
-                href="/login" 
-                className="btn-primary" 
-                style={{ 
-                  textAlign: "center", 
-                  padding: "0.75rem", 
-                  borderRadius: "50px",
-                  textDecoration: "none",
-                  fontWeight: 600,
-                  background: "var(--navy-mid)",
-                  fontSize: "0.95rem"
-                }}
-              >
-                Student Login
               </Link>
             </div>
           </motion.div>

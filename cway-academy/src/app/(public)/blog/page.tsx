@@ -404,6 +404,7 @@ export default function BlogPage() {
 
               {/* Modal Content - Scrollable */}
               <div
+                data-lenis-prevent
                 style={{
                   padding: "clamp(1.25rem, 5vw, 2rem) clamp(1.25rem, 6vw, 2.5rem)",
                   overflowY: "auto",

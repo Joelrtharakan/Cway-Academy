@@ -55,8 +55,8 @@ export default function LeadershipPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="parchment-bg" style={{ padding: "5rem 0 3rem" }}>
-        <div className="container">
+      <section className="parchment-bg" style={{ padding: "6rem 0 4rem" }}>
+        <div className="container reveal">
           <div className="section-label">Our Faculty & Leadership</div>
           <h1 style={{ marginBottom: "1rem" }}>
             Guided by <span className="gradient-text-gold">Seasoned Servants</span>
@@ -71,11 +71,15 @@ export default function LeadershipPage() {
       </section>
 
       {/* Leadership Grid */}
-      <section className="section-padding">
+      <section className="section-padding bg-[var(--cream-base)]">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "2rem" }}>
+          <div className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "2rem" }}>
             {leaders.map((leader, i) => (
-              <div key={leader.name} className="card-cream" style={{ padding: "2.5rem" }}>
+              <div 
+                key={i} 
+                className={`card-cream reveal ${i % 3 === 1 ? 'stagger-1' : i % 3 === 2 ? 'stagger-2' : ''}`} 
+                style={{ padding: "2rem", borderRadius: "12px", border: "1px solid var(--border-light)", display: "flex", flexDirection: "column", height: "100%", background: "white" }}
+              >
                 {/* Avatar */}
                 <div style={{ display: "flex", alignItems: "center", gap: "1.25rem", marginBottom: "1.5rem" }}>
                   <div

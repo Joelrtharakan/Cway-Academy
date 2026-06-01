@@ -10,7 +10,7 @@ export default function ContactPage() {
   return (
     <div>
       <section className="parchment-bg" style={{ padding: "5rem 0 3rem" }}>
-        <div className="container">
+        <div className="container reveal">
           <div className="section-label">Get in Touch</div>
           <h1 style={{ marginBottom: "1rem" }}>We Would Love to <span className="gradient-text-gold">Hear From You</span></h1>
           <div className="gold-divider gold-divider-left" />
@@ -23,9 +23,9 @@ export default function ContactPage() {
 
       <section className="section-padding">
         <div className="container">
-          <div className="contact-layout-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "4rem", alignItems: "start" }}>
+          <div className="contact-layout-grid reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "4rem", alignItems: "start" }}>
             {/* Info */}
-            <div>
+            <div className="reveal stagger-1">
               <h3 style={{ marginBottom: "2rem" }}>Contact Information</h3>
               {[
                 { Icon: MapPin, label: "Address", value: "CWAY MISSIONS Religious Trust\nBangalore, Karnataka, India" },
@@ -50,9 +50,9 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="card-cream" style={{ padding: "2.5rem" }}>
-              <h3 style={{ marginBottom: "0.5rem" }}>Send Us a Message</h3>
+            {/* Form */}
+            <div className="card-cream reveal stagger-2" style={{ padding: "2.5rem", borderRadius: "16px", border: "1px solid var(--border-light)" }}>
+              <h3 style={{ marginBottom: "2rem", color: "var(--navy-deep)", fontSize: "1.5rem", fontFamily: "var(--font-serif)" }}>Send us a Message</h3>
               <p style={{ fontSize: "0.875rem", color: "var(--text-muted)", marginBottom: "2rem" }}>
                 We typically respond within 1–2 business days.
               </p>

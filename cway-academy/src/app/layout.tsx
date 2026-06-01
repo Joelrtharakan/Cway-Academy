@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, DM_Serif_Display, Inter, JetBrains_Mono, Cinzel } from "next/font/google";
 import "./globals.css";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { GlobalReveal } from "@/components/GlobalReveal";
 
 /* ── Self-hosted fonts via next/font (no external network requests) ── */
 const plusJakarta = Plus_Jakarta_Sans({
@@ -149,7 +151,12 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <GlobalReveal />
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
+      </body>
     </html>
   );
 }
