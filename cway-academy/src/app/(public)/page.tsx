@@ -1716,10 +1716,12 @@ export default function LandingPage() {
 
               {/* Modal Content - Scrollable */}
               <div
+                data-lenis-prevent
                 style={{
                   padding: "2rem 2.5rem",
                   overflowY: "auto",
-                  backgroundColor: "var(--bg-main)"
+                  backgroundColor: "var(--bg-main)",
+                  overscrollBehavior: "contain"
                 }}
               >
                 <div style={{ maxWidth: "660px", margin: "0 auto", textAlign: "left" }}>
