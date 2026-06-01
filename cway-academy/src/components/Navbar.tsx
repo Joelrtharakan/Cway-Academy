@@ -8,12 +8,12 @@ import { Menu, X, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Home", href: "/#home" },
-  { label: "About", href: "/#about" },
-  { label: "Courses", href: "/#courses" },
-  { label: "Get Involved", href: "/#involved" },
-  { label: "Blog", href: "/#blog" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Courses", href: "/courses" },
+  { label: "Get Involved", href: "/get-involved" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -44,6 +44,14 @@ export function Navbar() {
   }, [pathname]);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // If the user clicks the link for the page they are ALREADY on, scroll to top instantly
+    if (href === pathname) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setMobileOpen(false);
+      return;
+    }
+    
     if (href.startsWith("/#")) {
       const targetId = href.substring(2);
       if (pathname === "/") {
