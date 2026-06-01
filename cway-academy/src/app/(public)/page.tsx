@@ -948,6 +948,7 @@ export default function LandingPage() {
             .challenge-left-content { position: relative; top: 0; }
             .offer-right-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
             .what-we-offer-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            .hero-section { background-attachment: scroll !important; }
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
