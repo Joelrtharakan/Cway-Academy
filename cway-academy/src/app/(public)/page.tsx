@@ -1267,7 +1267,7 @@ export default function LandingPage() {
               <div className="modern-team-row-card reveal">
                 <div className="team-row-left">
                   <div className="team-avatar-container">
-                    <div className="team-initials">RT</div>
+                    <img src="/Reeju.png" alt="Dr. Reeju Tharakan" className="w-full h-full rounded-full object-cover relative z-10" style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "75% 20%", position: "relative", zIndex: 10 }} />
                   </div>
                   <div className="team-role">Executive Director</div>
                   <span className="team-credential-badge">M.Th., Ph.D</span>
@@ -1286,7 +1286,7 @@ export default function LandingPage() {
               <div className="modern-team-row-card reveal stagger-1">
                 <div className="team-row-left">
                   <div className="team-avatar-container">
-                    <div className="team-initials">RN</div>
+                    <img src="/Robin.png" alt="Pr. Robin Ninan" className="w-full h-full rounded-full object-cover relative z-10" style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "center 20%", position: "relative", zIndex: 10 }} />
                   </div>
                   <div className="team-role">Director of Training & Outreach</div>
                   <span className="team-credential-badge">M.Div, Media Specialist</span>
@@ -1305,7 +1305,7 @@ export default function LandingPage() {
               <div className="modern-team-row-card reveal stagger-2">
                 <div className="team-row-left">
                   <div className="team-avatar-container">
-                    <div className="team-initials">FV</div>
+                    <img src="/Finny.png" alt="Mr. Finny Philip Varghese" className="w-full h-full rounded-full object-cover relative z-10" style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "center 20%", position: "relative", zIndex: 10 }} />
                   </div>
                   <div className="team-role">Director of Operations</div>
                   <span className="team-credential-badge">B.Tech, Operations Leader</span>
