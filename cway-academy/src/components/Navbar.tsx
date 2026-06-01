@@ -124,14 +124,13 @@ export function Navbar() {
               <div
                 style={{
                   fontFamily: "var(--font-serif)",
-                  fontWeight: 800,
                   fontSize: "1.35rem",
                   color: "var(--navy-deep)",
                   lineHeight: 1.1,
                   letterSpacing: "0.02em",
                 }}
               >
-                CWAY <span style={{ color: "var(--gold-primary)", fontWeight: 600 }}>Academy</span>
+                <span style={{ fontWeight: 700 }}>CWAY</span> <span style={{ color: "var(--gold-primary)", fontWeight: 400, letterSpacing: "1px" }}>ACADEMY</span>
               </div>
               <div
                 style={{

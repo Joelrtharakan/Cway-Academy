@@ -1167,7 +1167,7 @@ export default function LandingPage() {
           <div className="container about-header-grid reveal">
             <div>
               <span className="label" style={{ color: "var(--accent-gold-light)", marginBottom: "1rem" }}>Who We Are</span>
-              <h1 className="headline-page" style={{ color: "#FFFFFF", marginBottom: "1.5rem" }}>About Cway Academy</h1>
+              <h1 className="headline-page" style={{ color: "#FFFFFF", marginBottom: "1.5rem" }}>About CWAY Academy</h1>
               <p className="body-text" style={{ color: "rgba(255, 255, 255, 0.9)", fontSize: "1.1rem", lineHeight: "1.8", maxWidth: "680px" }}>
                 CWAY ACADEMY is a Bible-based leadership training project of the religious trust “CWAY MISSIONS,” registered in Bangalore, India. God laid a great vision in our hearts to equip members and pastors of rural churches in India as frontline leaders.
               </p>
@@ -1271,13 +1271,13 @@ export default function LandingPage() {
                     <img src="/Reeju.png" alt="Dr. Reeju Tharakan" className="w-full h-full rounded-full object-cover relative z-10" style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "85% 20%", position: "relative", zIndex: 10 }} />
                   </div>
                   <div className="team-role">Executive Director</div>
-                  <span className="team-credential-badge">M.Th., Ph.D</span>
+                  <span className="team-credential-badge">M.Th., Ph.D.</span>
                 </div>
                 <div className="team-row-right">
                   <h3 style={{ fontSize: "22px", fontWeight: 600 }}>Dr.&nbsp;Reeju Tharakan</h3>
                   <div className="team-separator" />
                   <div className="body-text" style={{ fontSize: "15px", lineHeight: "1.7", textAlign: "justify", wordSpacing: "-0.02em" }}>
-                    <p style={{ marginBottom: "1rem" }}>With a Ph.D. in Christian Studies and 19 years of experience in theological education, Dr.&nbsp;Reeju forged a vision to provide an optimized theological learning opportunity for every Local Church and Leader.</p>
+                    <p style={{ marginBottom: "1rem" }}>With a Ph.D. in Christian Studies and 21 years of experience in theological education, Dr.&nbsp;Reeju forged a vision to provide an optimized theological learning opportunity for every Local Church and Leader.</p>
                     <p style={{ marginBottom: "1rem" }}>As a theological educator, he served at Southern Asia Bible College, Bangalore, as Assistant Professor for 13 years, then as an international faculty at SUM Bible College and Theological Seminary, California, and Dean of M.Th. studies at Bethel New Life College, Bangalore.</p>
                     <p>Presently, he is the Lead Pastor of Immanuel AG Church in Dubai, and he is involved in teaching, training, developing curriculum, and launching new theological programs. He is also the President-Trustee of the CWAY Missions Religious Trust, Bangalore.</p>
                   </div>
@@ -1290,7 +1290,7 @@ export default function LandingPage() {
                     <img src="/Robin.png" alt="Pr. Robin Ninan" className="w-full h-full rounded-full object-cover relative z-10" style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "center 20%", position: "relative", zIndex: 10 }} />
                   </div>
                   <div className="team-role">Director of Training & Outreach</div>
-                  <span className="team-credential-badge">M.Div, Media Specialist</span>
+                  <span className="team-credential-badge">M.Div., Media Specialist</span>
                 </div>
                 <div className="team-row-right">
                   <h3 style={{ fontSize: "22px", fontWeight: 600 }}>Pr.&nbsp;Robin Ninan</h3>
@@ -1309,7 +1309,7 @@ export default function LandingPage() {
                     <img src="/Finny.png" alt="Mr. Finny Philip Varghese" className="w-full h-full rounded-full object-cover relative z-10" style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "center 20%", position: "relative", zIndex: 10 }} />
                   </div>
                   <div className="team-role">Director of Operations</div>
-                  <span className="team-credential-badge">B.Tech, Operations Leader</span>
+                  <span className="team-credential-badge">B.Tech., Operations Leader</span>
                 </div>
                 <div className="team-row-right">
                   <h3 style={{ fontSize: "22px", fontWeight: 600 }}>Mr.&nbsp;Finny Philip Varghese</h3>
@@ -1593,32 +1593,42 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
+      {/* Footer */}
       <footer>
         <div className="container footer-grid">
           <div>
-            <div className="nav-logo-text" style={{ marginBottom: "1rem" }}><span className="logo-cway">CWAY</span><span className="logo-academy"> ACADEMY</span></div>
-            <p className="body-text" style={{ fontSize: "14px" }}>Equipping Frontline Leaders for God&apos;s Great Commission.<br />A CWAY Missions Project · Bangalore, India</p>
-          </div>
-          <div>
-            <h4 style={{ fontFamily: "var(--font-plus-jakarta), sans-serif", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "1.5rem", color: "var(--text-main)", fontSize: "12px" }}>Quick Links</h4>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
-              <a href="#home" className="body-text">Home</a>
-              <a href="#about" className="body-text">About Us</a>
-              <a href="#courses" className="body-text">Our Courses</a>
-              <a href="#involved" className="body-text">Get Involved</a>
+            <div className="nav-logo-text" style={{ marginBottom: "1.2rem" }}><span className="logo-cway">CWAY</span><span className="logo-academy"> ACADEMY</span></div>
+            <p className="body-text" style={{ fontSize: "14.5px", lineHeight: "1.8", maxWidth: "300px", color: "var(--text-muted)" }}>Equipping Frontline Leaders for God&apos;s Great Commission.<br />A CWAY Missions Project · Bangalore, India</p>
+            <div style={{ marginTop: "1.5rem" }}>
+              <a href="mailto:info@cwaymissions.org" style={{ fontFamily: "var(--font-plus-jakarta), sans-serif", fontSize: "13px", fontWeight: 700, letterSpacing: "1.5px", color: "var(--accent-gold)", textDecoration: "none" }}>INFO@CWAYMISSIONS.ORG</a>
             </div>
           </div>
           <div>
-            <h4 style={{ fontFamily: "var(--font-plus-jakarta), sans-serif", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "1.5rem", color: "var(--text-main)", fontSize: "12px" }}>Contact Info</h4>
-            <p className="body-text" style={{ fontSize: "14px" }}>
-              CWAY Missions<br />Bangalore, India<br /><br />
-              <strong>Federal Bank Account:</strong><br />14710200017349
+            <h4 style={{ fontFamily: "var(--font-plus-jakarta), sans-serif", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "1.5rem", color: "var(--text-main)", fontSize: "13px" }}>Quick Links</h4>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              <a href="#home" className="body-text" style={{ textDecoration: "none", color: "var(--text-muted)", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--accent-green)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Home</a>
+              <a href="#about" className="body-text" style={{ textDecoration: "none", color: "var(--text-muted)", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--accent-green)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>About Us</a>
+              <a href="#courses" className="body-text" style={{ textDecoration: "none", color: "var(--text-muted)", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--accent-green)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Our Courses</a>
+              <a href="#involved" className="body-text" style={{ textDecoration: "none", color: "var(--text-muted)", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--accent-green)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Get Involved</a>
+            </div>
+          </div>
+          <div>
+            <h4 style={{ fontFamily: "var(--font-plus-jakarta), sans-serif", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "1.5rem", color: "var(--text-main)", fontSize: "13px" }}>Contact Info</h4>
+            <p className="body-text" style={{ fontSize: "14.5px", lineHeight: "1.8", color: "var(--text-muted)" }}>
+              CWAY Missions Religious Trust<br />
+              Bangalore, Karnataka, India<br /><br />
+              <strong style={{ color: "var(--text-main)", fontWeight: 600 }}>Phone Inquiries:</strong><br />
+              +91 8660307998
             </p>
           </div>
         </div>
         <div className="container">
-          <div className="footer-bottom">
-            &copy; 2025 CWAY Academy — A Ministry of CWAY Missions, Bangalore, India. All rights reserved.
+          <div className="footer-bottom" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem", color: "var(--text-muted)", borderTopColor: "rgba(0,0,0,0.1)" }}>
+            <div style={{ textAlign: "left" }}>&copy; 2025 CWAY Academy — A Ministry of CWAY Missions, Bangalore, India. All rights reserved.</div>
+            <div style={{ display: "flex", gap: "1.5rem" }}>
+              <a href="#privacy" style={{ color: "var(--text-muted)", textDecoration: "none", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--text-main)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Privacy Policy</a>
+              <a href="#terms" style={{ color: "var(--text-muted)", textDecoration: "none", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--text-main)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Terms of Service</a>
+            </div>
           </div>
         </div>
       </footer>

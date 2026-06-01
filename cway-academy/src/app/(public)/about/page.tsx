@@ -162,7 +162,7 @@ export default function AboutPage() {
                 About Us
               </span>
               <h1 className="text-4xl md:text-6xl font-normal font-serif leading-tight mb-6 text-white">
-                About Cway Academy
+                About CWAY Academy
               </h1>
               <div className="w-20 h-1 bg-[var(--gold-primary)] mb-8" />
               <p className="text-white/85 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
@@ -617,7 +617,7 @@ export default function AboutPage() {
                   Executive Director
                 </div>
                 <span className="inline-block px-3 py-1 bg-[#F3F4F0] text-[var(--navy-mid)] text-xs font-semibold rounded-full">
-                  M.Th., Ph.D
+                  M.Th., Ph.D.
                 </span>
               </div>
 
@@ -649,7 +649,7 @@ export default function AboutPage() {
                   Director of Training & Outreach
                 </div>
                 <span className="inline-block px-3 py-1 bg-[#F3F4F0] text-[var(--navy-mid)] text-xs font-semibold rounded-full">
-                  M.Div, Media Specialist
+                  M.Div., Media Specialist
                 </span>
               </div>
 
@@ -681,7 +681,7 @@ export default function AboutPage() {
                   Director of Operations
                 </div>
                 <span className="inline-block px-3 py-1 bg-[#F3F4F0] text-[var(--navy-mid)] text-xs font-semibold rounded-full">
-                  B.Tech, Operations Leader
+                  B.Tech., Operations Leader
                 </span>
               </div>
 
