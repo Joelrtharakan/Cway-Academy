@@ -1267,7 +1267,7 @@ export default function LandingPage() {
               <div className="modern-team-row-card reveal">
                 <div className="team-row-left">
                   <div className="team-avatar-container">
-                    <img src="/Reeju.png" alt="Dr. Reeju Tharakan" className="w-full h-full rounded-full object-cover relative z-10" style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "75% 20%", position: "relative", zIndex: 10 }} />
+                    <img src="/Reeju.png" alt="Dr. Reeju Tharakan" className="w-full h-full rounded-full object-cover relative z-10" style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "85% 20%", position: "relative", zIndex: 10 }} />
                   </div>
                   <div className="team-role">Executive Director</div>
                   <span className="team-credential-badge">M.Th., Ph.D</span>
