@@ -68,6 +68,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -76,7 +77,21 @@ body {
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.7;
+  overflow-x: hidden;
+  width: 100%;
 }
+
+/* Global Responsive Resilience */
+img, video, iframe, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+p, h1, h2, h3, h4, h5, h6, a, span, div {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 
 /* ─────────────────────────────────────────────
    TYPOGRAPHY SYSTEM
@@ -496,11 +511,11 @@ p { color: var(--text-secondary); line-height: 1.8; }
 
 /* Section spacing */
 .section-padding {
-  padding: 5rem 0;
+  padding-top: 5rem; padding-bottom: 5rem;
 }
 
 .section-padding-sm {
-  padding: 3rem 0;
+  padding-top: 3rem; padding-bottom: 3rem;
 }
 
 /* Gradient text */
@@ -734,7 +749,7 @@ p { color: var(--text-secondary); line-height: 1.8; }
   }
 
   .section-padding {
-    padding: 3rem 0;
+    padding-top: 3rem; padding-bottom: 3rem;
   }
 
     .container {
@@ -1019,7 +1034,7 @@ section[id] {
 
 /* Challenges Section */
 .challenge-section {
-    padding: 8rem 0;
+    padding-top: 8rem; padding-bottom: 8rem;
     background: var(--cream-base);
 }
 .challenge-new-grid {
@@ -1237,7 +1252,11 @@ section[id] {
     transform: translateX(4px);
 }
 
-/* Media Queries for Shared Sections */
+/* ─────────────────────────────────────────────
+   GLOBAL RESPONSIVE BREAKPOINTS
+───────────────────────────────────────────── */
+
+/* ── Tablet (≤ 992px) ── */
 @media (max-width: 992px) {
     .challenge-new-grid {
         grid-template-columns: 1fr;
@@ -1256,8 +1275,114 @@ section[id] {
         top: 0;
     }
     .offer-right-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
+    }
+
+    /* Contact & Donate forms — collapse side-by-side */
+    .contact-layout-grid,
+    .donate-layout-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+    }
+}
+
+/* ── Mobile (≤ 768px) ── */
+@media (max-width: 768px) {
+    /* Container */
+    .container { padding: 0 1.25rem; }
+    .container-wide { padding: 0 1.25rem; }
+
+    /* Typography scale-down */
+    h1 { font-size: clamp(28px, 8vw, 40px) !important; }
+    h2 { font-size: clamp(24px, 6vw, 32px) !important; }
+    h3 { font-size: clamp(20px, 5vw, 26px) !important; }
+
+    /* Section padding */
+    .section-padding { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+    .section-padding-sm { padding-top: 2rem; padding-bottom: 2rem; }
+    .parchment-bg { padding-top: 4rem !important; padding-bottom: 2.5rem !important; }
+
+    /* Grid utilities collapse to 1 col */
+    .grid-auto-fill,
+    .grid-auto-fill-sm { grid-template-columns: 1fr; gap: 1.5rem; }
+
+    /* Offer grid on mobile */
+    .offer-right-grid { grid-template-columns: 1fr !important; }
+
+    /* Blog cards — single column */
+    .blog-listing-grid { grid-template-columns: 1fr !important; }
+
+    /* Buttons — full width on mobile */
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline-gold { width: 100%; justify-content: center; }
+
+    /* Hero */
+    .hero-section { min-height: 90vh; }
+
+    /* Navbar */
+    .navbar { padding: 0 1.25rem; }
+
+    /* Scripture block */
+    .scripture-block { padding: 1.25rem 1.25rem; font-size: 1rem; }
+
+    /* Forms — Name/Email side by side → stacked */
+    .form-row-2col { grid-template-columns: 1fr !important; }
+
+    /* Contact & Donate grid */
+    .contact-layout-grid,
+    .donate-layout-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+    /* Leadership cards */
+    .leader-card { padding: 1.5rem; }
+
+    /* Footer nav */
+    .footer { text-align: center; }
+    .footer-link { display: block; padding: 0.25rem 0; }
+
+    /* Stat cards */
+    .stat-card { padding: 1.5rem 1rem; }
+    .stat-number { font-size: 2.25rem; }
+}
+
+/* ── Small Mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+    .container { padding: 0 1rem; }
+
+    /* Heading tighter */
+    h1 { font-size: clamp(26px, 7.5vw, 34px) !important; }
+
+    /* Offer grid — definitely 1 col */
+    .offer-right-grid { grid-template-columns: 1fr !important; gap: 1.25rem; }
+
+    /* Scripture block */
+    .scripture-block { font-size: 0.95rem; padding: 1rem; }
+
+    /* Badges */
+    .badge { font-size: 0.7rem; }
+
+    /* Section label */
+    .section-label { font-size: 0.72rem; }
+}
+
+/* ── Tiny phones (≤ 380px) ── */
+@media (max-width: 380px) {
+    .container { padding: 0 0.75rem; }
+    h1 { font-size: 26px !important; }
+    h2 { font-size: 22px !important; }
+}
+
+/* ── Global Flex & Grid Safety for Mobile ── */
+@media (max-width: 768px) {
+    /* Force inline flex containers to wrap unless they are column direction */
+    [style*="display: flex"]:not([style*="flexDirection: column"]):not([style*="flex-direction: column"]):not([style*="flexWrap"]):not([style*="flex-wrap"]) {
+        flex-wrap: wrap !important;
+    }
+    
+    /* Prevent flex children from breaking layouts */
+    [style*="display: flex"] > * {
+        min-width: 0;
     }
 }
 

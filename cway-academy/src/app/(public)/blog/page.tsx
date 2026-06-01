@@ -62,35 +62,9 @@ Arulappan was a true pioneer and visionary who believed in local training for Ch
     readTime: "6 min",
     category: "History",
     tags: ["Arulappan", "Indigenous", "Leadership", "India", "Tirunelveli"],
-    scripture: { 
-      text: "equipping of the saints for the work of ministry, for the edifying of the body of Christ", 
-      reference: "Ephesians 4:12" 
-    }
-  },
-  {
-    slug: "identity-uniqueness-calling",
-    title: "The Identity — Your Uniqueness and Your Calling",
-    excerpt: "Discover the importance of finding your true identity in your divine mandate and how a true leader emerges when they recognize God's unique plan and calling for their life.",
-    content: `In today's world, we can see many products that are knockoffs of the originals. The popularity, acceptance, advertising, and massive sales of the original products prompted others to create replicas of these genuine products. Fake product production shifts in response to the trend of original products. The features of authentic products are designed to keep them unique in the market, while duplicates attempt to imitate these originals. Two different visions!
-
-“Your uniqueness can become distorted if you lose focus on your calling and start concentrating on what others are doing.” Yes! The purpose makes you unique, so you must know who you are by identifying yourself. When we look at the Bible, we can see how God uses people to carry out His plan in unique ways. This means we are called for different purposes, which determine our identity. However, as humans, we are always influenced by others, and we frequently copy what others do when we observe their success. This is because no one wants to endure painful preparation; instead, everyone wants to be a finished product without going through the process. A true leader emerges when he recognizes God’s plan and lives accordingly. A leader should have a God-given vision and be able to communicate that vision to his teammates from the same perspective. Christian leadership is not a one-person show; instead, it is a fellowship.
-
-“As a prisoner for the Lord, then, I urge you to live a life worthy of the calling you have received.” (Eph 4:1). These are among the Apostle Paul's greatest words, revealing the uniqueness of the calling. The Epistle to the Ephesian Church was written while Paul was in Roman prison, and while there he tells us to "live a life worthy of the calling," the most important thing we should remember. Paul was content even in prison because he grasped God's purpose. As a result, when he moved by God's purpose, his worldly reputation was gone, and he saw himself as trash in the eyes of the world (1Cor4:13). However, when viewed through the lens of the Kingdom of God, the Apostle Paul is one of the greatest leaders ever recorded in the Bible. He was able to carry out God's will and communicate the God-given vision to his companions, not only conveying it but also correcting and redirecting others (churches and co-workers) by God's plan. His companions, such as Barnabas, Timothy, and others, understood his vision, and they all followed his lead, which is the mark of a successful leader. Toward the end of his life, Paul could see that he had fought the good fight, he had finished the race, and he had kept his faith (2Tim4:7).
-
-Although Jesus could have become a good political leader and brought freedom to the Jews from Roman rule, because he knew His purpose, he rejected the public's motive to make him a political king. Moreover, he took some men who appeared unworthy in the eyes of the public, taught them about the real Kingdom of God to come, and called them disciples. They had an entirely new view of the Messiah and the Kingdom of God after they encountered Jesus, and as a result, they were able to stand for the Kingdom of God in the face of severe persecution. Jesus was a great leader who was able to influence his followers and disciples and lead them toward the vision of God.
-
-In following Jesus, Paul imitated his example, allowing his path to become unique, just as he connected with his call. When we hear Jesus, we make our path unique and re-correct it according to God's plan.
-
-All of us are born leaders, and the degree of obedience to God's voice determines our leadership and its uniqueness. Even in the midst of problems, if you are confirmed in your call, you will respond with leadership's eyes, which will reveal a true leader within you. Then 'you', the original product, will remain original amid imitators.`,
-    author: "Pr. Robin Ninan",
-    authorRole: "Pastor & Teacher",
-    date: "April 2, 2026",
-    readTime: "5 min",
-    category: "Discipleship",
-    tags: ["Identity", "Calling", "Uniqueness", "Discipleship", "Leadership"],
-    scripture: { 
-      text: "As a prisoner for the Lord, then, I urge you to live a life worthy of the calling you have received.", 
-      reference: "Ephesians 4:1" 
+    scripture: {
+      text: "equipping of the saints for the work of ministry, for the edifying of the body of Christ",
+      reference: "Ephesians 4:12"
     }
   },
   {
@@ -108,9 +82,9 @@ John Maxwell made the leadership statement, “Everything rises and falls on lea
     readTime: "7 min",
     category: "Missions",
     tags: ["Mary Chapman", "Assemblies of God", "Missions", "India", "Kerala"],
-    scripture: { 
-      text: "The Spirit of God will not permit me to remain at home in a life of ease while souls are perishing…if young people are not able to go, old people must go.", 
-      reference: "Mary Weems Chapman" 
+    scripture: {
+      text: "The Spirit of God will not permit me to remain at home in a life of ease while souls are perishing…if young people are not able to go, old people must go.",
+      reference: "Mary Weems Chapman"
     }
   },
   {
@@ -126,15 +100,15 @@ A. G. Garr and Lillian Garr, with their daughter Virginia and their assistant Ma
 Lillian Garr reported on this revival in the periodical Apostolic Faith of the Azusa Street Mission: “God is spreading Pentecost in Calcutta, … We are among the Bible teachers, and they have the Word so stored away; but now the Spirit is putting life and power into it, which is wonderful to behold.” One night in Calcutta, Sister Lillian Garr had a vision of Jesus, His hands filled with golden crowns ready to place on heads. She realized that God had put a burden on her heart for the hungry souls in India. The Garrs began praying for missionaries in India to receive the outpouring of the Holy Spirit. She initiated revival prayer meetings among the missionary ladies in Calcutta. Miss Susan Easton, head of the American Women’s Board of Missions, and Fanny Simpson, a Methodist missionary and director of a girls’ orphanage, received the Holy Spirit's empowerment in these meetings. At Miss Simpson's orphanage, forty-five native girls prayed and received the Spirit’s baptism. These girls became local ministers and witnessed the power of the gospel in their families and villages. The revival continued to spread in Calcutta, Pune, and Bombay. The Garrs visited and conducted revival meetings at Ramabai’s Mukti Sadan in Pune and at a boys’ home in Dhond. The Garrs family went from Calcutta to Sri Lanka, then to Hong Kong and China. Despite personal tragedy, including the deaths of their two daughters and their assistant Maria, they continued the work of the Lord in China until 1911.
 
 Alfred and Lillian Garr were a model missionary family who had grown in the grace and wisdom of God. They obeyed God's will in their lives and accepted their challenging experiences as God-given for the glory of God. The impact of their lives and ministry will endure forever.`,
-    author: "Pr. Robin Ninan",
-    authorRole: "Pastor & Teacher",
+    author: "Dr. Reeju Tharakan",
+    authorRole: "M.Th., Ph.D",
     date: "May 15, 2026",
     readTime: "8 min",
     category: "History",
     tags: ["A.G. Garr", "Azusa Street", "Missions", "Calcutta", "Revival"],
-    scripture: { 
-      text: "Friends, I believe that God wants me to go to India with this message.", 
-      reference: "Alfred Goodrich Garr" 
+    scripture: {
+      text: "Friends, I believe that God wants me to go to India with this message.",
+      reference: "Alfred Goodrich Garr"
     }
   }
 ];
@@ -156,21 +130,65 @@ export default function BlogPage() {
 
   return (
     <div className="overflow-hidden">
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        .blog-cards-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2.5rem;
+        }
+        .blog-modal-overlay {
+          position: fixed;
+          inset: 0;
+          z-index: 50;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+          background-color: rgba(26, 38, 29, 0.7);
+          backdrop-filter: blur(12px);
+        }
+        .blog-modal-panel {
+          background-color: var(--cream-base);
+          border-radius: var(--radius-xl);
+          box-shadow: var(--shadow-xl);
+          max-width: 780px;
+          width: 100%;
+          max-height: 85vh;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+        }
+        @media (max-width: 768px) {
+          .blog-cards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+          .blog-modal-overlay { padding: 0; align-items: flex-end; }
+          .blog-modal-panel {
+            max-width: 100vw;
+            width: 100vw;
+            max-height: 92vh;
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+          }
+        }
+        @media (max-width: 480px) {
+          .blog-cards-grid { gap: 1.25rem; }
+          .blog-modal-panel { max-height: 95vh; }
+        }
+      ` }} />
       {/* Hero */}
-      <section 
-        className="py-24 px-6 border-b border-[var(--border-light)]"
+      <section
+        className="section-padding border-b border-[var(--border-light)]"
         style={{
           background: "linear-gradient(180deg, #FBFBFA 0%, #FAFAF7 100%)",
         }}
       >
         <div className="container" style={{ maxWidth: "1200px" }}>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             <div className="section-label">Academy Journal</div>
-            <h1 className="text-5xl md:text-7xl font-bold font-serif mb-6 leading-tight max-w-4xl">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-serif mb-6 leading-tight max-w-4xl">
               Insights & <span className="gradient-text-gold">Reflections</span>
             </h1>
             <div className="gold-divider gold-divider-left" />
@@ -182,18 +200,18 @@ export default function BlogPage() {
       </section>
 
       {/* Grid of Same-Sized Cards */}
-      <section className="py-24 px-6 bg-[var(--cream-base)]">
+      <section className="section-padding bg-[var(--cream-base)]">
         <div className="container" style={{ maxWidth: "1200px" }}>
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-10"
+          <motion.div
+            className="blog-cards-grid"
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-100px" }}
           >
             {posts.map((post) => (
-              <motion.article 
-                key={post.slug} 
+              <motion.article
+                key={post.slug}
                 variants={fadeUp}
                 whileHover={{ y: -8 }}
                 style={{
@@ -202,7 +220,7 @@ export default function BlogPage() {
                   border: "1px solid var(--border-light)",
                   borderTop: "4px solid var(--gold-primary)",
                   boxShadow: "var(--shadow-sm)",
-                  padding: "2.5rem",
+                  padding: "clamp(1.5rem, 5vw, 2.5rem)",
                   transition: "border-color 0.3s ease, box-shadow 0.3s ease",
                   display: "flex",
                   flexDirection: "column",
@@ -216,27 +234,27 @@ export default function BlogPage() {
                     <span className="badge badge-gold">{post.category}</span>
                     <span style={{ fontSize: "0.75rem", color: "var(--text-muted)", fontWeight: 500 }}>{post.date}</span>
                   </div>
-                  
-                  <h3 
-                    style={{ 
-                      fontSize: "1.45rem", 
-                      color: "var(--navy-deep)", 
-                      fontFamily: "var(--font-serif)", 
-                      fontWeight: 700, 
-                      lineHeight: 1.35, 
-                      marginBottom: "1rem" 
+
+                  <h3
+                    style={{
+                      fontSize: "1.45rem",
+                      color: "var(--navy-deep)",
+                      fontFamily: "var(--font-serif)",
+                      fontWeight: 700,
+                      lineHeight: 1.35,
+                      marginBottom: "1rem"
                     }}
                   >
                     {post.title}
                   </h3>
-                  
-                  <p 
-                    style={{ 
-                      color: "var(--text-secondary)", 
-                      fontSize: "0.95rem", 
-                      lineHeight: 1.65, 
-                      fontWeight: 300, 
-                      marginBottom: "1.5rem" 
+
+                  <p
+                    style={{
+                      color: "var(--text-secondary)",
+                      fontSize: "0.95rem",
+                      lineHeight: 1.65,
+                      fontWeight: 300,
+                      marginBottom: "1.5rem"
                     }}
                   >
                     {post.excerpt}
@@ -258,7 +276,7 @@ export default function BlogPage() {
                   </div>
 
                   <div style={{ display: "flex", gap: "1rem" }}>
-                    <button 
+                    <button
                       onClick={() => setSelectedPost(post)}
                       style={{
                         flex: 1,
@@ -280,9 +298,9 @@ export default function BlogPage() {
                     >
                       Read Full Story <ArrowRight size={15} />
                     </button>
-                    
-                    <Link 
-                      href={`/blog/${post.slug}`} 
+
+                    <Link
+                      href={`/blog/${post.slug}`}
                       style={{
                         display: "inline-flex",
                         alignItems: "center",
@@ -316,17 +334,7 @@ export default function BlogPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            style={{
-              position: "fixed",
-              inset: 0,
-              zIndex: 50,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "1rem",
-              backgroundColor: "rgba(26, 38, 29, 0.7)",
-              backdropFilter: "blur(12px)"
-            }}
+            className="blog-modal-overlay"
             onClick={() => setSelectedPost(null)}
           >
             <motion.div
@@ -334,23 +342,13 @@ export default function BlogPage() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 50, scale: 0.95 }}
               transition={{ type: "spring", duration: 0.5 }}
-              style={{
-                backgroundColor: "var(--cream-base)",
-                borderRadius: "var(--radius-xl)",
-                boxShadow: "var(--shadow-xl)",
-                maxWidth: "780px",
-                width: "100%",
-                maxHeight: "85vh",
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column"
-              }}
+              className="blog-modal-panel"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Sticky Header */}
-              <div 
+              <div
                 style={{
-                  padding: "1.75rem 2rem",
+                  padding: "clamp(1.25rem, 4vw, 1.75rem) clamp(1.25rem, 5vw, 2rem)",
                   borderBottom: "1px solid var(--border-light)",
                   backgroundColor: "var(--cream-light)",
                   display: "flex",
@@ -361,10 +359,10 @@ export default function BlogPage() {
               >
                 <div>
                   <span className="badge badge-gold" style={{ marginBottom: "0.5rem", display: "inline-block" }}>{selectedPost.category}</span>
-                  <h2 
-                    style={{ 
-                      fontSize: "clamp(1.25rem, 3vw, 1.85rem)", 
-                      lineHeight: 1.3, 
+                  <h2
+                    style={{
+                      fontSize: "clamp(1.25rem, 3vw, 1.85rem)",
+                      lineHeight: 1.3,
                       color: "var(--navy-deep)",
                       fontFamily: "var(--font-serif)",
                       fontWeight: 700
@@ -405,24 +403,24 @@ export default function BlogPage() {
               </div>
 
               {/* Modal Content - Scrollable */}
-              <div 
+              <div
                 style={{
-                  padding: "2rem 2.5rem",
+                  padding: "clamp(1.25rem, 5vw, 2rem) clamp(1.25rem, 6vw, 2.5rem)",
                   overflowY: "auto",
                   backgroundColor: "var(--cream-base)"
                 }}
               >
                 <div style={{ maxWidth: "680px", margin: "0 auto" }}>
                   {/* Lead excerpt */}
-                  <p 
-                    style={{ 
-                      fontSize: "1.1rem", 
-                      lineHeight: 1.8, 
-                      fontWeight: 500, 
-                      color: "var(--navy-mid)", 
-                      marginBottom: "2rem", 
-                      borderLeft: "3.5px solid var(--gold-primary)", 
-                      paddingLeft: "1.25rem" 
+                  <p
+                    style={{
+                      fontSize: "1.1rem",
+                      lineHeight: 1.8,
+                      fontWeight: 500,
+                      color: "var(--navy-mid)",
+                      marginBottom: "2rem",
+                      borderLeft: "3.5px solid var(--gold-primary)",
+                      paddingLeft: "1.25rem"
                     }}
                   >
                     {selectedPost.excerpt}
@@ -434,16 +432,16 @@ export default function BlogPage() {
                       const trimmed = para.trim();
                       if (trimmed.startsWith("“") && trimmed.endsWith("”")) {
                         return (
-                          <blockquote 
-                            key={i} 
-                            style={{ 
-                              borderLeft: "4px solid var(--gold-primary)", 
-                              paddingLeft: "1.5rem", 
-                              fontStyle: "italic", 
-                              margin: "2rem 0", 
-                              fontSize: "1.125rem", 
-                              color: "var(--navy-mid)", 
-                              fontFamily: "var(--font-serif)" 
+                          <blockquote
+                            key={i}
+                            style={{
+                              borderLeft: "4px solid var(--gold-primary)",
+                              paddingLeft: "1.5rem",
+                              fontStyle: "italic",
+                              margin: "2rem 0",
+                              fontSize: "1.125rem",
+                              color: "var(--navy-mid)",
+                              fontFamily: "var(--font-serif)"
                             }}
                           >
                             {trimmed}
@@ -452,15 +450,15 @@ export default function BlogPage() {
                       }
                       if (trimmed.startsWith("**") && trimmed.endsWith("**")) {
                         return (
-                          <h4 
-                            key={i} 
-                            style={{ 
-                              fontSize: "1.25rem", 
-                              color: "var(--navy-deep)", 
+                          <h4
+                            key={i}
+                            style={{
+                              fontSize: "1.25rem",
+                              color: "var(--navy-deep)",
                               fontFamily: "var(--font-serif)",
                               fontWeight: 700,
-                              marginTop: "2.5rem", 
-                              marginBottom: "1rem" 
+                              marginTop: "2.5rem",
+                              marginBottom: "1rem"
                             }}
                           >
                             {trimmed.replace(/\*\*/g, "")}
@@ -469,10 +467,10 @@ export default function BlogPage() {
                       }
                       const withBold = trimmed.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
                       return (
-                        <p 
-                          key={i} 
-                          style={{ marginBottom: "1.25rem", fontSize: "1rem" }} 
-                          dangerouslySetInnerHTML={{ __html: withBold }} 
+                        <p
+                          key={i}
+                          style={{ marginBottom: "1.25rem", fontSize: "1rem" }}
+                          dangerouslySetInnerHTML={{ __html: withBold }}
                         />
                       );
                     })}
@@ -481,7 +479,7 @@ export default function BlogPage() {
               </div>
 
               {/* Modal Sticky Footer */}
-              <div 
+              <div
                 style={{
                   padding: "1.25rem 2rem",
                   borderTop: "1px solid var(--border-light)",
@@ -519,7 +517,7 @@ export default function BlogPage() {
           <div className="gold-divider" />
           <h2 className="text-3xl font-bold font-serif mb-4">Support Our Frontline Leaders</h2>
           <p className="text-white/80 font-light leading-relaxed mb-8">
-            Our historical posts reflect the sacrifice of early missionaries. Today, local leaders 
+            Our historical posts reflect the sacrifice of early missionaries. Today, local leaders
             need training to protect remote rural churches. Become a part of their story.
           </p>
           <Link href="/get-involved" className="px-8 py-4 bg-[var(--gold-primary)] hover:bg-[var(--gold-dark)] text-white font-semibold rounded-full transition-all text-decoration-none">

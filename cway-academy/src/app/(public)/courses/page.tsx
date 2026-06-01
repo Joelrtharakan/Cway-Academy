@@ -138,6 +138,58 @@ const categoryColors: Record<string, string> = {
 export default function CoursesPage() {
   return (
     <div style={{ overflow: "hidden" }}>
+      <style dangerouslySetInnerHTML={{ __html: `
+        .courses-stats-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .courses-cards-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+        }
+        .courses-program-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 64px;
+          align-items: center;
+        }
+        .courses-hero-buttons {
+          display: flex;
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+        .courses-program-buttons {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+        .courses-cta-buttons {
+          display: flex;
+          gap: 16px;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+        @media (max-width: 992px) {
+          .courses-cards-grid { grid-template-columns: repeat(2, 1fr); }
+          .courses-program-grid { grid-template-columns: 1fr; gap: 3rem; }
+        }
+        @media (max-width: 768px) {
+          .courses-stats-grid { grid-template-columns: repeat(2, 1fr); }
+          .courses-cards-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+          .courses-program-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+          .courses-hero-buttons,
+          .courses-program-buttons,
+          .courses-cta-buttons { flex-direction: column; align-items: stretch; }
+          .courses-hero-buttons a,
+          .courses-program-buttons a,
+          .courses-cta-buttons a { text-align: center; }
+        }
+        @media (max-width: 480px) {
+          .courses-cards-grid { grid-template-columns: 1fr; gap: 14px; }
+          .courses-stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+      ` }} />
       {/* ═══════════════════════════════════════════════════
           HERO SECTION
       ═══════════════════════════════════════════════════ */}
@@ -202,7 +254,7 @@ export default function CoursesPage() {
               Our curriculum is designed to support active ministry, balancing academic depth
               with practical spiritual development.
             </p>
-            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+            <div className="courses-hero-buttons">
               <Link
                 href="/apply"
                 style={{
@@ -243,10 +295,8 @@ export default function CoursesPage() {
             whileInView="show"
             viewport={{ once: true }}
             variants={staggerContainer}
-            style={{
-              display: "grid", gridTemplateColumns: "repeat(4, 1fr)",
-              gap: "0",
-            }}
+            className="courses-stats-grid"
+            style={{ gap: "0" }}
           >
             {[
               { value: "10+", label: "Courses Available" },
@@ -325,11 +375,7 @@ export default function CoursesPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-80px" }}
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "24px",
-            }}
+            className="courses-cards-grid"
           >
             {allCourses.map((course, idx) => (
               <motion.article
@@ -455,12 +501,7 @@ export default function CoursesPage() {
             whileInView="show"
             viewport={{ once: true }}
             variants={staggerContainer}
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "64px",
-              alignItems: "center",
-            }}
+            className="courses-program-grid"
           >
             {/* Left text */}
             <motion.div variants={fadeUp}>
@@ -482,7 +523,7 @@ export default function CoursesPage() {
                 delivered over 6 weeks in a hybrid format — online and in-person — so you can
                 continue your ministry while you study.
               </p>
-              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+              <div className="courses-program-buttons">
                 <Link
                   href="/apply"
                   style={{
@@ -600,7 +641,7 @@ export default function CoursesPage() {
               a globally accredited certificate upon graduation. Graduation services
               will be conducted locally.
             </motion.p>
-            <motion.div variants={fadeUp} style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
+            <motion.div variants={fadeUp} className="courses-cta-buttons">
               <Link
                 href="/contact"
                 style={{

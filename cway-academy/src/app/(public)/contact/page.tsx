@@ -23,7 +23,7 @@ export default function ContactPage() {
 
       <section className="section-padding">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "4rem", alignItems: "start" }}>
+          <div className="contact-layout-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "4rem", alignItems: "start" }}>
             {/* Info */}
             <div>
               <h3 style={{ marginBottom: "2rem" }}>Contact Information</h3>
@@ -57,7 +57,7 @@ export default function ContactPage() {
                 We typically respond within 1–2 business days.
               </p>
               <form style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+                <div className="form-row-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                   <div>
                     <label className="form-label" htmlFor="contact-first">First Name *</label>
                     <input id="contact-first" type="text" className="form-input" placeholder="Samuel" required />

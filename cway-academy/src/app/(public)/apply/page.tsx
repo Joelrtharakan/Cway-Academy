@@ -64,6 +64,20 @@ export default function ApplyPage() {
 
   return (
     <div>
+      <style dangerouslySetInnerHTML={{ __html: `
+        .apply-form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .apply-form-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+        .apply-step-nav { display: flex; justify-content: space-between; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border-light); }
+        .apply-progress-label { font-size: 0.7rem; font-weight: 600; color: var(--text-muted); text-align: center; max-width: 64px; }
+        @media (max-width: 768px) {
+          .apply-form-grid-2, .apply-form-grid-3 { grid-template-columns: 1fr; }
+          .apply-step-nav { gap: 0.75rem; }
+          .apply-progress-label { display: none; }
+        }
+        @media (max-width: 480px) {
+          .card-cream { padding: 1.5rem !important; }
+        }
+      ` }} />
       {/* Header */}
       <section className="parchment-bg" style={{ padding: "4rem 0 2rem" }}>
         <div className="container">
@@ -98,7 +112,7 @@ export default function ApplyPage() {
                 >
                   {step > s.id ? <CheckCircle size={20} /> : <s.icon size={18} />}
                 </div>
-                <span style={{ fontSize: "0.7rem", fontWeight: 600, color: step >= s.id ? "var(--navy-deep)" : "var(--text-muted)", textAlign: "center", maxWidth: "64px" }}>
+                <span className="apply-progress-label" style={{ color: step >= s.id ? "var(--navy-deep)" : "var(--text-muted)" }}>
                   {s.title}
                 </span>
               </div>
@@ -112,13 +126,13 @@ export default function ApplyPage() {
                 <h3 style={{ marginBottom: "0.5rem" }}>Personal Information</h3>
                 <p style={{ color: "var(--text-muted)", fontSize: "0.875rem", marginBottom: "2rem" }}>Tell us a bit about yourself.</p>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+                  <div className="apply-form-grid-2">
                     <div><label className="form-label" htmlFor="app-first">First Name *</label><input id="app-first" className="form-input" value={form.firstName} onChange={(e) => update("firstName", e.target.value)} placeholder="Samuel" /></div>
                     <div><label className="form-label" htmlFor="app-last">Last Name *</label><input id="app-last" className="form-input" value={form.lastName} onChange={(e) => update("lastName", e.target.value)} placeholder="Raju" /></div>
                   </div>
                   <div><label className="form-label" htmlFor="app-email">Email Address *</label><input id="app-email" type="email" className="form-input" value={form.email} onChange={(e) => update("email", e.target.value)} placeholder="you@email.com" /></div>
                   <div><label className="form-label" htmlFor="app-phone">Phone Number *</label><input id="app-phone" type="tel" className="form-input" value={form.phone} onChange={(e) => update("phone", e.target.value)} placeholder="+91 98765 43210" /></div>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+                  <div className="apply-form-grid-2">
                     <div><label className="form-label" htmlFor="app-dob">Date of Birth</label><input id="app-dob" type="date" className="form-input" value={form.dateOfBirth} onChange={(e) => update("dateOfBirth", e.target.value)} /></div>
                     <div>
                       <label className="form-label" htmlFor="app-gender">Gender</label>
@@ -129,7 +143,7 @@ export default function ApplyPage() {
                     </div>
                   </div>
                   <div><label className="form-label" htmlFor="app-address">Address</label><input id="app-address" className="form-input" value={form.address} onChange={(e) => update("address", e.target.value)} placeholder="Street address" /></div>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem" }}>
+                  <div className="apply-form-grid-3">
                     <div><label className="form-label" htmlFor="app-city">City</label><input id="app-city" className="form-input" value={form.city} onChange={(e) => update("city", e.target.value)} placeholder="Bangalore" /></div>
                     <div><label className="form-label" htmlFor="app-state">State</label><input id="app-state" className="form-input" value={form.state} onChange={(e) => update("state", e.target.value)} placeholder="Karnataka" /></div>
                     <div><label className="form-label" htmlFor="app-country">Country</label><input id="app-country" className="form-input" value={form.country} onChange={(e) => update("country", e.target.value)} /></div>
@@ -145,7 +159,7 @@ export default function ApplyPage() {
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
                   <div><label className="form-label" htmlFor="app-church">Church / Organization Name *</label><input id="app-church" className="form-input" value={form.church} onChange={(e) => update("church", e.target.value)} placeholder="Grace Community Church" /></div>
                   <div><label className="form-label" htmlFor="app-denom">Denomination / Stream</label><input id="app-denom" className="form-input" value={form.denomination} onChange={(e) => update("denomination", e.target.value)} placeholder="Pentecostal, Baptist, CSI, etc." /></div>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+                  <div className="apply-form-grid-2">
                     <div><label className="form-label" htmlFor="app-years">Years in Ministry *</label><input id="app-years" type="number" min="0" className="form-input" value={form.yearsInMinistry} onChange={(e) => update("yearsInMinistry", e.target.value)} placeholder="5" /></div>
                     <div>
                       <label className="form-label" htmlFor="app-role">Ministry Role *</label>
@@ -301,7 +315,7 @@ export default function ApplyPage() {
             )}
 
             {/* Navigation */}
-            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "2.5rem", paddingTop: "2rem", borderTop: "1px solid var(--border-light)" }}>
+            <div className="apply-step-nav">
               {step > 1 ? (
                 <button onClick={() => setStep((s) => s - 1)} className="btn-secondary" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                   <ChevronLeft size={16} /> Previous

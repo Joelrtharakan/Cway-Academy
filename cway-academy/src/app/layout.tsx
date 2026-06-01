@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, DM_Serif_Display, Inter, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, DM_Serif_Display, Inter, JetBrains_Mono, Cinzel } from "next/font/google";
 import "./globals.css";
 
 /* ── Self-hosted fonts via next/font (no external network requests) ── */
@@ -30,6 +30,13 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   display: "swap",
   weight: ["400", "500"],
+});
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  variable: "--font-cinzel",
+  display: "swap",
+  weight: ["400", "600", "700", "900"],
 });
 
 export const metadata: Metadata = {
@@ -109,7 +116,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakarta.variable} ${dmSerif.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${plusJakarta.variable} ${dmSerif.variable} ${inter.variable} ${jetbrainsMono.variable} ${cinzel.variable}`}
     >
       <head>
         <script

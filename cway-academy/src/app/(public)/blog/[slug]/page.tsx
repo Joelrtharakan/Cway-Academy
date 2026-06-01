@@ -49,32 +49,6 @@ Arulappan was a true pioneer and visionary who believed in local training for Ch
     }
   },
   {
-    slug: "identity-uniqueness-calling",
-    title: "The Identity — Your Uniqueness and Your Calling",
-    excerpt: "Discover the importance of finding your true identity in your divine mandate and how a true leader emerges when they recognize God's unique plan and calling for their life.",
-    content: `In today's world, we can see many products that are knockoffs of the originals. The popularity, acceptance, advertising, and massive sales of the original products prompted others to create replicas of these genuine products. Fake product production shifts in response to the trend of original products. The features of authentic products are designed to keep them unique in the market, while duplicates attempt to imitate these originals. Two different visions!
-
-“Your uniqueness can become distorted if you lose focus on your calling and start concentrating on what others are doing.” Yes! The purpose makes you unique, so you must know who you are by identifying yourself. When we look at the Bible, we can see how God uses people to carry out His plan in unique ways. This means we are called for different purposes, which determine our identity. However, as humans, we are always influenced by others, and we frequently copy what others do when we observe their success. This is because no one wants to endure painful preparation; instead, everyone wants to be a finished product without going through the process. A true leader emerges when he recognizes God’s plan and lives accordingly. A leader should have a God-given vision and be able to communicate that vision to his teammates from the same perspective. Christian leadership is not a one-person show; instead, it is a fellowship.
-
-“As a prisoner for the Lord, then, I urge you to live a life worthy of the calling you have received.” (Eph 4:1). These are among the Apostle Paul's greatest words, revealing the uniqueness of the calling. The Epistle to the Ephesian Church was written while Paul was in Roman prison, and while there he tells us to "live a life worthy of the calling," the most important thing we should remember. Paul was content even in prison because he grasped God's purpose. As a result, when he moved by God's purpose, his worldly reputation was gone, and he saw himself as trash in the eyes of the world (1Cor4:13). However, when viewed through the lens of the Kingdom of God, the Apostle Paul is one of the greatest leaders ever recorded in the Bible. He was able to carry out God's will and communicate the God-given vision to his companions, not only conveying it but also correcting and redirecting others (churches and co-workers) by God's plan. His companions, such as Barnabas, Timothy, and others, understood his vision, and they all followed his lead, which is the mark of a successful leader. Toward the end of his life, Paul could see that he had fought the good fight, he had finished the race, and he had kept his faith (2Tim4:7).
-
-Although Jesus could have become a good political leader and brought freedom to the Jews from Roman rule, because he knew His purpose, he rejected the public's motive to make him a political king. Moreover, he took some men who appeared unworthy in the eyes of the public, taught them about the real Kingdom of God to come, and called them disciples. They had an entirely new view of the Messiah and the Kingdom of God after they encountered Jesus, and as a result, they were able to stand for the Kingdom of God in the face of severe persecution. Jesus was a great leader who was able to influence his followers and disciples and lead them toward the vision of God.
-
-In following Jesus, Paul imitated his example, allowing his path to become unique, just as he connected with his call. When we hear Jesus, we make our path unique and re-correct it according to God's plan.
-
-All of us are born leaders, and the degree of obedience to God's voice determines our leadership and its uniqueness. Even in the midst of problems, if you are confirmed in your call, you will respond with leadership's eyes, which will reveal a true leader within you. Then 'you', the original product, will remain original amid imitators.`,
-    author: "Pr. Robin Ninan",
-    authorRole: "Pastor & Teacher",
-    date: "April 2, 2026",
-    readTime: "5 min",
-    category: "Discipleship",
-    tags: ["Identity", "Calling", "Uniqueness", "Discipleship", "Leadership"],
-    scripture: { 
-      text: "As a prisoner for the Lord, then, I urge you to live a life worthy of the calling you have received.", 
-      reference: "Ephesians 4:1" 
-    }
-  },
-  {
     slug: "mary-chapmans-resolve",
     title: "“They Will Not Go, I Must” — The Legacy of Mary Chapman",
     excerpt: "Mary Weems Chapman, a 60-year-old veteran missionary, became the first Assemblies of God missionary to India, pioneering children's homes and local leadership training in Kerala.",
@@ -156,7 +130,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       </div>
 
       {/* Hero */}
-      <section className="parchment-bg" style={{ padding: "4rem 0 2.5rem" }}>
+      <section className="parchment-bg" style={{ paddingTop: "clamp(2.5rem, 6vw, 4rem)", paddingBottom: "clamp(1.5rem, 4vw, 2.5rem)" }}>
         <div className="container" style={{ maxWidth: "760px", margin: "0 auto", padding: "0 1rem" }}>
           <span className="badge badge-gold" style={{ marginBottom: "1.25rem", display: "inline-block" }}>{post.category}</span>
           <h1 style={{ fontSize: "clamp(28px, 4vw, 40px)", lineHeight: 1.25, marginBottom: "1.5rem" }}>{post.title}</h1>
@@ -175,7 +149,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       </section>
 
       {/* Article Body */}
-      <section style={{ padding: "3rem 0 5rem" }}>
+      <section style={{ paddingTop: "clamp(2rem, 5vw, 3rem)", paddingBottom: "clamp(3rem, 7vw, 5rem)" }}>
         <div className="container" style={{ maxWidth: "760px", margin: "0 auto", padding: "0 1rem" }}>
           {/* Lead */}
           <p style={{ fontSize: "1.1rem", lineHeight: 1.85, fontWeight: 500, color: "var(--navy-mid)", marginBottom: "2rem", borderLeft: "3px solid var(--gold-primary)", paddingLeft: "1.25rem" }}>
@@ -245,10 +219,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       {/* Related Posts */}
       {related.length > 0 && (
-        <section style={{ background: "var(--cream-mid)", padding: "4rem 0" }}>
+        <section style={{ background: "var(--cream-mid)", paddingTop: "clamp(2.5rem, 6vw, 4rem)", paddingBottom: "clamp(2.5rem, 6vw, 4rem)" }}>
           <div className="container" style={{ maxWidth: "760px", margin: "0 auto", padding: "0 1rem" }}>
             <h3 style={{ marginBottom: "1.5rem", fontFamily: "var(--font-serif)", color: "var(--navy-deep)" }}>Related Articles</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
               {related.map((r) => (
                 <Link key={r.slug} href={`/blog/${r.slug}`} style={{ display: "block", textDecoration: "none" }}>
                   <div className="card-cream" style={{ padding: "1.5rem", borderRadius: "12px", background: "white", border: "1px solid var(--border-light)", height: "100%" }}>

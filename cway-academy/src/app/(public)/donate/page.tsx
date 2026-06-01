@@ -62,7 +62,7 @@ export default function DonatePage() {
 
       <section className="section-padding">
         <div className="container" style={{ maxWidth: "900px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr", gap: "3rem", alignItems: "start" }}>
+          <div className="donate-layout-grid" style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr", gap: "3rem", alignItems: "start" }}>
             {/* Donation Form */}
             <div className="card-cream" style={{ padding: "2.5rem" }}>
               <h3 style={{ marginBottom: "1.5rem" }}>Make a Donation</h3>
@@ -127,7 +127,7 @@ export default function DonatePage() {
               </div>
 
               {/* Donor Info */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
+              <div className="form-row-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
                 <div><label className="form-label" htmlFor="donor-name">Full Name *</label><input id="donor-name" className="form-input" value={name} onChange={(e) => setName(e.target.value)} placeholder="Your Name" /></div>
                 <div><label className="form-label" htmlFor="donor-email">Email *</label><input id="donor-email" type="email" className="form-input" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" /></div>
               </div>

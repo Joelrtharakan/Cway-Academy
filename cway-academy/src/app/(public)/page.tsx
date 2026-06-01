@@ -41,28 +41,7 @@ Arulappan was a true pioneer and visionary who believed in local training for Ch
     readTime: "6 min",
     category: "History",
   },
-  {
-    slug: "identity-uniqueness-calling",
-    title: "The identity",
-    excerpt: "Discover the importance of finding your true identity in your divine mandate and how a true leader emerges when they recognize God's unique plan and calling for their life.",
-    content: `In today's world, we can see many products that are knockoffs of the originals. The popularity, acceptance, advertising, and massive sales of the original products prompted others to create replicas of these genuine products. Fake product production shifts in response to the trend of original products. The features of authentic products are designed to keep them unique in the market, while duplicates attempt to imitate these originals. Two different visions!
-“Your uniqueness can become distorted if you lose focus on your calling and start concentrating on what others are doing.” Yes! The purpose makes you unique, so you must know who you are by identifying yourself. When we look at the Bible, we can see how God uses people to carry out His plan in unique ways. This means we are called for different purposes, which determine our identity. 
 
-However, as humans, we are always influenced by others, and we frequently copy what others do when we observe their success. This is because no one wants to endure painful preparation; instead, everyone wants to be a finished product without going through the process. A true leader emerges when he recognizes God’s plan and lives accordingly. A leader should have a God-given vision and be able to communicate that vision to his teammates from the same perspective. Christian leadership is not a one-person show; instead, it is a fellowship. 
-
-“As a prisoner for the Lord, then, I urge you to live a life worthy of the calling you have received.” (Eph 4:1). These are among the Apostle Paul's greatest words, revealing the uniqueness of the calling. The Epistle to the Ephesian Church was written while Paul was in Roman prison, and while there he tells us to "live a life worthy of the calling," the most important thing we should remember. Paul was content even in prison because he grasped God's purpose. As a result, when he moved by God's purpose, his worldly reputation was gone, and he saw himself as trash in the eyes of the world (1Cor4:13). However, when viewed through the lens of the Kingdom of God, the Apostle Paul is one of the greatest leaders ever recorded in the Bible. He was able to carry out God's will and communicate the God-given vision to his companions, not only conveying it but also correcting and redirecting others (churches and co-workers) by God's plan. His companions, such as Barnabas, Timothy, and others, understood his vision, and they all followed his lead, which is the mark of a successful leader. Toward the end of his life, Paul could see that he had fought the good fight, he had finished the race, and he had kept his faith (2Tim4:7).
-
-Although Jesus could have become a good political leader and brought freedom to the Jews from Roman rule, because he knew His purpose, he rejected the public's motive to make him a political king. Moreover, he took some men who appeared unworthy in the eyes of the public, taught them about the real Kingdom of God to come, and called them disciples. They had an entirely new view of the Messiah and the Kingdom of God after they encountered Jesus, and as a result, they were able to stand for the Kingdom of God in the face of severe persecution. Jesus was a great leader who was able to influence his followers and disciples and lead them toward the vision of God. 
-In following Jesus, Paul imitated his example, allowing his path to become unique, just as he connected with his call. When we hear Jesus, we make our path unique and re-correct it according to God's plan.
-
-All of us are born leaders, and the degree of obedience to God's voice determines our leadership and its uniqueness. Even in the midst of problems, if you are confirmed in your call, you will respond with leadership's eyes, which will reveal a true leader within you. Then 'you,' the original product, will remain original amid imitators.
-`,
-    author: "Pr. Robin Ninan",
-    authorRole: "Pastor & Teacher",
-    date: "April 2, 2026",
-    readTime: "5 min",
-    category: "Discipleship",
-  },
   {
     slug: "mary-chapmans-resolve",
     title: "“They Will Not Go, I Must” — The Legacy of Mary Chapman",
@@ -94,8 +73,8 @@ Lillian Garr reported on this revival in the periodical Apostolic Faith of the A
 Alfred and Lillian Garr were a model missionary family who had grown in the grace and wisdom of God. They obeyed God's will in their lives and accepted their challenging experiences as God-given for the glory of God. The impact of their lives and ministry will endure forever. 
 
 `,
-    author: "Pr. Robin Ninan",
-    authorRole: "Pastor & Teacher",
+    author: "Dr. Reeju Tharakan",
+    authorRole: "M.Th., Ph.D",
     date: "May 15, 2026",
     readTime: "8 min",
     category: "History",
@@ -257,7 +236,7 @@ export default function LandingPage() {
         }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        .section { padding: 7rem 0; }
+        .section { padding-top: 7rem; padding-bottom: 7rem; }
         .text-center { text-align: center; }
 
         /* Typography */
@@ -294,8 +273,23 @@ export default function LandingPage() {
             padding: 0 5%; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .nav-brand { display: flex; align-items: center; gap: 1rem;}
-        .nav-logo-text { font-family: var(--font-dm-serif), serif !important; font-size: 26px; font-weight: 400; letter-spacing: 1px; color: var(--text-main); }
-        .nav-logo-text span { color: var(--accent-green); }
+        .nav-logo-text { 
+            font-family: var(--font-cinzel), 'Cinzel', Georgia, serif !important;
+            font-size: 21px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--text-main);
+            text-transform: uppercase;
+            line-height: 1;
+        }
+        .nav-logo-text .logo-cway {
+            color: var(--text-main);
+        }
+        .nav-logo-text .logo-academy {
+            color: var(--accent-gold);
+            font-weight: 400;
+            letter-spacing: 4px;
+        }
         
         .nav-links { display: flex; gap: 2.5rem; align-items: center; }
         .nav-links a {
@@ -406,7 +400,7 @@ export default function LandingPage() {
         }
 
         /* Stats */
-        .stats-section { background: var(--accent-green); color: white; padding: 5rem 0; position: relative; overflow: hidden; }
+        .stats-section { background: var(--accent-green); color: white; padding-top: 5rem; padding-bottom: 5rem; position: relative; overflow: hidden; }
         .stats-section::before {
             content: '';
             position: absolute; top: 0; left: 0; right: 0; bottom: 0;
@@ -418,11 +412,11 @@ export default function LandingPage() {
         .stat-label { font-family: var(--font-plus-jakarta), sans-serif !important; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.7); }
 
         /* Page Headers */
-        .page-header { background: var(--bg-alt); padding: 6rem 0 4rem; text-align: center; border-bottom: 1px solid var(--border); }
+        .page-header { background: var(--bg-alt); padding-top: 6rem; padding-bottom: 4rem; text-align: center; border-bottom: 1px solid var(--border); }
         .page-header p { max-width: 700px; margin: 0 auto; }
 
         /* About challenge box & quotes */
-        .challenge-box { background: #FFFFFF; padding: 2rem 2rem 2rem 2.5rem; border-radius: var(--radius-md); margin-bottom: 1.25rem; border-left: 3px solid var(--accent-green); text-align: left; box-shadow: var(--shadow-sm); transition: all 0.3s ease; }
+        .challenge-box { background: #FFFFFF; padding: 2rem; border-radius: var(--radius-md); margin-bottom: 1.25rem; border-left: 3px solid var(--accent-green); text-align: left; box-shadow: var(--shadow-sm); transition: all 0.3s ease; }
         .challenge-box:hover { box-shadow: var(--shadow-md); transform: translateX(4px); }
         .quote-text { font-family: var(--font-dm-serif), serif !important; font-size: 22px; font-style: italic; color: var(--accent-green); line-height: 1.5; border-left: 3px solid var(--accent-gold); padding-left: 2rem; margin: 3rem 0; text-align: left; }
 
@@ -486,7 +480,7 @@ export default function LandingPage() {
         .about-header-wrapper {
             background: linear-gradient(135deg, #1A261D 0%, #2C4A3B 100%);
             color: #FFFFFF;
-            padding: 8rem 0 6rem;
+            padding-top: 8rem; padding-bottom: 6rem;
             position: relative;
             overflow: hidden;
         }
@@ -523,7 +517,7 @@ export default function LandingPage() {
         }
         
         .challenge-section {
-            padding: 8rem 0;
+            padding-top: 8rem; padding-bottom: 8rem;
             background: var(--bg-main);
         }
         .challenge-new-grid {
@@ -617,7 +611,7 @@ export default function LandingPage() {
         }
 
         .vm-section {
-            padding: 8rem 0;
+            padding-top: 8rem; padding-bottom: 8rem;
             background: var(--bg-alt);
             position: relative;
             overflow: hidden;
@@ -684,7 +678,7 @@ export default function LandingPage() {
         }
 
         .team-section {
-            padding: 8rem 0;
+            padding-top: 8rem; padding-bottom: 8rem;
             background: var(--bg-main);
         }
         .team-list-container {
@@ -952,6 +946,8 @@ export default function LandingPage() {
             .offer-left-column { position: relative; top: 0; }
             .challenge-new-grid { grid-template-columns: 1fr; gap: 3.5rem; }
             .challenge-left-content { position: relative; top: 0; }
+            .offer-right-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .what-we-offer-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -959,11 +955,46 @@ export default function LandingPage() {
             .hero-btn-group { flex-direction: column; align-items: stretch; }
             .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .stats-section .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
-            .section { padding: 5rem 0; }
+            .stats-section .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+            .section { padding-top: 4rem; padding-bottom: 4rem; }
+            .page-header { padding-top: 3rem; padding-bottom: 2rem; }
+            .headline-page { font-size: clamp(32px, 9vw, 52px); }
+            .offer-right-grid { grid-template-columns: 1fr !important; gap: 1.25rem; }
+            .what-we-offer-grid { grid-template-columns: 1fr !important; }
+            /* Team row card */
+            .modern-team-row-card { grid-template-columns: 1fr; gap: 1.25rem; }
+            .team-row-right { padding-left: 0 !important; text-align: left; }
+            /* About challenge grid */
+            .challenge-new-grid { grid-template-columns: 1fr; }
+            /* Nav logo reduce */
+            .nav-logo-text { font-size: 17px !important; letter-spacing: 2px !important; }
+            /* Stat bar on blog/courses pages */
+            .stats-bar-4col { grid-template-columns: repeat(2, 1fr) !important; }
+            /* Hero section padding */
+            .hero-section { padding: 3rem 1.25rem 2rem; }
+            /* Blog reader modal — full screen */
+            .blog-modal-panel { max-width: 100vw !important; max-height: 100vh !important; border-radius: 0 !important; margin: 0 !important; }
+            .blog-modal-overlay { padding: 0 !important; }
+            /* Blog cards */
+            .blog-cards-2col { grid-template-columns: 1fr !important; }
         }
         @media (max-width: 640px) {
-            .offer-right-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .offer-right-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+            .what-we-offer-grid { grid-template-columns: 1fr !important; }
+            .hero-stat-row { flex-direction: column; gap: 1rem; }
+            .container { padding: 0 1rem; }
+        }
+        @media (max-width: 480px) {
+            .nav-logo-text { font-size: 15px !important; letter-spacing: 1.5px !important; }
+            .headline-hero { font-size: clamp(32px, 9vw, 48px); }
+            .headline-page { font-size: clamp(28px, 8vw, 40px); }
+            .section { padding-top: 3rem; padding-bottom: 3rem; }
+            .page-header { padding: 2.5rem 0 1.5rem; }
+            .blog-modal-panel { border-radius: 0 !important; }
+        }
+        @media (max-width: 380px) {
+            .nav-logo-text { font-size: 14px !important; letter-spacing: 1px !important; }
+            .container { padding: 0 0.75rem; }
         }
       ` }} />
 
@@ -973,7 +1004,7 @@ export default function LandingPage() {
       {/* Header Navigation */}
       <nav>
         <div className="nav-brand">
-          <div className="nav-logo-text">CWAY<span>ACADEMY</span></div>
+          <div className="nav-logo-text"><span className="logo-cway">CWAY</span><span className="logo-academy"> ACADEMY</span></div>
         </div>
         <div className="nav-links">
           <a href="#home" className={activeTab === "home" ? "nav-active" : ""}>Home</a>
@@ -1028,7 +1059,7 @@ export default function LandingPage() {
             </div>
 
             {/* Feature Cards — 2×2 grid */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "24px", marginBottom: "40px" }}>
+            <div className="what-we-offer-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "24px", marginBottom: "40px" }}>
               {[
                 { num: "01", title: "Hybrid Learning", desc: "Online and offline environment for your Christian leadership through systematic, biblical, and accredited training programs." },
                 { num: "02", title: "Easy Access", desc: "From the comfort of your own home or location, participate in this training to accomplish God\u0027s vision." },
@@ -1078,15 +1109,16 @@ export default function LandingPage() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
                 {["Flexible hybrid schedule", "Globally recognized credentials", "Fully bilingual programs"].map((text, i) => (
                   <span key={i} style={{
-                    display: "inline-block", padding: "10px 22px",
+                    display: "inline-flex", padding: "10px 22px",
                     background: "#F3F4F0", border: "1px solid #DCE0D5",
-                    borderRadius: "999px", fontSize: "12px", fontWeight: 600,
+                    borderRadius: "30px", fontSize: "12px", fontWeight: 600,
                     color: "var(--accent-green)", letterSpacing: "0.5px",
-                    whiteSpace: "nowrap"
+                    textAlign: "center", justifyContent: "center", alignItems: "center",
+                    lineHeight: "1.3"
                   }}>{text}</span>
                 ))}
               </div>
-              <a href="#courses" className="btn-primary" style={{ padding: "14px 32px", fontSize: "12px" }}>Explore Courses</a>
+              <a href="#courses" className="btn-primary" style={{ padding: "14px 32px", fontSize: "12px", textAlign: "center" }}>Explore Courses</a>
             </div>
           </div>
         </div>
@@ -1453,7 +1485,7 @@ export default function LandingPage() {
           className="section container"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             gap: "2.5rem",
             alignItems: "stretch",
             paddingTop: "4rem",
@@ -1558,7 +1590,7 @@ export default function LandingPage() {
       <footer>
         <div className="container footer-grid">
           <div>
-            <div className="nav-logo-text" style={{ marginBottom: "1rem" }}>CWAY<span style={{ color: "var(--accent-green)" }}>ACADEMY</span></div>
+            <div className="nav-logo-text" style={{ marginBottom: "1rem" }}><span className="logo-cway">CWAY</span><span className="logo-academy"> ACADEMY</span></div>
             <p className="body-text" style={{ fontSize: "14px" }}>Equipping Frontline Leaders for God&apos;s Great Commission.<br />A CWAY Missions Project · Bangalore, India</p>
           </div>
           <div>
