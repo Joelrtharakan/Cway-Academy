@@ -206,7 +206,7 @@ export function Footer() {
           }}
         >
           <p style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.4)", margin: 0 }}>
-            © {new Date().getFullYear()} CWAY Academy · CWAY MISSIONS Religious Trust, Bangalore, India. All rights reserved.
+            © 2025 CWAY Academy — A Ministry of CWAY Missions, Bangalore, India. All rights reserved.
           </p>
           <div style={{ display: "flex", gap: "1.5rem" }}>
             <NextLink href="/privacy" className="footer-link" style={{ fontSize: "0.8rem" }}>Privacy Policy</NextLink>

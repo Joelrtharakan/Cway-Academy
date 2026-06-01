@@ -1617,7 +1617,7 @@ export default function LandingPage() {
         </div>
         <div className="container">
           <div className="footer-bottom">
-            &copy; 2024 CWAY Academy — A Ministry of CWAY Missions, Bangalore, India. All rights reserved.
+            &copy; 2025 CWAY Academy — A Ministry of CWAY Missions, Bangalore, India. All rights reserved.
           </div>
         </div>
       </footer>
