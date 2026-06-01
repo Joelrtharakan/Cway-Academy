@@ -1004,6 +1004,11 @@ export default function LandingPage() {
       {/* Header Navigation */}
       <nav>
         <div className="nav-brand">
+          <img 
+            src="/logo.png?v=3" 
+            alt="CWAY Academy Logo" 
+            style={{ width: "48px", height: "48px", objectFit: "contain", flexShrink: 0 }}
+          />
           <div className="nav-logo-text"><span className="logo-cway">CWAY</span><span className="logo-academy"> ACADEMY</span></div>
         </div>
         <div className="nav-links">

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -92,19 +93,24 @@ export function Navbar() {
           >
             <div
               style={{
-                width: "44px",
-                height: "44px",
-                borderRadius: "14px",
-                background: "linear-gradient(135deg, var(--navy-deep), var(--navy-mid))",
+                width: "48px",
+                height: "48px",
+                borderRadius: "50%",
+                overflow: "hidden",
+                flexShrink: 0,
+                boxShadow: "0 4px 12px rgba(44, 74, 59, 0.15)",
+                border: "2px solid rgba(212, 163, 91, 0.3)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                flexShrink: 0,
-                boxShadow: "0 4px 12px rgba(44, 74, 59, 0.15)",
-                border: "1px solid rgba(212, 163, 91, 0.3)",
+                background: "white"
               }}
             >
-              <BookOpen size={20} color="var(--gold-light)" />
+              <img 
+                src="/logo.png?v=3" 
+                alt="CWAY Academy Logo" 
+                style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
+              />
             </div>
             <div>
               <div
