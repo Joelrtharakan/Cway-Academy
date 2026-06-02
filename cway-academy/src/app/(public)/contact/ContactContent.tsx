@@ -133,7 +133,9 @@ export function ContactContent() {
 
         {/* Email Card */}
         <a 
-          href="mailto:support@cwayacademy.com" 
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=support@cwayacademy.com" 
+          target="_blank"
+          rel="noopener noreferrer"
           className="contact-redesign-card"
           style={{
             background: "#ffffff",
