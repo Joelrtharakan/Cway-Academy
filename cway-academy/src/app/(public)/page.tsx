@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { EmailCard } from "@/components/EmailCard";
+import { ContactContent } from "./contact/ContactContent";
 
 interface Post {
   slug: string;
@@ -1591,18 +1592,12 @@ export default function LandingPage() {
             paddingBottom: "5rem"
           }}
         >
-          <div className="reveal" style={{ maxWidth: "500px", width: "100%", margin: "0 auto" }}>
+          <div className="reveal" style={{ width: "100%", margin: "0 auto" }}>
             <span className="label text-center" style={{ color: "var(--accent-gold)" }}>A Question For You</span>
             <h1 className="headline-page" style={{ margin: "1.5rem 0" }}>&ldquo;Is it too late for you to be equipped for God&apos;s calling?&rdquo;</h1>
-            <p className="sub-heading" style={{ marginBottom: "2rem" }}>&ldquo;Keep your hope alive. The Lord has already prepared a path for you.&rdquo;</p>
+            <p className="sub-heading" style={{ marginBottom: "3rem" }}>&ldquo;Keep your hope alive. The Lord has already prepared a path for you.&rdquo;</p>
 
-            <div style={{ marginBottom: "2rem" }}>
-              <EmailCard />
-            </div>
-
-            <div>
-              <a href="#courses" className="btn-secondary" style={{ display: "inline-block" }}>Explore Courses</a>
-            </div>
+            <ContactContent />
           </div>
         </div>
       </section>
