@@ -19,49 +19,13 @@ export function ContactContent() {
     <div style={{ width: "100%", position: "relative", zIndex: 2 }}>
       
       {/* 3-Card Deck Grid */}
-      <div 
-        className="contact-deck-grid"
-        style={{ 
-          display: "grid", 
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", 
-          gap: "24px",
-          width: "100%",
-          maxWidth: "1100px",
-          margin: "0 auto 48px auto",
-          padding: "0 1rem"
-        }}
-      >
+      <div className="contact-deck-grid">
         {/* WhatsApp Card */}
         <a 
           href="https://wa.me/919663831220" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="contact-redesign-card"
-          style={{
-            background: "#ffffff",
-            borderRadius: "20px",
-            padding: "44px 36px",
-            border: "1px solid #DCE0D5",
-            borderTop: "4px solid #25D366",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-            textDecoration: "none",
-            transition: "transform 0.4s, box-shadow 0.4s, border-color 0.4s",
-            cursor: "pointer",
-            boxShadow: "var(--shadow-sm)"
-          }}
-          onMouseEnter={e => { 
-            e.currentTarget.style.transform = "translateY(-6px)"; 
-            e.currentTarget.style.boxShadow = "0 20px 40px rgba(37, 211, 102, 0.08)"; 
-            e.currentTarget.style.borderColor = "#25D366"; 
-          }}
-          onMouseLeave={e => { 
-            e.currentTarget.style.transform = "translateY(0)"; 
-            e.currentTarget.style.boxShadow = "var(--shadow-sm)"; 
-            e.currentTarget.style.borderColor = "#DCE0D5"; 
-          }}
+          className="contact-redesign-card whatsapp"
         >
           {/* Circular Backdrop Icon */}
           <div 
@@ -85,15 +49,7 @@ export function ContactContent() {
             WhatsApp Chat
           </span>
 
-          <h3 
-            style={{ 
-              fontSize: "22px", 
-              fontWeight: 600, 
-              color: "var(--accent-green)", 
-              marginBottom: "12px", 
-              fontFamily: "var(--font-serif, Georgia, serif)" 
-            }}
-          >
+          <h3 className="contact-card-title">
             +91 96638 31220
           </h3>
 
@@ -136,32 +92,7 @@ export function ContactContent() {
           href="https://mail.google.com/mail/?view=cm&fs=1&to=support@cwayacademy.com" 
           target="_blank"
           rel="noopener noreferrer"
-          className="contact-redesign-card"
-          style={{
-            background: "#ffffff",
-            borderRadius: "20px",
-            padding: "44px 36px",
-            border: "1px solid #DCE0D5",
-            borderTop: "4px solid var(--accent-gold)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-            textDecoration: "none",
-            transition: "transform 0.4s, box-shadow 0.4s, border-color 0.4s",
-            cursor: "pointer",
-            boxShadow: "var(--shadow-sm)"
-          }}
-          onMouseEnter={e => { 
-            e.currentTarget.style.transform = "translateY(-6px)"; 
-            e.currentTarget.style.boxShadow = "0 20px 40px rgba(184, 134, 69, 0.08)"; 
-            e.currentTarget.style.borderColor = "var(--accent-gold-light)"; 
-          }}
-          onMouseLeave={e => { 
-            e.currentTarget.style.transform = "translateY(0)"; 
-            e.currentTarget.style.boxShadow = "var(--shadow-sm)"; 
-            e.currentTarget.style.borderColor = "#DCE0D5"; 
-          }}
+          className="contact-redesign-card email"
         >
           {/* Circular Backdrop Icon */}
           <div 
@@ -185,16 +116,7 @@ export function ContactContent() {
             Email Inquiries
           </span>
 
-          <h3 
-            style={{ 
-              fontSize: "20px", 
-              fontWeight: 600, 
-              color: "var(--accent-green)", 
-              marginBottom: "12px", 
-              fontFamily: "var(--font-serif, Georgia, serif)",
-              wordBreak: "break-all"
-            }}
-          >
+          <h3 className="contact-card-title">
             support@cwayacademy.com
           </h3>
 
@@ -235,32 +157,7 @@ export function ContactContent() {
         {/* Phone Card */}
         <a 
           href="tel:+919663831220" 
-          className="contact-redesign-card"
-          style={{
-            background: "#ffffff",
-            borderRadius: "20px",
-            padding: "44px 36px",
-            border: "1px solid #DCE0D5",
-            borderTop: "4px solid var(--accent-green)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-            textDecoration: "none",
-            transition: "transform 0.4s, box-shadow 0.4s, border-color 0.4s",
-            cursor: "pointer",
-            boxShadow: "var(--shadow-sm)"
-          }}
-          onMouseEnter={e => { 
-            e.currentTarget.style.transform = "translateY(-6px)"; 
-            e.currentTarget.style.boxShadow = "0 20px 40px rgba(44, 74, 59, 0.08)"; 
-            e.currentTarget.style.borderColor = "var(--accent-green-light)"; 
-          }}
-          onMouseLeave={e => { 
-            e.currentTarget.style.transform = "translateY(0)"; 
-            e.currentTarget.style.boxShadow = "var(--shadow-sm)"; 
-            e.currentTarget.style.borderColor = "#DCE0D5"; 
-          }}
+          className="contact-redesign-card phone"
         >
           {/* Circular Backdrop Icon */}
           <div 
@@ -284,15 +181,7 @@ export function ContactContent() {
             Phone Inquiries
           </span>
 
-          <h3 
-            style={{ 
-              fontSize: "22px", 
-              fontWeight: 600, 
-              color: "var(--accent-green)", 
-              marginBottom: "12px", 
-              fontFamily: "var(--font-serif, Georgia, serif)" 
-            }}
-          >
+          <h3 className="contact-card-title">
             +91 96638 31220
           </h3>
 
@@ -332,24 +221,8 @@ export function ContactContent() {
       </div>
 
       {/* Clean Bottom working Hours block to match home page style */}
-      <div 
-        className="reveal" 
-        style={{
-          background: "#ffffff", 
-          borderRadius: "20px", 
-          border: "1px solid #DCE0D5",
-          padding: "32px 40px",
-          display: "flex", 
-          flexWrap: "wrap", 
-          justifyContent: "space-between", 
-          alignItems: "center", 
-          gap: "24px",
-          maxWidth: "1100px",
-          margin: "0 auto 48px auto",
-          width: "calc(100% - 2rem)"
-        }}
-      >
-        <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+      <div className="reveal contact-hours-block">
+        <div className="contact-hours-info">
           <div 
             style={{ 
               width: "48px", 
@@ -375,7 +248,7 @@ export function ContactContent() {
           </div>
         </div>
 
-        <div style={{ borderLeft: "2px solid var(--accent-gold-light)", paddingLeft: "16px", maxWidth: "420px", textAlign: "left" }}>
+        <div className="contact-hours-quote">
           <p style={{ margin: 0, fontFamily: "var(--font-serif, Georgia, serif)", fontStyle: "italic", fontSize: "14px", color: "var(--accent-green)", lineHeight: 1.5 }}>
             "Commit your work to the Lord, and your plans will be established."
           </p>

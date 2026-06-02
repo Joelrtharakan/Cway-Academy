@@ -1604,18 +1604,18 @@ export default function LandingPage() {
 
       {/* Footer */}
       {/* Footer */}
-      <footer>
-        <div className="container footer-grid">
+      <footer className="footer-main">
+        <div className="container footer-grid-container">
           <div>
             <div className="nav-logo-text" style={{ marginBottom: "1.2rem" }}><span className="logo-cway">CWAY</span><span className="logo-academy"> ACADEMY</span></div>
-            <p className="body-text" style={{ fontSize: "14.5px", lineHeight: "1.8", maxWidth: "300px", color: "var(--text-muted)" }}>Equipping Frontline Leaders for God&apos;s Great Commission.<br />A CWAY Missions Project · Bangalore, India</p>
+            <p className="body-text footer-brand-desc">Equipping Frontline Leaders for God&apos;s Great Commission.<br />A CWAY Missions Project · Bangalore, India</p>
             <div style={{ marginTop: "1.5rem" }}>
-              <a href="mailto:support@cwayacademy.com" style={{ fontFamily: "var(--font-plus-jakarta), sans-serif", fontSize: "13px", fontWeight: 700, letterSpacing: "1.5px", color: "var(--accent-gold)", textDecoration: "none" }}>SUPPORT@CWAYACADEMY.COM</a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=support@cwayacademy.com" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-plus-jakarta), sans-serif", fontSize: "13px", fontWeight: 700, letterSpacing: "1.5px", color: "var(--accent-gold)", textDecoration: "none" }}>SUPPORT@CWAYACADEMY.COM</a>
             </div>
           </div>
           <div>
             <h4 style={{ fontFamily: "var(--font-plus-jakarta), sans-serif", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "1.5rem", color: "var(--text-main)", fontSize: "13px" }}>Quick Links</h4>
-            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <div className="footer-links-col">
               <a href="#home" className="body-text" style={{ textDecoration: "none", color: "var(--text-muted)", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--accent-green)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Home</a>
               <a href="#about" className="body-text" style={{ textDecoration: "none", color: "var(--text-muted)", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--accent-green)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>About Us</a>
               <a href="#courses" className="body-text" style={{ textDecoration: "none", color: "var(--text-muted)", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--accent-green)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Our Courses</a>
@@ -1624,7 +1624,7 @@ export default function LandingPage() {
           </div>
           <div>
             <h4 style={{ fontFamily: "var(--font-plus-jakarta), sans-serif", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "1.5rem", color: "var(--text-main)", fontSize: "13px" }}>Contact Info</h4>
-            <p className="body-text" style={{ fontSize: "14.5px", lineHeight: "1.8", color: "var(--text-muted)" }}>
+            <p className="body-text" style={{ fontSize: "14.5px", lineHeight: "1.8", color: "var(--text-muted)", margin: 0 }}>
               CWAY Missions Religious Trust<br />
               Bangalore, Karnataka, India<br /><br />
               <strong style={{ color: "var(--text-main)", fontWeight: 600 }}>Phone Inquiries:</strong><br />
@@ -1633,7 +1633,7 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="container">
-          <div className="footer-bottom" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem", color: "var(--text-muted)", borderTopColor: "rgba(0,0,0,0.1)" }}>
+          <div className="footer-bottom-bar">
             <div style={{ textAlign: "left" }}>&copy; 2025 CWAY Academy — A Ministry of CWAY Missions, Bangalore, India. All rights reserved.</div>
             <div style={{ display: "flex", gap: "1.5rem" }}>
               <a href="#privacy" style={{ color: "var(--text-muted)", textDecoration: "none", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--text-main)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Privacy Policy</a>
