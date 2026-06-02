@@ -1109,21 +1109,10 @@ export default function LandingPage() {
             </div>
 
             {/* Bottom banner row */}
-            <div className="reveal" style={{
-              background: "#fff", borderRadius: "20px", border: "1px solid #DCE0D5",
-              padding: "32px 40px",
-              display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "24px"
-            }}>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
+            <div className="reveal courses-banner-row">
+              <div className="courses-banner-tags">
                 {["Flexible hybrid schedule", "Globally recognized credentials", "Fully bilingual programs"].map((text, i) => (
-                  <span key={i} style={{
-                    display: "inline-flex", padding: "10px 22px",
-                    background: "#F3F4F0", border: "1px solid #DCE0D5",
-                    borderRadius: "30px", fontSize: "12px", fontWeight: 600,
-                    color: "var(--accent-green)", letterSpacing: "0.5px",
-                    textAlign: "center", justifyContent: "center", alignItems: "center",
-                    lineHeight: "1.3"
-                  }}>{text}</span>
+                  <span key={i} className="courses-banner-tag">{text}</span>
                 ))}
               </div>
               <a href="#courses" className="btn-primary" style={{ padding: "14px 32px", fontSize: "12px", textAlign: "center" }}>Explore Courses</a>
