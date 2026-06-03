@@ -87,9 +87,11 @@ export default function LandingPage() {
   const [activeTab, setActiveTab] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedBlogPost, setSelectedBlogPost] = useState<Post | null>(null);
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const [showTermsModal, setShowTermsModal] = useState(false);
 
   useEffect(() => {
-    if (selectedBlogPost) {
+    if (selectedBlogPost || showPrivacyModal || showTermsModal) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -97,7 +99,7 @@ export default function LandingPage() {
     return () => {
       document.body.style.overflow = "";
     };
-  }, [selectedBlogPost]);
+  }, [selectedBlogPost, showPrivacyModal, showTermsModal]);
 
   useEffect(() => {
     // 1. Router System
@@ -1623,10 +1625,10 @@ export default function LandingPage() {
         </div>
         <div className="container">
           <div className="footer-bottom-bar">
-            <div style={{ textAlign: "left" }}>&copy; 2026 CWAY Academy — A Ministry of CWAY Missions, Bangalore, India. All rights reserved.</div>
-            <div style={{ display: "flex", gap: "1.5rem" }}>
-              <a href="#privacy" style={{ color: "var(--text-muted)", textDecoration: "none", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--text-main)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Privacy Policy</a>
-              <a href="#terms" style={{ color: "var(--text-muted)", textDecoration: "none", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--text-main)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Terms of Service</a>
+            <div className="footer-copyright">&copy; 2026 CWAY Academy — A Ministry of CWAY Missions, Bangalore, India. All rights reserved.</div>
+            <div className="footer-legal-links">
+              <a href="#privacy" onClick={(e) => { e.preventDefault(); setShowPrivacyModal(true); }} style={{ color: "var(--text-muted)", textDecoration: "none", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--text-main)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Privacy Policy</a>
+              <a href="#terms" onClick={(e) => { e.preventDefault(); setShowTermsModal(true); }} style={{ color: "var(--text-muted)", textDecoration: "none", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--text-main)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Terms of Service</a>
             </div>
           </div>
         </div>
@@ -1828,6 +1830,348 @@ export default function LandingPage() {
                   className="hover-btn-close"
                 >
                   Close Article
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Privacy Policy Modal */}
+      <AnimatePresence>
+        {showPrivacyModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: 9999,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "1rem",
+              backgroundColor: "rgba(26, 38, 29, 0.75)",
+              backdropFilter: "blur(12px)"
+            }}
+            onClick={() => setShowPrivacyModal(false)}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 50, scale: 0.95 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              style={{
+                backgroundColor: "var(--bg-main)",
+                borderRadius: "var(--radius-lg)",
+                boxShadow: "var(--shadow-xl)",
+                maxWidth: "760px",
+                width: "100%",
+                maxHeight: "85vh",
+                overflow: "hidden",
+                display: "flex",
+                flexDirection: "column"
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Sticky Header */}
+              <div
+                style={{
+                  padding: "1.75rem 2rem",
+                  borderBottom: "1px solid var(--border)",
+                  backgroundColor: "#FFFFFF",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "flex-start",
+                  gap: "1.5rem"
+                }}
+              >
+                <div style={{ textAlign: "left" }}>
+                  <span className="label" style={{ marginBottom: "0.25rem", display: "inline-block", color: "var(--accent-gold)" }}>Legal Documents</span>
+                  <h2
+                    style={{
+                      fontSize: "clamp(1.2rem, 3vw, 1.75rem)",
+                      lineHeight: 1.3,
+                      color: "var(--text-main)",
+                      fontFamily: "var(--font-serif), serif",
+                      fontWeight: 700
+                    }}
+                  >
+                    Privacy Policy
+                  </h2>
+                </div>
+                <button
+                  onClick={() => setShowPrivacyModal(false)}
+                  style={{
+                    padding: "0.5rem",
+                    borderRadius: "50%",
+                    border: "none",
+                    backgroundColor: "transparent",
+                    color: "var(--text-muted)",
+                    cursor: "pointer",
+                    transition: "all 0.2s ease",
+                    flexShrink: 0
+                  }}
+                  className="hover-close"
+                  aria-label="Close reader"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+
+              {/* Modal Content - Scrollable */}
+              <div
+                data-lenis-prevent
+                style={{
+                  padding: "2rem 2.5rem",
+                  overflowY: "auto",
+                  backgroundColor: "var(--bg-main)",
+                  overscrollBehavior: "contain"
+                }}
+              >
+                <div style={{ maxWidth: "660px", margin: "0 auto", textAlign: "left" }}>
+                  <p style={{ fontSize: "14.5px", color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                    Last Updated: June 2026
+                  </p>
+                  <p style={{ fontSize: "15px", color: "var(--text-main)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                    CWAY Academy and the CWAY Missions Religious Trust respect your privacy and are committed to protecting it through our compliance with this policy. This Privacy Policy describes the types of information we may collect from you or that you may provide when you visit our website, register for training, or communicate with us, and our practices for collecting, using, maintaining, protecting, and disclosing that information.
+                  </p>
+
+                  <h3 style={{ fontSize: "18px", color: "var(--text-main)", fontWeight: 700, margin: "1.5rem 0 0.75rem", fontFamily: "var(--font-serif), serif" }}>1. Information We Collect</h3>
+                  <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                    We collect personal information that you voluntarily provide to us when you fill out contact forms, apply for admission, request scholarships, or subscribe to updates. This information may include:
+                  </p>
+                  <ul style={{ paddingLeft: "1.5rem", marginBottom: "1.5rem", listStyleType: "disc", fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.8 }}>
+                    <li>Personal identification information (such as name, email address, phone number, and mailing address).</li>
+                    <li>Ministry and academic background details provided in connection with enrollment or scholarship inquiries.</li>
+                    <li>Payment information and donor records in connection with sponsorships or donations.</li>
+                  </ul>
+
+                  <h3 style={{ fontSize: "18px", color: "var(--text-main)", fontWeight: 700, margin: "1.5rem 0 0.75rem", fontFamily: "var(--font-serif), serif" }}>2. How We Use Your Information</h3>
+                  <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                    We use the information we collect for the following purposes:
+                  </p>
+                  <ul style={{ paddingLeft: "1.5rem", marginBottom: "1.5rem", listStyleType: "disc", fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.8 }}>
+                    <li>To facilitate admissions, enrollment, academic assessments, and hybrid class workshops.</li>
+                    <li>To coordinate and manage local graduation ceremonies.</li>
+                    <li>To process and record sponsorships and charitable contributions.</li>
+                    <li>To respond to your inquiries, support requests, or partnership applications.</li>
+                    <li>To send updates or newsletters about CWAY Academy and CWAY Missions Trust.</li>
+                  </ul>
+
+                  <h3 style={{ fontSize: "18px", color: "var(--text-main)", fontWeight: 700, margin: "1.5rem 0 0.75rem", fontFamily: "var(--font-serif), serif" }}>3. Data Protection and Security</h3>
+                  <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                    We implement appropriate administrative, physical, and electronic security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, please note that no transmission of data over the internet can be guaranteed as completely secure.
+                  </p>
+
+                  <h3 style={{ fontSize: "18px", color: "var(--text-main)", fontWeight: 700, margin: "1.5rem 0 0.75rem", fontFamily: "var(--font-serif), serif" }}>4. Information Sharing and Disclosure</h3>
+                  <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                    We do not sell, rent, or trade your personal identification information. We may share details with trusted third-party service providers (such as hosting partners or platform administrators) who assist us in operating our educational platforms and conducting our ministries, provided those partners agree to keep this information confidential.
+                  </p>
+
+                  <h3 style={{ fontSize: "18px", color: "var(--text-main)", fontWeight: 700, margin: "1.5rem 0 0.75rem", fontFamily: "var(--font-serif), serif" }}>5. Your Rights and Contact Info</h3>
+                  <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                    You have the right to request access to the personal data we hold about you, request corrections to any inaccuracies, or ask for deletion of your records. For any requests or inquiries, please contact us at:
+                  </p>
+                  <p style={{ fontSize: "15px", color: "var(--accent-green)", fontWeight: 600, lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                    Email: support@cwayacademy.com<br />
+                    Address: CWAY Missions Religious Trust, Bangalore, Karnataka, India
+                  </p>
+                </div>
+              </div>
+
+              {/* Modal Sticky Footer */}
+              <div
+                style={{
+                  padding: "1.25rem 2rem",
+                  borderTop: "1px solid var(--border)",
+                  backgroundColor: "#FFFFFF",
+                  display: "flex",
+                  justifyContent: "flex-end"
+                }}
+              >
+                <button
+                  onClick={() => setShowPrivacyModal(false)}
+                  style={{
+                    padding: "0.75rem 2rem",
+                    borderRadius: "50px",
+                    border: "1px solid var(--border)",
+                    backgroundColor: "transparent",
+                    color: "var(--text-muted)",
+                    fontWeight: 600,
+                    fontSize: "13px",
+                    cursor: "pointer",
+                    transition: "all 0.3s ease"
+                  }}
+                  className="hover-btn-close"
+                >
+                  Close
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Terms of Service Modal */}
+      <AnimatePresence>
+        {showTermsModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: 9999,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "1rem",
+              backgroundColor: "rgba(26, 38, 29, 0.75)",
+              backdropFilter: "blur(12px)"
+            }}
+            onClick={() => setShowTermsModal(false)}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 50, scale: 0.95 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              style={{
+                backgroundColor: "var(--bg-main)",
+                borderRadius: "var(--radius-lg)",
+                boxShadow: "var(--shadow-xl)",
+                maxWidth: "760px",
+                width: "100%",
+                maxHeight: "85vh",
+                overflow: "hidden",
+                display: "flex",
+                flexDirection: "column"
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Sticky Header */}
+              <div
+                style={{
+                  padding: "1.75rem 2rem",
+                  borderBottom: "1px solid var(--border)",
+                  backgroundColor: "#FFFFFF",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "flex-start",
+                  gap: "1.5rem"
+                }}
+              >
+                <div style={{ textAlign: "left" }}>
+                  <span className="label" style={{ marginBottom: "0.25rem", display: "inline-block", color: "var(--accent-gold)" }}>Legal Documents</span>
+                  <h2
+                    style={{
+                      fontSize: "clamp(1.2rem, 3vw, 1.75rem)",
+                      lineHeight: 1.3,
+                      color: "var(--text-main)",
+                      fontFamily: "var(--font-serif), serif",
+                      fontWeight: 700
+                    }}
+                  >
+                    Terms of Service
+                  </h2>
+                </div>
+                <button
+                  onClick={() => setShowTermsModal(false)}
+                  style={{
+                    padding: "0.5rem",
+                    borderRadius: "50%",
+                    border: "none",
+                    backgroundColor: "transparent",
+                    color: "var(--text-muted)",
+                    cursor: "pointer",
+                    transition: "all 0.2s ease",
+                    flexShrink: 0
+                  }}
+                  className="hover-close"
+                  aria-label="Close reader"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+
+              {/* Modal Content - Scrollable */}
+              <div
+                data-lenis-prevent
+                style={{
+                  padding: "2rem 2.5rem",
+                  overflowY: "auto",
+                  backgroundColor: "var(--bg-main)",
+                  overscrollBehavior: "contain"
+                }}
+              >
+                <div style={{ maxWidth: "660px", margin: "0 auto", textAlign: "left" }}>
+                  <p style={{ fontSize: "14.5px", color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                    Last Updated: June 2026
+                  </p>
+                  <p style={{ fontSize: "15px", color: "var(--text-main)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                    Welcome to CWAY Academy. By accessing our website, participating in our hybrid training programs, or using any services provided by CWAY Academy and CWAY Missions Religious Trust, you agree to comply with and be bound by the following Terms of Service. If you do not agree, please do not access or use our services.
+                  </p>
+
+                  <h3 style={{ fontSize: "18px", color: "var(--text-main)", fontWeight: 700, margin: "1.5rem 0 0.75rem", fontFamily: "var(--font-serif), serif" }}>1. Admission and Code of Conduct</h3>
+                  <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                    CWAY Academy provides Bible-based leadership training primarily intended for pastors, church elders, lay leaders, and Christian believers seeking to grow in spiritual leadership. All student participants are expected to communicate respectfully, engage with program coordinators constructively, and provide accurate background and credentials during enrollment.
+                  </p>
+
+                  <h3 style={{ fontSize: "18px", color: "var(--text-main)", fontWeight: 700, margin: "1.5rem 0 0.75rem", fontFamily: "var(--font-serif), serif" }}>2. Academic Policies and Course Materials</h3>
+                  <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                    The structure of CWAY Academy comprises a total of ten courses spanning a duration of 60 weeks (6 weeks per course).
+                  </p>
+                  <ul style={{ paddingLeft: "1.5rem", marginBottom: "1.5rem", listStyleType: "disc", fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.8 }}>
+                    <li><strong>Material Usage:</strong> All video lectures, transcripts, notes, and theological study sheets provided are the intellectual property of CWAY Academy. You are granted a limited license to use these materials solely for personal learning and study. Distributing or copying them for commercial purposes is strictly prohibited.</li>
+                    <li><strong>Graduation Requirements:</strong> To obtain the globally certified graduation credentials, students must complete all 10 courses, submit all evaluations, and fulfill feedback requirements.</li>
+                  </ul>
+
+                  <h3 style={{ fontSize: "18px", color: "var(--text-main)", fontWeight: 700, margin: "1.5rem 0 0.75rem", fontFamily: "var(--font-serif), serif" }}>3. Tuition and Scholarships</h3>
+                  <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                    CWAY Academy is committed to making education accessible to rural leaders. Tuition rates and payment periods are detailed in the courses block. Scholarships are available to candidates with proven financial constraints, sponsored directly by donation partners. Satisfying eligibility criteria is mandatory for scholarship allocation.
+                  </p>
+
+                  <h3 style={{ fontSize: "18px", color: "var(--text-main)", fontWeight: 700, margin: "1.5rem 0 0.75rem", fontFamily: "var(--font-serif), serif" }}>4. Limitation of Liability</h3>
+                  <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                    All educational materials and platform operations are provided "as is" and "as available". We do not warrant that files or platforms will be completely error-free or uninterrupted. CWAY Academy and CWAY Missions Religious Trust will not be liable for any indirect, incidental, or consequential damages resulting from your use of or inability to use our services.
+                  </p>
+
+                  <h3 style={{ fontSize: "18px", color: "var(--text-main)", fontWeight: 700, margin: "1.5rem 0 0.75rem", fontFamily: "var(--font-serif), serif" }}>5. Jurisdiction and Governing Law</h3>
+                  <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                    These Terms of Service are governed by and construed in accordance with the laws of India. Any disputes arising in connection with these terms or CWAY Academy services will be subject to the exclusive jurisdiction of the courts located in Bangalore, Karnataka, India.
+                  </p>
+                </div>
+              </div>
+
+              {/* Modal Sticky Footer */}
+              <div
+                style={{
+                  padding: "1.25rem 2rem",
+                  borderTop: "1px solid var(--border)",
+                  backgroundColor: "#FFFFFF",
+                  display: "flex",
+                  justifyContent: "flex-end"
+                }}
+              >
+                <button
+                  onClick={() => setShowTermsModal(false)}
+                  style={{
+                    padding: "0.75rem 2rem",
+                    borderRadius: "50px",
+                    border: "1px solid var(--border)",
+                    backgroundColor: "transparent",
+                    color: "var(--text-muted)",
+                    fontWeight: 600,
+                    fontSize: "13px",
+                    cursor: "pointer",
+                    transition: "all 0.3s ease"
+                  }}
+                  className="hover-btn-close"
+                >
+                  Close
                 </button>
               </div>
             </motion.div>

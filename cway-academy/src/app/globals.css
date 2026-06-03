@@ -1604,6 +1604,15 @@ section[id] {
   margin-top: 4rem;
 }
 
+.footer-copyright {
+  text-align: left;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
 @media (max-width: 900px) {
   .footer-grid-container {
     grid-template-columns: 1fr 1fr;
@@ -1622,6 +1631,7 @@ section[id] {
   }
   .footer-brand-desc {
     margin: 1rem auto 0 auto !important; /* Center paragraph container */
+    max-width: 100% !important;
   }
   .footer-links-col {
     align-items: center !important; /* Center link items */
@@ -1633,8 +1643,13 @@ section[id] {
     margin-top: 3rem;
     gap: 1.25rem;
   }
-  .footer-bottom-bar > div {
+  .footer-copyright {
     text-align: center !important;
+    width: 100% !important;
+  }
+  .footer-legal-links {
+    justify-content: center !important;
+    width: 100% !important;
   }
 }
 
