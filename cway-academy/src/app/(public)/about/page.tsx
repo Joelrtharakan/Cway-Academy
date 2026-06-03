@@ -626,9 +626,9 @@ export default function AboutPage() {
                 <h4 className="text-2xl font-normal font-serif text-[var(--navy-deep)] mb-2">Dr. Reeju Tharakan</h4>
                 <div className="w-12 h-[2px] bg-[var(--gold-light)] mb-4" />
                 <div className="text-[var(--text-secondary)] font-light leading-relaxed text-sm md:text-base text-justify space-y-4" style={{ wordSpacing: '-0.02em' }}>
-                  <p>With a Ph.D. in Christian Studies and 19 years of experience in theological education, Dr. Reeju forged a vision to provide an optimized theological learning opportunity for every Local Church and Leader.</p>
-                  <p>As a theological educator, he served at Southern Asia Bible College, Bangalore, as Assistant Professor for 13 years, then as an international faculty at SUM Bible College and Theological Seminary, California, and Dean of M.Th. studies at Bethel New Life College, Bangalore.</p>
-                  <p>Presently, he is the Lead Pastor of Immanuel AG Church in Dubai, and he is involved in teaching, training, developing curriculum, and launching new theological programs. He is also the President-Trustee of the CWAY Missions Religious Trust, Bangalore.</p>
+                  <p>With a Ph.D. in Christian Studies and a Master of Theology in History of Christianity and 24 years of experience in theological education, Dr. Reeju forged a vision to provide an optimized theological learning opportunity for every Local Church and Leader.</p>
+                  <p>As a theological educator, he served at Southern Asia Bible College, Bangalore, as an Assistant Professor for 13 years, then as an international faculty member at SUM Bible College and Theological Seminary, California, and as Dean of M.Th. studies at Bethel New Life College, Bangalore.</p>
+                  <p>Presently, he is the Lead Pastor of Immanuel AG Church in Dubai and is involved in teaching, training, developing curricula, and launching new theological programs. He is also the President-Trustee of the CWAY Missions Religious Trust, Bangalore.</p>
                 </div>
               </div>
             </motion.div>
@@ -690,7 +690,7 @@ export default function AboutPage() {
                 <h4 className="text-2xl font-normal font-serif text-[var(--navy-deep)] mb-2">Mr. Finny Philip Varghese</h4>
                 <div className="w-12 h-[2px] bg-[var(--gold-light)] mb-4" />
                 <div className="text-[var(--text-secondary)] font-light leading-relaxed text-sm md:text-base text-justify space-y-4" style={{ wordSpacing: '-0.02em' }}>
-                  <p>Education in IT and computers, and a very engaged Christian upbringing, allowed Mr. Finny to draw on more than a decade of professional experience, including roles at multinational companies like Dell, forming and administering trusts for skill development, and organizing Church gatherings.</p>
+                  <p>Education in IT and computers, and a very engaged Christian upbringing, enabled Mr. Finny to draw on more than a decade of professional experience, including roles at multinational companies such as Dell, forming and administering trusts for skill development, and organizing Church gatherings.</p>
                   <p>He is the Founder and Operations Head of ARTnTEQ GLOBAL SERVICES and its subsidiaries.</p>
                   <p>He is an entrepreneur with a vision to equip and emancipate lay leaders, with a genuine emphasis on the Kingdom&apos;s purpose. He is also the Treasurer-Trustee of the CWAY Missions Religious Trust in Bangalore.</p>
                 </div>

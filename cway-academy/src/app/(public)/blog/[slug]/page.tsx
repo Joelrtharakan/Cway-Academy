@@ -38,7 +38,7 @@ The Missionary Reporter of 1860 reported on revivals in Britain and America in r
 
 Arulappan was a true pioneer and visionary who believed in local training for Christian leaders. He was a local pastor and Christian leader with the vision to train and produce Christian leaders for the future church in India. The impact of his training and the Tirunelveli revival continues to this day, as we have many Pentecostal-Charismatic Christian leaders and churches in South India.`,
     author: "Dr. Reeju Tharakan",
-    authorRole: "M.Th., Ph.D",
+    authorRole: "M.Th., Ph.D.",
     date: "March 16, 2026",
     readTime: "6 min",
     category: "History",
@@ -58,7 +58,7 @@ Mary Chapman arrived in India in October 1915 and had a vision that women and li
 
 John Maxwell made the leadership statement, “Everything rises and falls on leadership.” This statement has become especially significant in today’s church context in India, where there appears to be a shortage of trained pastors and local leaders. Because of India’s many ethnic groups and languages, training Christian leaders has become the most challenging task for churches and theological institutions. There are thousands of untrained pastors and lay leaders in remote villages in India who have never had the opportunity for formal leadership training or theological education. The poor financial status of churches and families, along with the lack of training programs in local languages, always hinders local pastors and leaders from enrolling in theological education or Christian leadership programs. What can we do for them?`,
     author: "Dr. Reeju Tharakan",
-    authorRole: "M.Th., Ph.D",
+    authorRole: "M.Th., Ph.D.",
     date: "April 28, 2026",
     readTime: "7 min",
     category: "Missions",
@@ -81,8 +81,8 @@ A. G. Garr and Lillian Garr, with their daughter Virginia and their assistant Ma
 Lillian Garr reported on this revival in the periodical Apostolic Faith of the Azusa Street Mission: “God is spreading Pentecost in Calcutta, … We are among the Bible teachers, and they have the Word so stored away; but now the Spirit is putting life and power into it, which is wonderful to behold.” One night in Calcutta, Sister Lillian Garr had a vision of Jesus, His hands filled with golden crowns ready to place on heads. She realized that God had put a burden on her heart for the hungry souls in India. The Garrs began praying for missionaries in India to receive the outpouring of the Holy Spirit. She initiated revival prayer meetings among the missionary ladies in Calcutta. Miss Susan Easton, head of the American Women’s Board of Missions, and Fanny Simpson, a Methodist missionary and director of a girls’ orphanage, received the Holy Spirit's empowerment in these meetings. At Miss Simpson's orphanage, forty-five native girls prayed and received the Spirit’s baptism. These girls became local ministers and witnessed the power of the gospel in their families and villages. The revival continued to spread in Calcutta, Pune, and Bombay. The Garrs visited and conducted revival meetings at Ramabai’s Mukti Sadan in Pune and at a boys’ home in Dhond. The Garrs family went from Calcutta to Sri Lanka, then to Hong Kong and China. Despite personal tragedy, including the deaths of their two daughters and their assistant Maria, they continued the work of the Lord in China until 1911.
 
 Alfred and Lillian Garr were a model missionary family who had grown in the grace and wisdom of God. They obeyed God's will in their lives and accepted their challenging experiences as God-given for the glory of God. The impact of their lives and ministry will endure forever.`,
-    author: "Pr. Robin Ninan",
-    authorRole: "Pastor & Teacher",
+    author: "Dr. Reeju Tharakan",
+    authorRole: "M.Th., Ph.D.",
     date: "May 15, 2026",
     readTime: "8 min",
     category: "History",

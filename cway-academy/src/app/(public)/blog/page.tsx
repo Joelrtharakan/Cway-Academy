@@ -57,7 +57,7 @@ The Missionary Reporter of 1860 reported on revivals in Britain and America in r
 
 Arulappan was a true pioneer and visionary who believed in local training for Christian leaders. He was a local pastor and Christian leader with the vision to train and produce Christian leaders for the future church in India. The impact of his training and the Tirunelveli revival continues to this day, as we have many Pentecostal-Charismatic Christian leaders and churches in South India.`,
     author: "Dr. Reeju Tharakan",
-    authorRole: "M.Th., Ph.D",
+    authorRole: "M.Th., Ph.D.",
     date: "March 16, 2026",
     readTime: "6 min",
     category: "History",
@@ -77,7 +77,7 @@ Mary Chapman arrived in India in October 1915 and had a vision that women and li
 
 John Maxwell made the leadership statement, “Everything rises and falls on leadership.” This statement has become especially significant in today’s church context in India, where there appears to be a shortage of trained pastors and local leaders. Because of India’s many ethnic groups and languages, training Christian leaders has become the most challenging task for churches and theological institutions. There are thousands of untrained pastors and lay leaders in remote villages in India who have never had the opportunity for formal leadership training or theological education. The poor financial status of churches and families, along with the lack of training programs in local languages, always hinders local pastors and leaders from enrolling in theological education or Christian leadership programs. What can we do for them?`,
     author: "Dr. Reeju Tharakan",
-    authorRole: "M.Th., Ph.D",
+    authorRole: "M.Th., Ph.D.",
     date: "April 28, 2026",
     readTime: "7 min",
     category: "Missions",
@@ -101,7 +101,7 @@ Lillian Garr reported on this revival in the periodical Apostolic Faith of the A
 
 Alfred and Lillian Garr were a model missionary family who had grown in the grace and wisdom of God. They obeyed God's will in their lives and accepted their challenging experiences as God-given for the glory of God. The impact of their lives and ministry will endure forever.`,
     author: "Dr. Reeju Tharakan",
-    authorRole: "M.Th., Ph.D",
+    authorRole: "M.Th., Ph.D.",
     date: "May 15, 2026",
     readTime: "8 min",
     category: "History",

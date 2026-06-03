@@ -38,7 +38,7 @@ The Missionary Reporter of 1860 reported on revivals in Britain and America in r
 Arulappan was a true pioneer and visionary who believed in local training for Christian leaders. He was a local pastor and Christian leader with the vision to train and produce Christian leaders for the future church in India. The impact of his training and the Tirunelveli revival continues to this day, as we have many Pentecostal-Charismatic Christian leaders and churches in South India.
 `,
     author: "Dr. Reeju Tharakan",
-    authorRole: "M.Th., Ph.D",
+    authorRole: "M.Th., Ph.D.",
     date: "March 16, 2026",
     readTime: "6 min",
     category: "History",
@@ -55,7 +55,7 @@ Mary Chapman arrived in India in October 1915 and had a vision that women and li
 John Maxwell made the leadership statement, “Everything rises and falls on leadership.” This statement has become especially significant in today’s church context in India, where there appears to be a shortage of trained pastors and local leaders. Because of India’s many ethnic groups and languages, training Christian leaders has become the most challenging task for churches and theological institutions. There are thousands of untrained pastors and lay leaders in remote villages in India who have never had the opportunity for formal leadership training or theological education. The poor financial status of churches and families, along with the lack of training programs in local languages, always hinders local pastors and leaders from enrolling in theological education or Christian leadership programs. What can we do for them?
 `,
     author: "Dr. Reeju Tharakan",
-    authorRole: "M.Th., Ph.D",
+    authorRole: "M.Th., Ph.D.",
     date: "April 28, 2026",
     readTime: "7 min",
     category: "Missions",
@@ -76,7 +76,7 @@ Alfred and Lillian Garr were a model missionary family who had grown in the grac
 
 `,
     author: "Dr. Reeju Tharakan",
-    authorRole: "M.Th., Ph.D",
+    authorRole: "M.Th., Ph.D.",
     date: "May 15, 2026",
     readTime: "8 min",
     category: "History",
@@ -1268,9 +1268,9 @@ export default function LandingPage() {
                   <h3 style={{ fontSize: "22px", fontWeight: 600 }}>Dr.&nbsp;Reeju Tharakan</h3>
                   <div className="team-separator" />
                   <div className="body-text" style={{ fontSize: "15px", lineHeight: "1.7", textAlign: "justify", wordSpacing: "-0.02em" }}>
-                    <p style={{ marginBottom: "1rem" }}>With a Ph.D. in Christian Studies and 21 years of experience in theological education, Dr.&nbsp;Reeju forged a vision to provide an optimized theological learning opportunity for every Local Church and Leader.</p>
-                    <p style={{ marginBottom: "1rem" }}>As a theological educator, he served at Southern Asia Bible College, Bangalore, as Assistant Professor for 13 years, then as an international faculty at SUM Bible College and Theological Seminary, California, and Dean of M.Th. studies at Bethel New Life College, Bangalore.</p>
-                    <p>Presently, he is the Lead Pastor of Immanuel AG Church in Dubai, and he is involved in teaching, training, developing curriculum, and launching new theological programs. He is also the President-Trustee of the CWAY Missions Religious Trust, Bangalore.</p>
+                    <p style={{ marginBottom: "1rem" }}>With a Ph.D. in Christian Studies and a Master of Theology in History of Christianity and 24 years of experience in theological education, Dr.&nbsp;Reeju forged a vision to provide an optimized theological learning opportunity for every Local Church and Leader.</p>
+                    <p style={{ marginBottom: "1rem" }}>As a theological educator, he served at Southern Asia Bible College, Bangalore, as an Assistant Professor for 13 years, then as an international faculty member at SUM Bible College and Theological Seminary, California, and as Dean of M.Th. studies at Bethel New Life College, Bangalore.</p>
+                    <p>Presently, he is the Lead Pastor of Immanuel AG Church in Dubai and is involved in teaching, training, developing curricula, and launching new theological programs. He is also the President-Trustee of the CWAY Missions Religious Trust, Bangalore.</p>
                   </div>
                 </div>
               </div>
@@ -1306,7 +1306,7 @@ export default function LandingPage() {
                   <h3 style={{ fontSize: "22px", fontWeight: 600 }}>Mr.&nbsp;Finny Philip Varghese</h3>
                   <div className="team-separator" />
                   <div className="body-text" style={{ fontSize: "15px", lineHeight: "1.7", textAlign: "justify", wordSpacing: "-0.02em" }}>
-                    <p style={{ marginBottom: "1rem" }}>Education in IT and computers, and a very engaged Christian upbringing, allowed Mr.&nbsp;Finny to draw on more than a decade of professional experience, including roles at multinational companies like Dell, forming and administering trusts for skill development, and organizing Church gatherings.</p>
+                    <p style={{ marginBottom: "1rem" }}>Education in IT and computers, and a very engaged Christian upbringing, enabled Mr.&nbsp;Finny to draw on more than a decade of professional experience, including roles at multinational companies such as Dell, forming and administering trusts for skill development, and organizing Church gatherings.</p>
                     <p style={{ marginBottom: "1rem" }}>He is the Founder and Operations Head of ARTnTEQ GLOBAL SERVICES and its subsidiaries.</p>
                     <p>He is an entrepreneur with a vision to equip and emancipate lay leaders, with a genuine emphasis on the Kingdom&apos;s purpose. He is also the Treasurer-Trustee of the CWAY Missions Religious Trust in Bangalore.</p>
                   </div>
@@ -1623,7 +1623,7 @@ export default function LandingPage() {
         </div>
         <div className="container">
           <div className="footer-bottom-bar">
-            <div style={{ textAlign: "left" }}>&copy; 2025 CWAY Academy — A Ministry of CWAY Missions, Bangalore, India. All rights reserved.</div>
+            <div style={{ textAlign: "left" }}>&copy; 2026 CWAY Academy — A Ministry of CWAY Missions, Bangalore, India. All rights reserved.</div>
             <div style={{ display: "flex", gap: "1.5rem" }}>
               <a href="#privacy" style={{ color: "var(--text-muted)", textDecoration: "none", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--text-main)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Privacy Policy</a>
               <a href="#terms" style={{ color: "var(--text-muted)", textDecoration: "none", transition: "color 0.3s" }} onMouseEnter={(e) => e.currentTarget.style.color = "var(--text-main)"} onMouseLeave={(e) => e.currentTarget.style.color = "var(--text-muted)"}>Terms of Service</a>
